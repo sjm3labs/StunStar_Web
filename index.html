@@ -19,7 +19,13 @@
 .hero img.art{width:100%;max-width:360px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
 .hero .text{flex:1;min-width:260px}
 .chars{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-@media (max-width:560px){.chars{grid-template-columns:repeat(3,1fr)}.hero{justify-content:center}}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.tile{display:flex;gap:12px;align-items:center;background:#18203a;border:1px solid #2a3760;border-radius:14px;padding:10px 12px}
+.tile img,.tile svg{width:56px;height:56px;object-fit:contain;flex:none}
+.tile b{display:block;color:#ffd866;font-size:15px}
+.tile span.d{color:#c9d2ea;font-size:13px;line-height:1.45}
+.tile span.d.on{display:block}
+@media (max-width:560px){.chars{grid-template-columns:repeat(3,1fr)}.hero{justify-content:center}.tiles{grid-template-columns:1fr}}
 </style>
 <section class="hero">
 <img class="art" src="assets/intro.jpg" alt="StunStar">
@@ -69,6 +75,70 @@
 <figure style="margin:0;text-align:center"><img src="assets/werewolf.png" alt="Werewolf" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">늑대인간</span><span data-lang="en">Werewolf</span></figcaption></figure>
 <figure style="margin:0;text-align:center"><img src="assets/chef.png" alt="Chef" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">요리사</span><span data-lang="en">Chef</span></figcaption></figure>
 <figure style="margin:0;text-align:center"><img src="assets/angel.png" alt="Angel" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">천사</span><span data-lang="en">Angel</span></figcaption></figure>
+</div>
+
+<h2><span data-lang="ko">보스</span><span data-lang="en">Bosses</span></h2>
+<p class="muted"><span data-lang="ko">스테이지마다 마지막 판에 등장하고, 100레벨마다 크라켄이 기다립니다.</span><span data-lang="en">Each stage ends with a boss, and the Kraken waits at every hundredth level.</span></p>
+<div class="chars">
+<figure style="margin:0;text-align:center"><img src="assets/bosses/yeti.png" alt="Yeti" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">설인</span><span data-lang="en">Yeti</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/bosses/golem.png" alt="Golem" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">골렘</span><span data-lang="en">Golem</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/bosses/clown.png" alt="Mad Clown" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">미친광대</span><span data-lang="en">Mad Clown</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/bosses/pirate.png" alt="Pirate" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">해적</span><span data-lang="en">Pirate</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/bosses/dragon.png" alt="Dragon" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">드래곤</span><span data-lang="en">Dragon</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/bosses/mummy.png" alt="Mummy" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">미라</span><span data-lang="en">Mummy</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/bosses/darkmage.png" alt="Dark Mage" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">흑마법사</span><span data-lang="en">Dark Mage</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/bosses/hydra.png" alt="Hydra" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">히드라</span><span data-lang="en">Hydra</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/bosses/cyclops.png" alt="Cyclops" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">사이클롭스</span><span data-lang="en">Cyclops</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/bosses/kraken.png" alt="Kraken" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">크라켄</span><span data-lang="en">Kraken</span></figcaption></figure>
+</div>
+
+<h2><span data-lang="ko">스킬 아이템</span><span data-lang="en">Skill items</span></h2>
+<p class="muted"><span data-lang="ko">경기 전에 골라 넣으면 내 무기 하나에 그 스킬이 붙습니다.</span><span data-lang="en">Pick them before a game and each puts its skill on one of your tools.</span></p>
+<div class="tiles">
+<div class="tile"><img src="assets/items/grow.png" alt="Grows" loading="lazy"><div><b><span data-lang="ko">확대</span><span data-lang="en">Grows</span></b><span class="d" data-lang="ko">날아가면서 커져서 옆으로 더 넓게 맞습니다.</span><span class="d" data-lang="en">Swells as it flies, so it hits from farther to the side.</span></div></div>
+<div class="tile"><img src="assets/items/pierce.png" alt="Pierce" loading="lazy"><div><b><span data-lang="ko">관통</span><span data-lang="en">Pierce</span></b><span class="d" data-lang="ko">날아오는 무기와 부딪혀도 밀리지 않고 그대로 갑니다.</span><span class="d" data-lang="en">Keeps its course when it meets another tool in flight.</span></div></div>
+<div class="tile"><img src="assets/items/curve.png" alt="Curve" loading="lazy"><div><b><span data-lang="ko">커브</span><span data-lang="en">Curve</span></b><span class="d" data-lang="ko">옆벽 쪽으로 크게 휘었다가 돌아와 떨어집니다.</span><span class="d" data-lang="en">Swings out toward the side wall and back before it lands.</span></div></div>
+<div class="tile"><img src="assets/items/decoy.png" alt="Phantoms" loading="lazy"><div><b><span data-lang="ko">분신</span><span data-lang="en">Phantoms</span></b><span class="d" data-lang="ko">셋으로 보이며 날아갑니다. 그중 하나만 진짜입니다.</span><span class="d" data-lang="en">Flies as three side by side. Only one of them is real.</span></div></div>
+<div class="tile"><img src="assets/items/zigzag.png" alt="Zigzag" loading="lazy"><div><b><span data-lang="ko">지그재그</span><span data-lang="en">Zigzag</span></b><span class="d" data-lang="ko">좌우로 흔들리며 날아갑니다.</span><span class="d" data-lang="en">Swings from side to side all the way.</span></div></div>
+<div class="tile"><img src="assets/items/vanish.png" alt="Vanish" loading="lazy"><div><b><span data-lang="ko">은신</span><span data-lang="en">Vanish</span></b><span class="d" data-lang="ko">날아가는 중간에 사라졌다가 도착 직전에 다시 나타납니다.</span><span class="d" data-lang="en">Is gone through the middle of its flight and shows again just before it lands.</span></div></div>
+<div class="tile"><img src="assets/items/doublehit.png" alt="Double Hit" loading="lazy"><div><b><span data-lang="ko">2연타</span><span data-lang="en">Double Hit</span></b><span class="d" data-lang="ko">도착해서 한 번, 잠시 뒤에 한 번 더 때립니다.</span><span class="d" data-lang="en">Strikes when it arrives and once more a moment later.</span></div></div>
+<div class="tile"><img src="assets/items/teleport.png" alt="Teleport" loading="lazy"><div><b><span data-lang="ko">순간이동</span><span data-lang="en">Teleport</span></b><span class="d" data-lang="ko">날아가지 않고 곧바로 상대 줄에 나타나 잠시 뒤에 때립니다.</span><span class="d" data-lang="en">Does not fly: it is at once at the far row, and strikes a moment later.</span></div></div>
+<div class="tile"><img src="assets/items/twinthrow.png" alt="Twin Throw" loading="lazy"><div><b><span data-lang="ko">쌍발</span><span data-lang="en">Twin Throw</span></b><span class="d" data-lang="ko">가까이 놓인 무기 하나를 함께 던집니다.</span><span class="d" data-lang="en">The tool lying nearest on your row is thrown along with it.</span></div></div>
+<div class="tile"><img src="assets/items/homing.png" alt="Homing" loading="lazy"><div><b><span data-lang="ko">유도</span><span data-lang="en">Homing</span></b><span class="d" data-lang="ko">날아가는 앞부분 동안 상대 쪽으로 방향을 틉니다.</span><span class="d" data-lang="en">Steers toward the opponent for the first part of its flight.</span></div></div>
+</div>
+
+<h2><span data-lang="ko">경기장</span><span data-lang="en">Courts</span></h2>
+<div class="tiles">
+<div class="tile"><img src="assets/courts/rectangle.png" alt="Rectangle" loading="lazy"><div><b><span data-lang="ko">직사각형</span><span data-lang="en">Rectangle</span></b><span class="d" data-lang="ko">곧은 옆벽의 기본 경기장</span><span class="d" data-lang="en">The plain court with straight sides</span></div></div>
+<div class="tile"><img src="assets/courts/jar.png" alt="Jar" loading="lazy"><div><b><span data-lang="ko">항아리</span><span data-lang="en">Jar</span></b><span class="d" data-lang="ko">가운데가 넓게 부푼 경기장</span><span class="d" data-lang="en">Wide in the middle</span></div></div>
+<div class="tile"><img src="assets/courts/hourglass.png" alt="Hourglass" loading="lazy"><div><b><span data-lang="ko">모래시계</span><span data-lang="en">Hourglass</span></b><span class="d" data-lang="ko">가운데가 잘록한 경기장</span><span class="d" data-lang="en">Narrow in the middle</span></div></div>
+</div>
+
+<h2><span data-lang="ko">장애물</span><span data-lang="en">Obstacles</span></h2>
+<p class="muted"><span data-lang="ko">레벨이 오를수록 경기장 가운데에 여러 장애물이 놓이고, 가만히 있거나 움직입니다.</span><span data-lang="en">As the levels go up, obstacles stand in the middle of the court, still or on the move.</span></p>
+<div class="tiles">
+<div class="tile"><img src="assets/obstacles/pin.png" alt="Stone" loading="lazy"><div><b><span data-lang="ko">돌멩이</span><span data-lang="en">Stone</span></b><span class="d" data-lang="ko">부딪힌 무기는 튕겨 나가고 스킬이 사라집니다.</span><span class="d" data-lang="en">A tool that hits it bounces off and loses its skill.</span></div></div>
+<div class="tile"><img src="assets/obstacles/wall.png" alt="Wall" loading="lazy"><div><b><span data-lang="ko">벽</span><span data-lang="en">Wall</span></b><span class="d" data-lang="ko">길쭉한 돌벽입니다. 부딪힌 무기는 튕겨 나가고 스킬이 사라집니다.</span><span class="d" data-lang="en">A long stone bar. A tool that hits it bounces off and loses its skill.</span></div></div>
+<div class="tile"><img src="assets/obstacles/booster.png" alt="Booster" loading="lazy"><div><b><span data-lang="ko">부스터</span><span data-lang="en">Booster</span></b><span class="d" data-lang="ko">지나가는 무기가 1.5배 빨라집니다.</span><span class="d" data-lang="en">A tool passing over it flies on half as fast again.</span></div></div>
+<div class="tile"><img src="assets/obstacles/swamp.png" alt="Swamp" loading="lazy"><div><b><span data-lang="ko">늪</span><span data-lang="en">Swamp</span></b><span class="d" data-lang="ko">지나가는 무기가 절반 속도로 느려집니다.</span><span class="d" data-lang="en">A tool passing over it flies on at half its speed.</span></div></div>
+<div class="tile"><img src="assets/obstacles/blackhole.png" alt="Black Hole" loading="lazy"><div><b><span data-lang="ko">블랙홀</span><span data-lang="en">Black Hole</span></b><span class="d" data-lang="ko">무기를 1초 동안 삼켰다가 상대를 향해 다른 각도로 내보냅니다.</span><span class="d" data-lang="en">Swallows a tool for a second, then sends it toward the thrower's opponent at a new angle.</span></div></div>
+<div class="tile"><img src="assets/obstacles/portal.png" alt="Portal" loading="lazy"><div><b><span data-lang="ko">포탈</span><span data-lang="en">Portal</span></b><span class="d" data-lang="ko">두 개가 한 쌍입니다. 한쪽에 들어간 무기가 다른 쪽에서 나옵니다.</span><span class="d" data-lang="en">Two make a pair: a tool going into one comes out of the other.</span></div></div>
+<div class="tile"><img src="assets/obstacles/ice.png" alt="Ice" loading="lazy"><div><b><span data-lang="ko">얼음</span><span data-lang="en">Ice</span></b><span class="d" data-lang="ko">무기를 2초 동안 멈춰 세웠다가 그대로 보냅니다.</span><span class="d" data-lang="en">Holds a tool still for 2 seconds, then lets it go on as it was.</span></div></div>
+</div>
+
+<h2><span data-lang="ko">보너스 게임</span><span data-lang="en">Bonus games</span></h2>
+<p class="muted"><span data-lang="ko">보스를 이긴 다음 레벨은 지지 않는 보너스 게임입니다. 점수만큼 별을 받습니다.</span><span data-lang="en">The level after each boss is a bonus game you cannot lose, paying stars for your score.</span></p>
+<div class="tiles">
+<div class="tile"><img src="assets/games/stun.png" alt="Stun Practice" loading="lazy"><div><b><span data-lang="ko">기절시키기</span><span data-lang="en">Stun Practice</span></b><span class="d" data-lang="ko">상대를 맞혀 기절시키세요. 맞힐 때마다 별을 얻습니다.</span><span class="d" data-lang="en">Hit the opponent to stun it. Every hit earns stars.</span></div></div>
+<div class="tile"><img src="assets/games/pins.png" alt="Obstacle Shot" loading="lazy"><div><b><span data-lang="ko">장애물 맞히기</span><span data-lang="en">Obstacle Shot</span></b><span class="d" data-lang="ko">장애물을 맞힐 때마다 별을 얻습니다.</span><span class="d" data-lang="en">Every obstacle you hit earns stars.</span></div></div>
+<div class="tile"><img src="assets/games/moving.png" alt="Moving Obstacles" loading="lazy"><div><b><span data-lang="ko">움직이는 장애물</span><span data-lang="en">Moving Obstacles</span></b><span class="d" data-lang="ko">돌아다니는 장애물을 맞히세요.</span><span class="d" data-lang="en">Hit the obstacles as they drift about.</span></div></div>
+<div class="tile"><img src="assets/games/stars.png" alt="Falling Stars" loading="lazy"><div><b><span data-lang="ko">별 따기</span><span data-lang="en">Falling Stars</span></b><span class="d" data-lang="ko">별이 내 쪽에 닿기 전에 맞히세요.</span><span class="d" data-lang="en">Hit the stars before they reach your side.</span></div></div>
+<div class="tile"><img src="assets/games/dodge.png" alt="Dodge the Tools" loading="lazy"><div><b><span data-lang="ko">무기 피하기</span><span data-lang="en">Dodge the Tools</span></b><span class="d" data-lang="ko">떨어지는 무기를 피하세요. 지나간 무기만큼 별을 얻습니다.</span><span class="d" data-lang="en">Keep clear of what comes down. Every tool that gets past earns stars.</span></div></div>
+<div class="tile"><img src="assets/games/archery.png" alt="Archery" loading="lazy"><div><b><span data-lang="ko">양궁</span><span data-lang="en">Archery</span></b><span class="d" data-lang="ko">누르고 있다가 놓으면 던집니다. 과녁 가운데일수록 별이 많습니다.</span><span class="d" data-lang="en">Hold, then let go to throw. The nearer the middle, the more stars.</span></div></div>
+<div class="tile"><svg viewBox="0 0 56 56" aria-hidden="true"><g stroke="#16224a" stroke-width="2"><rect x="2" y="10" width="25" height="11" fill="#ff5a5a"/><rect x="29" y="10" width="25" height="11" fill="#ff5a5a"/><rect x="2" y="23" width="12" height="11" fill="#ff9f43"/><rect x="16" y="23" width="25" height="11" fill="#ff9f43"/><rect x="43" y="23" width="11" height="11" fill="#ff9f43"/><rect x="2" y="36" width="25" height="11" fill="#ffd866"/><rect x="29" y="36" width="25" height="11" fill="#ffd866"/></g></svg><div><b><span data-lang="ko">벽돌 깨기</span><span data-lang="en">Brick Break</span></b><span class="d" data-lang="ko">무기 하나로 벽돌을 깨세요. 무기는 튕겨 다니다 돌아옵니다.</span><span class="d" data-lang="en">Break the bricks with your one tool as it bounces about.</span></div></div>
+<div class="tile"><img src="assets/games/boss.png" alt="Boss Bash" loading="lazy"><div><b><span data-lang="ko">보스 때리기</span><span data-lang="en">Boss Bash</span></b><span class="d" data-lang="ko">보스를 때리세요. 체력을 깎은 만큼 별을 얻습니다.</span><span class="d" data-lang="en">Hit the boss. The more of its health you take, the more stars.</span></div></div>
+<div class="tile"><img src="assets/games/bowling.png" alt="Bowling" loading="lazy"><div><b><span data-lang="ko">볼링</span><span data-lang="en">Bowling</span></b><span class="d" data-lang="ko">누르고 있다가 놓으면 굴러갑니다. 쓰러진 핀만큼 점수!</span><span class="d" data-lang="en">Hold and let go to roll. Score by the pins you knock down.</span></div></div>
+<div class="tile"><img src="assets/games/fruit.png" alt="Fruit Match" loading="lazy"><div><b><span data-lang="ko">과일 짝 맞추기</span><span data-lang="en">Fruit Match</span></b><span class="d" data-lang="ko">같은 과일을 연달아 맞혀 짝을 지우세요.</span><span class="d" data-lang="en">Hit the same fruit twice in a row to clear the pair.</span></div></div>
 </div>
 
 <h2><span data-lang="ko">문의</span><span data-lang="en">Contact</span></h2>

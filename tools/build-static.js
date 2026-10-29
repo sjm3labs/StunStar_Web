@@ -31,6 +31,68 @@ const CHARACTERS = [
   ['werewolf', '늑대인간', 'Werewolf'], ['chef', '요리사', 'Chef'], ['angel', '천사', 'Angel'],
 ];
 
+// What the home page lists, with the game's own names (Texts.cs) and words; the pictures in assets/<folder>/<key>.png.
+const BOSSES = [
+  ['yeti', '설인', 'Yeti'], ['golem', '골렘', 'Golem'], ['clown', '미친광대', 'Mad Clown'], ['pirate', '해적', 'Pirate'],
+  ['dragon', '드래곤', 'Dragon'], ['mummy', '미라', 'Mummy'], ['darkmage', '흑마법사', 'Dark Mage'], ['hydra', '히드라', 'Hydra'],
+  ['cyclops', '사이클롭스', 'Cyclops'], ['kraken', '크라켄', 'Kraken'],
+];
+const ITEMS = [
+  ['grow', '확대', 'Grows', '날아가면서 커져서 옆으로 더 넓게 맞습니다.', 'Swells as it flies, so it hits from farther to the side.'],
+  ['pierce', '관통', 'Pierce', '날아오는 무기와 부딪혀도 밀리지 않고 그대로 갑니다.', 'Keeps its course when it meets another tool in flight.'],
+  ['curve', '커브', 'Curve', '옆벽 쪽으로 크게 휘었다가 돌아와 떨어집니다.', 'Swings out toward the side wall and back before it lands.'],
+  ['decoy', '분신', 'Phantoms', '셋으로 보이며 날아갑니다. 그중 하나만 진짜입니다.', 'Flies as three side by side. Only one of them is real.'],
+  ['zigzag', '지그재그', 'Zigzag', '좌우로 흔들리며 날아갑니다.', 'Swings from side to side all the way.'],
+  ['vanish', '은신', 'Vanish', '날아가는 중간에 사라졌다가 도착 직전에 다시 나타납니다.', 'Is gone through the middle of its flight and shows again just before it lands.'],
+  ['doublehit', '2연타', 'Double Hit', '도착해서 한 번, 잠시 뒤에 한 번 더 때립니다.', 'Strikes when it arrives and once more a moment later.'],
+  ['teleport', '순간이동', 'Teleport', '날아가지 않고 곧바로 상대 줄에 나타나 잠시 뒤에 때립니다.', 'Does not fly: it is at once at the far row, and strikes a moment later.'],
+  ['twinthrow', '쌍발', 'Twin Throw', '가까이 놓인 무기 하나를 함께 던집니다.', 'The tool lying nearest on your row is thrown along with it.'],
+  ['homing', '유도', 'Homing', '날아가는 앞부분 동안 상대 쪽으로 방향을 틉니다.', 'Steers toward the opponent for the first part of its flight.'],
+];
+const COURTS = [
+  ['rectangle', '직사각형', 'Rectangle', '곧은 옆벽의 기본 경기장', 'The plain court with straight sides'],
+  ['jar', '항아리', 'Jar', '가운데가 넓게 부푼 경기장', 'Wide in the middle'],
+  ['hourglass', '모래시계', 'Hourglass', '가운데가 잘록한 경기장', 'Narrow in the middle'],
+];
+const OBSTACLES = [
+  ['pin', '돌멩이', 'Stone', '부딪힌 무기는 튕겨 나가고 스킬이 사라집니다.', 'A tool that hits it bounces off and loses its skill.'],
+  ['wall', '벽', 'Wall', '길쭉한 돌벽입니다. 부딪힌 무기는 튕겨 나가고 스킬이 사라집니다.', 'A long stone bar. A tool that hits it bounces off and loses its skill.'],
+  ['booster', '부스터', 'Booster', '지나가는 무기가 1.5배 빨라집니다.', 'A tool passing over it flies on half as fast again.'],
+  ['swamp', '늪', 'Swamp', '지나가는 무기가 절반 속도로 느려집니다.', 'A tool passing over it flies on at half its speed.'],
+  ['blackhole', '블랙홀', 'Black Hole', '무기를 1초 동안 삼켰다가 상대를 향해 다른 각도로 내보냅니다.', "Swallows a tool for a second, then sends it toward the thrower's opponent at a new angle."],
+  ['portal', '포탈', 'Portal', '두 개가 한 쌍입니다. 한쪽에 들어간 무기가 다른 쪽에서 나옵니다.', 'Two make a pair: a tool going into one comes out of the other.'],
+  ['ice', '얼음', 'Ice', '무기를 2초 동안 멈춰 세웠다가 그대로 보냅니다.', 'Holds a tool still for 2 seconds, then lets it go on as it was.'],
+];
+const GAMES = [
+  ['stun', '기절시키기', 'Stun Practice', '상대를 맞혀 기절시키세요. 맞힐 때마다 별을 얻습니다.', 'Hit the opponent to stun it. Every hit earns stars.'],
+  ['pins', '장애물 맞히기', 'Obstacle Shot', '장애물을 맞힐 때마다 별을 얻습니다.', 'Every obstacle you hit earns stars.'],
+  ['moving', '움직이는 장애물', 'Moving Obstacles', '돌아다니는 장애물을 맞히세요.', 'Hit the obstacles as they drift about.'],
+  ['stars', '별 따기', 'Falling Stars', '별이 내 쪽에 닿기 전에 맞히세요.', 'Hit the stars before they reach your side.'],
+  ['dodge', '무기 피하기', 'Dodge the Tools', '떨어지는 무기를 피하세요. 지나간 무기만큼 별을 얻습니다.', 'Keep clear of what comes down. Every tool that gets past earns stars.'],
+  ['archery', '양궁', 'Archery', '누르고 있다가 놓으면 던집니다. 과녁 가운데일수록 별이 많습니다.', 'Hold, then let go to throw. The nearer the middle, the more stars.'],
+  ['bricks', '벽돌 깨기', 'Brick Break', '무기 하나로 벽돌을 깨세요. 무기는 튕겨 다니다 돌아옵니다.', 'Break the bricks with your one tool as it bounces about.'],
+  ['boss', '보스 때리기', 'Boss Bash', '보스를 때리세요. 체력을 깎은 만큼 별을 얻습니다.', 'Hit the boss. The more of its health you take, the more stars.'],
+  ['bowling', '볼링', 'Bowling', '누르고 있다가 놓으면 굴러갑니다. 쓰러진 핀만큼 점수!', 'Hold and let go to roll. Score by the pins you knock down.'],
+  ['fruit', '과일 짝 맞추기', 'Fruit Match', '같은 과일을 연달아 맞혀 짝을 지우세요.', 'Hit the same fruit twice in a row to clear the pair.'],
+];
+// The brick game has no picture of its own: three rows of bricks drawn here.
+const BRICKS_SVG = '<svg viewBox="0 0 56 56" aria-hidden="true"><g stroke="#16224a" stroke-width="2">'
+  + '<rect x="2" y="10" width="25" height="11" fill="#ff5a5a"/><rect x="29" y="10" width="25" height="11" fill="#ff5a5a"/>'
+  + '<rect x="2" y="23" width="12" height="11" fill="#ff9f43"/><rect x="16" y="23" width="25" height="11" fill="#ff9f43"/><rect x="43" y="23" width="11" height="11" fill="#ff9f43"/>'
+  + '<rect x="2" y="36" width="25" height="11" fill="#ffd866"/><rect x="29" y="36" width="25" height="11" fill="#ffd866"/></g></svg>';
+
+function faces(list, folder) {
+  return list.map(([key, ko, en]) => `<figure style="margin:0;text-align:center"><img src="assets/${folder}/${key}.png" alt="${en}" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">${ko}</span><span data-lang="en">${en}</span></figcaption></figure>`).join('\n');
+}
+
+function tiles(list, folder) {
+  return list.map(([key, ko, en, koText, enText]) => {
+    const picture = folder === 'games' && key === 'bricks' ? BRICKS_SVG : `<img src="assets/${folder}/${key}.png" alt="${en}" loading="lazy">`;
+    return `<div class="tile">${picture}<div><b><span data-lang="ko">${ko}</span><span data-lang="en">${en}</span></b>`
+      + `<span class="d" data-lang="ko">${koText}</span><span class="d" data-lang="en">${enText}</span></div></div>`;
+  }).join('\n');
+}
+
 const escape = (text) => String(text).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 const unescapeXml = (text) => text.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&amp;/g, '&');
 
@@ -122,7 +184,13 @@ function home() {
 .hero img.art{width:100%;max-width:360px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
 .hero .text{flex:1;min-width:260px}
 .chars{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
-@media (max-width:560px){.chars{grid-template-columns:repeat(3,1fr)}.hero{justify-content:center}}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.tile{display:flex;gap:12px;align-items:center;background:#18203a;border:1px solid #2a3760;border-radius:14px;padding:10px 12px}
+.tile img,.tile svg{width:56px;height:56px;object-fit:contain;flex:none}
+.tile b{display:block;color:#ffd866;font-size:15px}
+.tile span.d{color:#c9d2ea;font-size:13px;line-height:1.45}
+.tile span.d.on{display:block}
+@media (max-width:560px){.chars{grid-template-columns:repeat(3,1fr)}.hero{justify-content:center}.tiles{grid-template-columns:1fr}}
 </style>
 <section class="hero">
 <img class="art" src="assets/intro.jpg" alt="StunStar">
@@ -163,6 +231,35 @@ function home() {
 <h2><span data-lang="ko">캐릭터</span><span data-lang="en">Characters</span></h2>
 <div class="chars">
 ${characters}
+</div>
+
+<h2><span data-lang="ko">보스</span><span data-lang="en">Bosses</span></h2>
+<p class="muted"><span data-lang="ko">스테이지마다 마지막 판에 등장하고, 100레벨마다 크라켄이 기다립니다.</span><span data-lang="en">Each stage ends with a boss, and the Kraken waits at every hundredth level.</span></p>
+<div class="chars">
+${faces(BOSSES, 'bosses')}
+</div>
+
+<h2><span data-lang="ko">스킬 아이템</span><span data-lang="en">Skill items</span></h2>
+<p class="muted"><span data-lang="ko">경기 전에 골라 넣으면 내 무기 하나에 그 스킬이 붙습니다.</span><span data-lang="en">Pick them before a game and each puts its skill on one of your tools.</span></p>
+<div class="tiles">
+${tiles(ITEMS, 'items')}
+</div>
+
+<h2><span data-lang="ko">경기장</span><span data-lang="en">Courts</span></h2>
+<div class="tiles">
+${tiles(COURTS, 'courts')}
+</div>
+
+<h2><span data-lang="ko">장애물</span><span data-lang="en">Obstacles</span></h2>
+<p class="muted"><span data-lang="ko">레벨이 오를수록 경기장 가운데에 여러 장애물이 놓이고, 가만히 있거나 움직입니다.</span><span data-lang="en">As the levels go up, obstacles stand in the middle of the court, still or on the move.</span></p>
+<div class="tiles">
+${tiles(OBSTACLES, 'obstacles')}
+</div>
+
+<h2><span data-lang="ko">보너스 게임</span><span data-lang="en">Bonus games</span></h2>
+<p class="muted"><span data-lang="ko">보스를 이긴 다음 레벨은 지지 않는 보너스 게임입니다. 점수만큼 별을 받습니다.</span><span data-lang="en">The level after each boss is a bonus game you cannot lose, paying stars for your score.</span></p>
+<div class="tiles">
+${tiles(GAMES, 'games')}
 </div>
 
 <h2><span data-lang="ko">문의</span><span data-lang="en">Contact</span></h2>
