@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Delete your StunStar account</title>
+<meta name="description" content="How to delete a StunStar account and its data / StunStar 계정 삭제 방법">
+<meta property="og:title" content="Delete your StunStar account">
+<meta property="og:description" content="How to delete a StunStar account and its data / StunStar 계정 삭제 방법">
+<meta property="og:image" content="../assets/icon.png">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<header class="top"><a class="home" href="../"><img src="../assets/icon.png" alt="">StunStar</a><div class="langs"><select id="lang" aria-label="Language"><option value="ko">한국어</option><option value="en">English</option></select></div></header>
+<article data-lang="ko">
+<h1>StunStar 계정 삭제</h1>
+<p>StunStar 계정과 관련 데이터는 게임 안에서 직접 삭제할 수 있습니다.</p>
+<h2>게임 안에서 삭제하기</h2>
+<div class="card"><ol>
+<li>StunStar를 실행합니다.</li>
+<li>오른쪽 위 <b>메뉴(≡)</b> → <b>약관</b>을 엽니다.</li>
+<li>아래의 <b>계정 삭제</b>를 누르고, 확인 창에서 <b>삭제</b>를 누릅니다.</li>
+</ol>
+<p class="muted">삭제가 끝나면 게임이 처음 상태로 다시 시작됩니다.</p></div>
+<h2>삭제되는 데이터</h2>
+<div class="card"><ul>
+<li>게임 계정(플레이어 ID)과 계정 연동 정보</li>
+<li>클라우드에 저장된 게임 진행 데이터와 보상 기록</li>
+<li>주간 랭킹 기록</li>
+<li>기기에 저장된 게임 데이터</li>
+</ul>
+<p class="muted">서버 운영 기록(플레이어 ID 없이, IP 일부를 가린 형태)은 최대 30일 보관 후 삭제되며, 그 밖의 보관 기간은 <a href="../privacy-policy/">개인정보처리방침</a>을 따릅니다.</p></div>
+<h2>게임을 실행할 수 없는 경우</h2>
+<div class="card"><p>앱을 지웠거나 실행할 수 없다면 <a href="mailto:sjm3labs@gmail.com?subject=StunStar%20account%20deletion">sjm3labs@gmail.com</a>로 삭제를 요청해 주세요. 게임 안 <b>메뉴 → 약관</b>에 표시되는 <b>플레이어 ID</b>를 함께 보내 주시면 더 빠르게 처리됩니다. 요청은 확인 후 30일 이내에 처리합니다.</p></div>
+</article>
+<article data-lang="en">
+<h1>Delete your StunStar account</h1>
+<p>You can delete your StunStar account and its data yourself, in the game.</p>
+<h2>In the game</h2>
+<div class="card"><ol>
+<li>Open StunStar.</li>
+<li>Tap the <b>menu (≡)</b> at the top right, then <b>Terms</b>.</li>
+<li>Tap <b>Delete account</b> at the bottom, then <b>Delete</b> to confirm.</li>
+</ol>
+<p class="muted">Once it is done, the game starts again from the beginning.</p></div>
+<h2>What is deleted</h2>
+<div class="card"><ul>
+<li>Your game account (player ID) and any linked sign-in</li>
+<li>Your game progress and reward records saved in the cloud</li>
+<li>Your weekly ranking records</li>
+<li>The game data on your device</li>
+</ul>
+<p class="muted">Server operating records (without your player ID, IP addresses only in part) are kept for up to 30 days and then deleted; anything else is kept only as the <a href="../privacy-policy/">privacy policy</a> says.</p></div>
+<h2>If you cannot open the game</h2>
+<div class="card"><p>If you have removed the app or cannot open it, email <a href="mailto:sjm3labs@gmail.com?subject=StunStar%20account%20deletion">sjm3labs@gmail.com</a> to ask for deletion. Including your <b>player ID</b>, shown in the game under <b>Menu → Terms</b>, helps us find your account. Requests are handled within 30 days.</p></div>
+</article>
+<footer>
+<a href="../">Home</a><a href="../privacy-policy/"><span data-lang="ko">개인정보처리방침</span><span data-lang="en">Privacy Policy</span></a><a href="../delete-account/"><span data-lang="ko">계정 삭제</span><span data-lang="en">Delete account</span></a><a href="mailto:sjm3labs@gmail.com">sjm3labs@gmail.com</a>
+<div style="margin-top:8px">© 2026 suseong kim (sjm3labs)</div>
+</footer>
+</div>
+<script>
+(function(){var codes=["ko","en"];
+function pick(c){if(codes.indexOf(c)<0)c=codes.indexOf('en')>=0?'en':codes[0];
+document.querySelectorAll('[data-lang]').forEach(function(e){e.classList.toggle('on',e.getAttribute('data-lang')===c)});
+var s=document.getElementById('lang');if(s)s.value=c;document.documentElement.lang=c;try{localStorage.setItem('lang',c)}catch(e){}}
+var saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
+var nav=(navigator.language||'en').slice(0,2).toLowerCase();
+pick(saved||nav);
+var s=document.getElementById('lang');if(s)s.onchange=function(){pick(s.value)};})();
+</script>
+</body>
+</html>

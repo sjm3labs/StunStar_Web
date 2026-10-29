@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>StunStar</title>
+<meta name="description" content="Throw, stun and win! A 1v1 throwing battle game. 던지고 기절시켜라! 1:1 대전 게임">
+<meta property="og:title" content="StunStar">
+<meta property="og:description" content="Throw, stun and win! A 1v1 throwing battle game. 던지고 기절시켜라! 1:1 대전 게임">
+<meta property="og:image" content="./assets/icon.png">
+<link rel="icon" href="./assets/favicon.png">
+<link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+<div class="wrap">
+<header class="top"><a class="home" href="./"><img src="./assets/icon.png" alt="">StunStar</a><div class="langs"><select id="lang" aria-label="Language"><option value="ko">한국어</option><option value="en">English</option></select></div></header>
+<style>
+.hero{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.hero img.art{width:100%;max-width:360px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.hero .text{flex:1;min-width:260px}
+.chars{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+@media (max-width:560px){.chars{grid-template-columns:repeat(3,1fr)}.hero{justify-content:center}}
+</style>
+<section class="hero">
+<img class="art" src="assets/intro.jpg" alt="StunStar">
+<div class="text">
+<div data-lang="ko">
+<h1>던지고 기절시켜라!<br>1:1 대전</h1>
+<p>내 쪽의 무기를 모두 상대 진영으로 던져 넘기면 승리! 상대를 맞혀 기절시키고, 그 틈에 몰아 던지세요. 한 손으로도 즐길 수 있는 빠르고 짜릿한 던지기 대전입니다.</p>
+</div>
+<div data-lang="en">
+<h1>Throw, Stun &amp; Win!<br>1v1 battles</h1>
+<p>Send every one of your tools over to the other side to win. Hit your rival to stun them, then throw everything while they are down. A fast, thrilling throwing battle you can play with one hand.</p>
+</div>
+<p>
+<a class="button" href="https://play.google.com/store/apps/details?id=com.sjm3labs.stunstar">Google Play</a>
+<a class="button pink" href="https://apps.apple.com/app/id6826731312">App Store</a>
+</p>
+</div>
+</section>
+
+<h2><span data-lang="ko">게임 특징</span><span data-lang="en">Features</span></h2>
+<div class="card">
+<ul data-lang="ko">
+<li>각자 다른 무기와 스킬을 가진 캐릭터 10명</li>
+<li>설인, 골렘, 드래곤, 크라켄 등 보스와 다양한 장애물이 기다리는 모험 모드</li>
+<li>볼링, 양궁, 벽돌 깨기 등 보너스 게임</li>
+<li>같은 와이파이에서 즐기는 로컬 대전과 전 세계 플레이어와 겨루는 온라인 대전</li>
+<li>모험·온라인 대전 주간 랭킹과 보상, 일일 미션과 출석 보상</li>
+</ul>
+<ul data-lang="en">
+<li>10 characters, each with its own tool and skill</li>
+<li>An adventure of bosses such as the Yeti, the Golem, the Dragon and the Kraken, with obstacles on the court</li>
+<li>Bonus games: bowling, archery, bricks and more</li>
+<li>Local matches on the same Wi-Fi, and online matches with players around the world</li>
+<li>Weekly rankings for adventure and online matches with rewards, daily missions and attendance rewards</li>
+</ul>
+</div>
+
+<h2><span data-lang="ko">캐릭터</span><span data-lang="en">Characters</span></h2>
+<div class="chars">
+<figure style="margin:0;text-align:center"><img src="assets/human.png" alt="Human" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">휴먼</span><span data-lang="en">Human</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/robot.png" alt="Robot" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">로봇</span><span data-lang="en">Robot</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/elf.png" alt="Elf" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">엘프</span><span data-lang="en">Elf</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/monk.png" alt="Monk" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">수도승</span><span data-lang="en">Monk</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/alien.png" alt="Alien" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">외계인</span><span data-lang="en">Alien</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/mermaid.png" alt="Mermaid" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">인어공주</span><span data-lang="en">Mermaid</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/gladiator.png" alt="Gladiator" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">검투사</span><span data-lang="en">Gladiator</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/werewolf.png" alt="Werewolf" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">늑대인간</span><span data-lang="en">Werewolf</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/chef.png" alt="Chef" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">요리사</span><span data-lang="en">Chef</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/angel.png" alt="Angel" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">천사</span><span data-lang="en">Angel</span></figcaption></figure>
+</div>
+
+<h2><span data-lang="ko">문의</span><span data-lang="en">Contact</span></h2>
+<p><a href="mailto:sjm3labs@gmail.com">sjm3labs@gmail.com</a></p>
+<footer>
+<a href="./">Home</a><a href="./privacy-policy/"><span data-lang="ko">개인정보처리방침</span><span data-lang="en">Privacy Policy</span></a><a href="./delete-account/"><span data-lang="ko">계정 삭제</span><span data-lang="en">Delete account</span></a><a href="mailto:sjm3labs@gmail.com">sjm3labs@gmail.com</a>
+<div style="margin-top:8px">© 2026 suseong kim (sjm3labs)</div>
+</footer>
+</div>
+<script>
+(function(){var codes=["ko","en"];
+function pick(c){if(codes.indexOf(c)<0)c=codes.indexOf('en')>=0?'en':codes[0];
+document.querySelectorAll('[data-lang]').forEach(function(e){e.classList.toggle('on',e.getAttribute('data-lang')===c)});
+var s=document.getElementById('lang');if(s)s.value=c;document.documentElement.lang=c;try{localStorage.setItem('lang',c)}catch(e){}}
+var saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
+var nav=(navigator.language||'en').slice(0,2).toLowerCase();
+pick(saved||nav);
+var s=document.getElementById('lang');if(s)s.onchange=function(){pick(s.value)};})();
+</script>
+</body>
+</html>
