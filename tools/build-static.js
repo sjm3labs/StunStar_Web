@@ -2,7 +2,7 @@
 
 // Makes the game's web pages at this repository's root (since 2026-10-29; StunStar_Server/static_html for its first hour): the home page (/), the
 // privacy policy (/privacy-policy/) from the game's own Data/PrivacyPolicy.xml in all its languages, how to delete an
-// account (/delete-account/), and app-ads.txt (with ads.txt beside it) for AdMob. Run again whenever the policy changes:
+// account (/delete-account/), the terms of service (/terms/, from tools/terms.txt), and app-ads.txt (with ads.txt beside it) for AdMob. Run again whenever the policy changes:
 //
 //   node tools/build-static.js [path to the Unity project]      (D:\Workspace\StunStar where none is given)
 //
@@ -165,7 +165,7 @@ function page(title, description, codes, body, root) {
 <header class="top"><a class="home" href="${root}"><img src="${root}assets/icon.png" alt="">StunStar</a>${langSelect(codes)}</header>
 ${body}
 <footer>
-<a href="${root}">Home</a><a href="${root}privacy-policy/"><span data-lang="ko">개인정보처리방침</span><span data-lang="en">Privacy Policy</span>${codes.length > 2 ? codes.filter((c) => c !== 'ko' && c !== 'en').map((c) => `<span data-lang="${c}">Privacy Policy</span>`).join('') : ''}</a><a href="${root}delete-account/"><span data-lang="ko">계정 삭제</span><span data-lang="en">Delete account</span>${codes.length > 2 ? codes.filter((c) => c !== 'ko' && c !== 'en').map((c) => `<span data-lang="${c}">Delete account</span>`).join('') : ''}</a><a href="mailto:${CONTACT}">${CONTACT}</a>
+<a href="${root}">Home</a><a href="${root}privacy-policy/"><span data-lang="ko">개인정보처리방침</span><span data-lang="en">Privacy Policy</span>${codes.length > 2 ? codes.filter((c) => c !== 'ko' && c !== 'en').map((c) => `<span data-lang="${c}">Privacy Policy</span>`).join('') : ''}</a><a href="${root}terms/"><span data-lang="ko">이용약관</span><span data-lang="en">Terms of Service</span>${codes.length > 2 ? codes.filter((c) => c !== 'ko' && c !== 'en').map((c) => `<span data-lang="${c}">Terms of Service</span>`).join('') : ''}</a><a href="${root}delete-account/"><span data-lang="ko">계정 삭제</span><span data-lang="en">Delete account</span>${codes.length > 2 ? codes.filter((c) => c !== 'ko' && c !== 'en').map((c) => `<span data-lang="${c}">Delete account</span>`).join('') : ''}</a><a href="mailto:${CONTACT}">${CONTACT}</a>
 <div style="margin-top:8px">© 2026 ${escape(DEVELOPER)} (sjm3labs)</div>
 </footer>
 </div>
@@ -327,6 +327,28 @@ ${policyHtml(unescapeXml(m[1]).replace(/^\n+|\s+$/g, ''))}
   return page('StunStar Privacy Policy', 'StunStar privacy policy / 개인정보처리방침', codes, sections.join('\n'), '../');
 }
 
+// ---- Terms of service -----------------------------------------------------------------------------------
+
+// tools/terms.txt, Korean then English, the two parts split by a line of dashes. In each the first line is the
+// title, the second the effective date, "제N조" (Korean) or "N." (English) a heading, an address a link, anything else a paragraph.
+function termsPart(text, code) {
+  const lines = text.split('\n').map((l) => l.trim()).filter((l) => l !== '');
+  const html = [`<article data-lang="${code}">`, `<h1>${escape(lines[0])}</h1>`, `<p class="muted">${escape(lines[1])}</p>`, '<div class="card">'];
+  for (const line of lines.slice(2)) {
+    if ((code === 'ko' ? /^제\d+조 \(/ : /^\d+\.\s/).test(line)) html.push(`<h2>${escape(line)}</h2>`);
+    else if (/^https?:\/\//.test(line)) html.push(`<p><a href="${escape(line)}">${escape(line)}</a></p>`);
+    else html.push(`<p>${escape(line).replace(CONTACT, `<a href="mailto:${CONTACT}">${CONTACT}</a>`)}</p>`);
+  }
+  html.push('</div>', '</article>');
+  return html.join('\n');
+}
+
+function terms() {
+  const text = fs.readFileSync(path.join(__dirname, 'terms.txt'), 'utf8').replace(/\r\n/g, '\n');
+  const [ko, en] = text.split(/\n-{10,}\n/);
+  return page('StunStar Terms of Service', 'StunStar terms of service / 이용약관', ['ko', 'en'], termsPart(ko, 'ko') + '\n' + termsPart(en, 'en'), '../');
+}
+
 // ---- Account deletion ----------------------------------------------------------------------------------
 
 function deleteAccount() {
@@ -380,10 +402,12 @@ function deleteAccount() {
 fs.mkdirSync(path.join(out, 'assets'), { recursive: true });
 fs.mkdirSync(path.join(out, 'privacy-policy'), { recursive: true });
 fs.mkdirSync(path.join(out, 'delete-account'), { recursive: true });
+fs.mkdirSync(path.join(out, 'terms'), { recursive: true });
 fs.writeFileSync(path.join(out, 'assets', 'site.css'), CSS);
 fs.writeFileSync(path.join(out, 'index.html'), home());
 fs.writeFileSync(path.join(out, 'privacy-policy', 'index.html'), privacy());
 fs.writeFileSync(path.join(out, 'delete-account', 'index.html'), deleteAccount());
+fs.writeFileSync(path.join(out, 'terms', 'index.html'), terms());
 // AdMob's line for the app (app-ads.txt is what it reads for apps; ads.txt, for websites, is the same line).
 const adsLine = `google.com, ${PUBLISHER}, DIRECT, f08c47fec0942fa0\n`;
 fs.writeFileSync(path.join(out, 'app-ads.txt'), adsLine);
