@@ -16,7 +16,7 @@ const out = path.join(__dirname, '..');
 const policyXml = fs.readFileSync(path.join(unity, 'Assets/_Project/Data/PrivacyPolicy.xml'), 'utf8');
 
 const DEVELOPER = 'suseong kim';
-const CONTACT = 'sjm3labs@gmail.com';
+const CONTACT = 'stunstar@sjm3labs.com';
 const PUBLISHER = 'pub-2075600345013086';
 const PLAY = 'https://play.google.com/store/apps/details?id=com.sjm3labs.stunstar';
 const APP_STORE = 'https://apps.apple.com/app/id6826731312';
