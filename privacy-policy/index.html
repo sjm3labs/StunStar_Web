@@ -16,7 +16,7 @@
 <header class="top"><a class="home" href="../"><img src="../assets/icon.png" alt="">StunStar</a><div class="langs"><select id="lang" aria-label="Language"><option value="ko">한국어</option><option value="en">English</option><option value="ja">日本語</option><option value="zh">中文</option><option value="es">Español</option><option value="hi">हिन्दी</option><option value="fr">Français</option><option value="ru">Русский</option><option value="de">Deutsch</option><option value="pt">Português</option></select></div></header>
 <article data-lang="ko">
 <h1>StunStar 개인정보처리방침</h1>
-<p class="muted">시행일: 2026-10-31</p>
+<p class="muted">시행일: 2026-11-01</p>
 <div class="card">
 <p>suseong kim(이하 &quot;개발자&quot;)는 모바일 게임 &quot;StunStar&quot;(이하 &quot;게임&quot;) 이용자의 개인정보를 아래와 같이 처리합니다.</p>
 <h2>1. 수집하는 정보</h2>
@@ -27,12 +27,12 @@
 <li>게임 이용 기록: 레벨, 승패, 아이템 구매와 광고 시청 기록, 접속 시간</li>
 <li>게임 계정: 처음 실행할 때 자동으로 만들어지는 익명 플레이어 ID와 자동 생성 이름, 그에 연결된 주간랭킹 기록(모험, 온라인 대전)</li>
 <li>보상 기록: 마지막으로 받은 출석 보상과 주간랭킹 보상. 보상이 두 번 지급되지 않도록 게임 진행 데이터와 함께 기기에 저장하며, 계정을 연동한 경우에만 클라우드에도 저장합니다. 게임의 시간은 서버 시간으로 확인하며, 이를 위해 이용자에 관한 정보를 저장하지 않습니다.</li>
-<li>계정을 연동한 경우(Unity 계정, Google·Apple·이메일로 로그인): 계정 식별자와, 클라우드에 저장되는 게임 진행 데이터(레벨, 재화, 아이템 등). 연동하지 않으면 진행 데이터는 기기에만 저장됩니다. 게임은 로그인에 쓴 계정의 이메일과 이름을 저장하지 않습니다.</li>
+<li>계정을 연동한 경우(Unity 계정, Google·Apple·이메일로 로그인): 계정 식별자와, 클라우드에 저장되는 게임 진행 데이터(레벨, 재화, 아이템 등). 연동하지 않으면 진행 데이터는 기기에만 저장됩니다. 게임은 로그인에 쓴 계정의 이메일과 이름을 저장하지 않습니다. 클라우드 진행 데이터에는 기기를 구분하기 위해 앱 설치마다 무작위로 만든 설치 ID가 함께 저장됩니다.</li>
 <li>오류 정보: 게임에 오류가 나거나 비정상 종료될 때의 오류 내용, 기기 상태(메모리, 저장 공간, 화면 방향 등), 발생 시각</li>
 <li>실시간 대전:
 <ul>
 <li>로컬 대전(같은 Wi-Fi): 기기 주소와 방 이름(기기 이름이 들어갈 수 있음)이 같은 네트워크에 알려집니다.</li>
-<li>온라인 대전: 개발자가 운영하는 중계 서버를 거칩니다. 서버는 IP 주소, 플레이어 ID(로그인 확인용), 방 정보(방 번호, 자동 생성 이름, 프로필 캐릭터와 레벨, 방 설정, 비밀번호의 해시값), 접속 시각을 처리하고, 두 기기 사이의 경기 데이터를 전달합니다.</li>
+<li>온라인 대전: 개발자가 운영하는 중계 서버를 거칩니다. 서버는 IP 주소, 플레이어 ID(로그인 확인용), 방 정보(방 번호, 자동 생성 이름, 프로필 캐릭터와 레벨, 방 설정, 비밀번호의 해시값), 접속 시각을 처리하고, 두 기기 사이의 경기 데이터를 전달합니다. 참가자의 자동 생성 이름도 서버에 전달됩니다. 부정 이용에 대응하기 위해 서버는 접속 중인 IP 주소와 플레이어 ID를 메모리에서만 처리하며(같은 플레이어가 쓴 다른 주소는 최대 24시간), 파일로 남기지 않습니다.</li>
 </ul></li>
 </ul>
 <p>게임은 실명, 전화번호, 주소록, 사진, 정확한 위치 정보를 수집하지 않습니다.</p>
@@ -41,10 +41,12 @@
 <ul>
 <li>게임 서비스 제공: 플레이어 식별, 주간랭킹 집계와 보상 지급</li>
 <li>온라인 대전 제공: 방 만들기·참가, 경기 중계, 부정 이용 방지(같은 계정의 동시 접속과 자기 방 참가 차단), 서버 부하 관리</li>
+<li>부정 이용 제한: 이용약관을 어긴 플레이어 ID나 IP 주소(IPv6는 네트워크 대역)의 온라인 대전 이용 제한</li>
 <li>보상 중복 지급 방지: 보상 기록 보관과 서버 시간 확인</li>
 <li>계정 연동: 계정을 연동한 경우 진행 데이터를 보관하고 다른 기기에서 이어서 플레이</li>
 <li>광고 제공: 보상형 광고 표시와 보상 지급, 광고 성과 측정, 부정 이용 방지</li>
 <li>서비스 개선: 이용 통계 분석, 난이도 조정, 오류 수정</li>
+<li>문의 처리와 복구: 이용자가 요청하거나 서버 오류로 잃은 클라우드 진행 데이터의 확인과 복구</li>
 </ul>
 <h2>3. 다른 이용자에게 보이는 정보</h2>
 <ul>
@@ -79,6 +81,8 @@
 <li>기기에 저장된 게임 데이터는 앱을 삭제하면 함께 삭제됩니다.</li>
 <li>서버에 저장된 계정과 기록(계정을 연동한 경우 클라우드에 저장된 진행 데이터 포함)은 서비스를 제공하는 동안 보관하며, 삭제를 요청하거나 계정을 삭제하면 지체 없이 삭제합니다.</li>
 <li>중계 서버는 경기 데이터를 저장하지 않습니다. 끊긴 경기를 이어 하기 위해 마지막 경기 상태만 잠시(약 70초) 보관합니다. 서버 운영 기록(접속 번호, 방 번호, 시각)은 운영과 부정 이용 대응을 위해 최대 30일 보관한 뒤 삭제합니다. 이 기록에는 플레이어 ID를 남기지 않으며, IP 주소는 일부를 가려서만 남깁니다.</li>
+<li>부정 이용으로 온라인 대전 이용을 제한한 경우, 제한에 필요한 플레이어 ID나 IP 주소(IPv6는 네트워크 대역)를 제한 기간 동안(영구 제한은 해제될 때까지) 보관한 뒤 삭제합니다.</li>
+<li>관리 도구로 클라우드 진행 데이터를 수정한 기록(처리자, 시각, 플레이어 ID, 바뀐 항목)은 1년간 보관한 뒤 삭제합니다.</li>
 <li>이용 통계와 오류 보고는 Google의 보관 정책에 따라 일정 기간이 지나면 자동으로 삭제됩니다.</li>
 <li>관련 법령이 보관을 요구하는 정보는 그 기간 동안 보관합니다.</li>
 <li>삭제하는 정보는 서버에서 복구할 수 없는 방법으로 지웁니다.</li>
@@ -86,8 +90,9 @@
 <h2>7. 개인정보의 안전성 확보조치</h2>
 <ul>
 <li>통신 암호화: 게임과 Google·Unity 서비스, 온라인 대전 중계 서버 사이의 통신은 암호화(HTTPS·TLS)됩니다. 같은 Wi-Fi 안에서 하는 로컬 대전은 암호화하지 않습니다.</li>
+<li>저장 데이터 암호화: 기기와 클라우드에 저장되는 게임 진행 데이터는 암호화해 저장합니다.</li>
 <li>비밀번호 보호: 온라인 대전 방의 비밀번호는 원문이 아닌 해시값으로만 서버에 전달됩니다.</li>
-<li>접근 통제: 클라우드에 저장된 데이터는 해당 플레이어의 로그인 인증을 거쳐야만 읽고 쓸 수 있습니다. 중계 서버의 관리 기능은 서버 안에서만 쓸 수 있으며, 서버와 각 서비스의 관리 계정은 개발자만 사용합니다.</li>
+<li>접근 통제: 클라우드에 저장된 데이터는 해당 플레이어의 로그인 인증을 거쳐 읽고 씁니다. 개발자는 문의 처리와 복구를 위해서만 로그인과 권한이 필요한 관리 도구로 열람·수정하며, 수정할 때마다 기록을 남깁니다. 중계 서버의 관리 화면은 로그인이 필요하고 개발자의 접속 주소에서만 열리며, 서버와 각 서비스의 관리 계정은 개발자만 사용합니다.</li>
 <li>최소 보관: 중계 서버 로그에는 플레이어 ID를 남기지 않고 IP 주소는 일부를 가려 남기며, 보관 기간이 지나면 삭제합니다.</li>
 </ul>
 <h2>8. 이용자의 권리</h2>
@@ -119,7 +124,7 @@
 </article>
 <article data-lang="en">
 <h1>StunStar Privacy Policy</h1>
-<p class="muted">Effective date: 2026-10-31</p>
+<p class="muted">Effective date: 2026-11-01</p>
 <div class="card">
 <p>suseong kim (&quot;the developer&quot;) handles the personal information of people who play the mobile game &quot;StunStar&quot; (&quot;the game&quot;) as set out below.</p>
 <h2>1. Information collected</h2>
@@ -130,12 +135,12 @@
 <li>Gameplay records: levels, wins and losses, item purchases and adverts watched, times of use</li>
 <li>Game account: an anonymous player ID and a generated name, created automatically when the game is first opened, with the weekly ranking records (adventure and online match) tied to them</li>
 <li>Reward records: the last attendance reward and weekly ranking reward you received, kept with your game progress (on your device; in the cloud only if you link an account) so that a reward is not paid twice. The game's clock is checked against the server's time, which saves nothing about you.</li>
-<li>If you link an account (a Unity account, signed in with Google, Apple or an email): the account's identifier, and your game progress saved in the cloud (level, currencies, items and the like). Without a link, progress is kept on your device only. The game does not store the email or name of the account you sign in with.</li>
+<li>If you link an account (a Unity account, signed in with Google, Apple or an email): the account's identifier, and your game progress saved in the cloud (level, currencies, items and the like). Without a link, progress is kept on your device only. The game does not store the email or name of the account you sign in with. A random installation ID is saved with the cloud progress to tell your devices apart.</li>
 <li>Error information: the error, the state of the device (memory, storage, screen orientation and the like) and the time, when the game meets an error or stops unexpectedly</li>
 <li>Live matches:
 <ul>
 <li>Local match (same Wi-Fi): your device's address and the room name (which may include your device's name) are made known on that network.</li>
-<li>Online match: the game goes through a relay server run by the developer. The server handles your IP address, your player ID (to confirm your sign-in), the room's details (room number, generated name, profile character and level, room settings and a hash of its password) and connection times, and passes the match data between the two devices.</li>
+<li>Online match: the game goes through a relay server run by the developer. The server handles your IP address, your player ID (to confirm your sign-in), the room's details (room number, generated name, profile character and level, room settings and a hash of its password) and connection times, and passes the match data between the two devices. The joining player's generated name is passed to the server too. To deal with abuse, the server keeps the IP addresses and player IDs of current connections in memory only (another address the same player used, for up to 24 hours) and writes them to no file.</li>
 </ul></li>
 </ul>
 <p>The game does not collect your real name, phone number, contacts, photos or precise location.</p>
@@ -144,10 +149,12 @@
 <ul>
 <li>Providing the game: identifying players, running the weekly rankings and paying their rewards</li>
 <li>Online matches: making and joining rooms, relaying matches, preventing abuse (one connection per account at a time, no joining one's own room) and managing server load</li>
+<li>Restricting abuse: limiting online matches for a player ID or IP address (an IPv6 address by its network prefix) found breaking the Terms of Service</li>
 <li>Preventing rewards from being paid twice: reward records and checking the time against the server</li>
 <li>Account linking: keeping the progress of a linked player and letting it continue on another device</li>
 <li>Advertising: showing rewarded adverts, paying their rewards, measuring their results and preventing fraud</li>
 <li>Improving the game: usage statistics, difficulty tuning and fixing errors</li>
+<li>Support and recovery: checking and restoring cloud progress when you ask, or when it was lost through a server error</li>
 </ul>
 <h2>3. What other players see</h2>
 <ul>
@@ -182,6 +189,8 @@
 <li>Game data stored on your device is removed when you delete the app.</li>
 <li>Your account and records on servers (and, if you linked an account, the progress saved in the cloud) are kept while the service is provided and are deleted without delay on request or when you delete your account.</li>
 <li>The relay server does not store match data. To let a dropped match be resumed it keeps only the last match state for a short time (about 70 seconds). Its operating records (connection number, room number and times) are kept for up to 30 days for running the service and dealing with abuse, then deleted. They hold no player ID, and IP addresses only in part.</li>
+<li>Where online matches are restricted for abuse, the player ID or IP address (an IPv6 address by its network prefix) needed for it is kept for the period of the restriction (a permanent one until it is lifted), then deleted.</li>
+<li>Records of changes made to cloud progress with the administration tool (who made them, when, the player ID and the entries changed) are kept for 1 year, then deleted.</li>
 <li>Usage statistics and error reports are deleted automatically after the period set by Google's retention policy.</li>
 <li>Information that the law requires to be kept is kept for that period.</li>
 <li>Deleted information is erased from the servers so that it cannot be recovered.</li>
@@ -189,8 +198,9 @@
 <h2>7. How your information is protected</h2>
 <ul>
 <li>Encryption in transit: traffic between the game and Google's and Unity's services and the online match relay server is encrypted (HTTPS, TLS). Local matches on the same Wi-Fi are not encrypted.</li>
+<li>Encryption at rest: your game progress is stored encrypted, on the device and in the cloud.</li>
 <li>Passwords: an online match room's password reaches the server only as a hash, never as written.</li>
-<li>Access control: data saved in the cloud can be read and written only after that player's sign-in is verified. The relay server's administration works only from the server itself, and the administrator accounts of the server and of each service are used by the developer alone.</li>
+<li>Access control: data saved in the cloud is read and written after that player's sign-in is verified. The developer views or changes it only for support and recovery, through an administration tool that needs a login and permission, and every change is recorded. The relay server's administration pages need a login and open only from the developer's own addresses, and the administrator accounts of the server and of each service are used by the developer alone.</li>
 <li>Keeping little: the relay server's logs hold no player ID and IP addresses only in part, and are deleted when their retention period ends.</li>
 </ul>
 <h2>8. Your rights</h2>
@@ -220,7 +230,7 @@
 </article>
 <article data-lang="ja">
 <h1>StunStar プライバシーポリシー</h1>
-<p class="muted">施行日: 2026-10-31</p>
+<p class="muted">施行日: 2026-11-01</p>
 <div class="card">
 <p>suseong kim(以下「開発者」)は、モバイルゲーム「StunStar」(以下「本ゲーム」)の利用者の個人情報を以下のとおり取り扱います。</p>
 <h2>1. 収集する情報</h2>
@@ -231,12 +241,12 @@
 <li>ゲーム利用記録:レベル、勝敗、アイテムの購入と広告の視聴記録、接続時間</li>
 <li>ゲームアカウント:初回起動時に自動で作られる匿名のプレイヤーIDと自動生成された名前、それに紐づく週間ランキングの記録(冒険、オンライン対戦)</li>
 <li>報酬記録:最後に受け取った出席報酬と週間ランキング報酬。報酬が二重に支払われないよう、ゲームの進行データとともに端末に保存し、アカウントを連携した場合にのみクラウドにも保存します。ゲームの時刻はサーバーの時刻で確認しますが、そのために利用者に関する情報は保存しません。</li>
-<li>アカウントを連携した場合(Unityアカウント、Google・Apple・メールでのログイン):アカウント識別子と、クラウドに保存されるゲームの進行データ(レベル、通貨、アイテムなど)。連携しない場合、進行データは端末にのみ保存されます。本ゲームはログインに使ったアカウントのメールアドレスと名前を保存しません。</li>
+<li>アカウントを連携した場合(Unityアカウント、Google・Apple・メールでのログイン):アカウント識別子と、クラウドに保存されるゲームの進行データ(レベル、通貨、アイテムなど)。連携しない場合、進行データは端末にのみ保存されます。本ゲームはログインに使ったアカウントのメールアドレスと名前を保存しません。 クラウドの進行データには、端末を区別するためにアプリのインストールごとに無作為に作られたインストールIDも保存されます。</li>
 <li>エラー情報:ゲームでエラーが起きたり異常終了したりしたときのエラー内容、端末の状態(メモリ、ストレージ、画面の向きなど)、発生時刻</li>
 <li>リアルタイム対戦:
 <ul>
 <li>ローカル対戦(同じWi-Fi):端末のアドレスとルーム名(端末名が含まれる場合があります)が同じネットワークに知らされます。</li>
-<li>オンライン対戦:開発者が運営する中継サーバーを経由します。サーバーはIPアドレス、プレイヤーID(ログイン確認用)、ルーム情報(ルーム番号、自動生成された名前、プロフィールキャラクターとレベル、ルーム設定、パスワードのハッシュ値)、接続時刻を処理し、2台の端末の間で対戦データを中継します。</li>
+<li>オンライン対戦:開発者が運営する中継サーバーを経由します。サーバーはIPアドレス、プレイヤーID(ログイン確認用)、ルーム情報(ルーム番号、自動生成された名前、プロフィールキャラクターとレベル、ルーム設定、パスワードのハッシュ値)、接続時刻を処理し、2台の端末の間で対戦データを中継します。 参加者の自動生成名もサーバーに送られます。不正利用に対応するため、サーバーは接続中のIPアドレスとプレイヤーIDをメモリ上でのみ扱い(同じプレイヤーが使った別のアドレスは最大24時間)、ファイルには残しません。</li>
 </ul></li>
 </ul>
 <p>本ゲームは実名、電話番号、連絡先、写真、正確な位置情報を収集しません。</p>
@@ -245,10 +255,12 @@
 <ul>
 <li>ゲームサービスの提供:プレイヤーの識別、週間ランキングの集計と報酬の付与</li>
 <li>オンライン対戦の提供:ルームの作成・参加、対戦の中継、不正利用の防止(同じアカウントの同時接続と自分のルームへの参加の防止)、サーバー負荷の管理</li>
+<li>不正利用の制限:利用規約に違反したプレイヤーIDまたはIPアドレス(IPv6はネットワーク帯域)のオンライン対戦の利用制限</li>
 <li>報酬の二重支払いの防止:報酬記録の保管とサーバー時刻の確認</li>
 <li>アカウント連携:連携した場合に進行データを保管し、別の端末で続きをプレイできるようにすること</li>
 <li>広告の提供:リワード広告の表示と報酬の付与、広告成果の測定、不正利用の防止</li>
 <li>サービスの改善:利用統計の分析、難易度の調整、エラーの修正</li>
+<li>お問い合わせ対応と復旧:ご依頼があった場合やサーバーの不具合で失われた場合の、クラウドの進行データの確認と復旧</li>
 </ul>
 <h2>3. 他の利用者に表示される情報</h2>
 <ul>
@@ -283,6 +295,8 @@
 <li>端末に保存されたゲームデータは、アプリを削除すると一緒に削除されます。</li>
 <li>サーバーに保存されたアカウントと記録(アカウントを連携した場合はクラウドに保存された進行データを含む)はサービスを提供する間保管し、削除の請求やアカウントの削除があれば遅滞なく削除します。</li>
 <li>中継サーバーは対戦データを保存しません。途切れた対戦を再開できるよう、最後の対戦状態だけを短時間(約70秒)保管します。サーバーの運用記録(接続番号、ルーム番号、時刻)は、運用と不正利用への対応のため最大30日保管した後に削除します。この記録にはプレイヤーIDを残さず、IPアドレスは一部を伏せて残します。</li>
+<li>不正利用によりオンライン対戦の利用を制限した場合、制限に必要なプレイヤーIDまたはIPアドレス(IPv6はネットワーク帯域)を制限期間中(無期限の制限は解除されるまで)保管し、その後削除します。</li>
+<li>管理ツールでクラウドの進行データを変更した記録(担当者、日時、プレイヤーID、変更した項目)は1年間保管し、その後削除します。</li>
 <li>利用統計とエラー報告は、Googleの保管ポリシーに従って一定期間が過ぎると自動的に削除されます。</li>
 <li>関係法令が保管を求める情報は、その期間保管します。</li>
 <li>削除する情報は、サーバーから復元できない方法で消去します。</li>
@@ -290,8 +304,9 @@
 <h2>7. 個人情報の安全管理措置</h2>
 <ul>
 <li>通信の暗号化:本ゲームとGoogle・Unityのサービス、オンライン対戦の中継サーバーとの通信は暗号化(HTTPS・TLS)されます。同じWi-Fi内で行うローカル対戦は暗号化されません。</li>
+<li>保存データの暗号化:端末とクラウドに保存されるゲームの進行データは暗号化して保存します。</li>
 <li>パスワードの保護:オンライン対戦ルームのパスワードは、原文ではなくハッシュ値としてのみサーバーに送られます。</li>
-<li>アクセス制御:クラウドに保存されたデータは、そのプレイヤーのログイン認証を経た場合にのみ読み書きできます。中継サーバーの管理機能はサーバー内からのみ使え、サーバーと各サービスの管理アカウントは開発者のみが使用します。</li>
+<li>アクセス制御:クラウドに保存されたデータは、そのプレイヤーのログイン認証を経て読み書きされます。開発者はお問い合わせ対応と復旧のためにのみ、ログインと権限が必要な管理ツールで閲覧・変更し、変更のたびに記録を残します。中継サーバーの管理画面はログインが必要で開発者の接続元からのみ開くことができ、サーバーと各サービスの管理アカウントは開発者だけが使用します。</li>
 <li>最小限の保管:中継サーバーのログにはプレイヤーIDを残さず、IPアドレスは一部を伏せて残し、保管期間が過ぎたら削除します。</li>
 </ul>
 <h2>8. 利用者の権利</h2>
@@ -321,7 +336,7 @@
 </article>
 <article data-lang="zh">
 <h1>StunStar 隐私政策</h1>
-<p class="muted">生效日期: 2026-10-31</p>
+<p class="muted">生效日期: 2026-11-01</p>
 <div class="card">
 <p>suseong kim(以下简称&quot;开发者&quot;)按以下方式处理手机游戏&quot;StunStar&quot;(以下简称&quot;本游戏&quot;)用户的个人信息。</p>
 <h2>1. 收集的信息</h2>
@@ -332,12 +347,12 @@
 <li>游戏使用记录:等级、胜负、道具购买和广告观看记录、登录时间</li>
 <li>游戏账号:首次启动时自动创建的匿名玩家ID和自动生成的名称,以及与之关联的周排行记录(冒险、在线对战)</li>
 <li>奖励记录:最近领取的签到奖励和周排行奖励。为防止重复发放奖励,与游戏进度数据一起保存在设备上,仅在关联账号时同时保存在云端。游戏时间以服务器时间校验,此过程不保存任何关于用户的信息。</li>
-<li>如果关联了账号(Unity账号,通过Google、Apple或电子邮件登录):账号标识符,以及保存在云端的游戏进度数据(等级、货币、道具等)。未关联时,进度数据仅保存在设备上。本游戏不保存登录所用账号的电子邮件和姓名。</li>
+<li>如果关联了账号(Unity账号,通过Google、Apple或电子邮件登录):账号标识符,以及保存在云端的游戏进度数据(等级、货币、道具等)。未关联时,进度数据仅保存在设备上。本游戏不保存登录所用账号的电子邮件和姓名。 云端进度数据中还会保存一个随每次安装随机生成的安装ID,用于区分你的设备。</li>
 <li>错误信息:游戏出错或异常退出时的错误内容、设备状态(内存、存储空间、屏幕方向等)和发生时间</li>
 <li>实时对战:
 <ul>
 <li>本地对战(同一Wi-Fi):设备地址和房间名称(可能包含设备名称)会在同一网络中公开。</li>
-<li>在线对战:通过开发者运营的中继服务器进行。服务器处理IP地址、玩家ID(用于确认登录)、房间信息(房间号、自动生成的名称、个人资料角色和等级、房间设置、密码的哈希值)和连接时间,并在两台设备之间传递对战数据。</li>
+<li>在线对战:通过开发者运营的中继服务器进行。服务器处理IP地址、玩家ID(用于确认登录)、房间信息(房间号、自动生成的名称、个人资料角色和等级、房间设置、密码的哈希值)和连接时间,并在两台设备之间传递对战数据。 加入者的自动生成名称也会发送到服务器。为应对滥用,服务器仅在内存中处理当前连接的IP地址和玩家ID(同一玩家使用过的其他地址最多保留24小时),不会写入文件。</li>
 </ul></li>
 </ul>
 <p>本游戏不收集真实姓名、电话号码、通讯录、照片或精确位置信息。</p>
@@ -346,10 +361,12 @@
 <ul>
 <li>提供游戏服务:识别玩家、统计周排行并发放奖励</li>
 <li>提供在线对战:创建和加入房间、中继对战、防止滥用(阻止同一账号同时登录和加入自己的房间)、管理服务器负载</li>
+<li>限制滥用:对违反服务条款的玩家ID或IP地址(IPv6按网络前缀)限制使用在线对战</li>
 <li>防止重复发放奖励:保存奖励记录并校验服务器时间</li>
 <li>账号关联:为已关联账号的玩家保存进度数据,并可在其他设备上继续游戏</li>
 <li>提供广告:展示激励广告并发放奖励、衡量广告效果、防止欺诈</li>
 <li>改进服务:分析使用统计、调整难度、修复错误</li>
+<li>咨询处理与恢复:在你提出请求或因服务器故障丢失时,查看并恢复云端进度数据</li>
 </ul>
 <h2>3. 其他用户可见的信息</h2>
 <ul>
@@ -384,6 +401,8 @@
 <li>保存在设备上的游戏数据会在删除应用时一并删除。</li>
 <li>保存在服务器上的账号和记录(关联账号时包括保存在云端的进度数据)在提供服务期间保存,收到删除请求或删除账号后会立即删除。</li>
 <li>中继服务器不保存对战数据。为了能继续中断的对战,只会短暂(约70秒)保存最后的对战状态。服务器运营记录(连接编号、房间号、时间)为运营和应对滥用最多保存30天后删除。这些记录不保留玩家ID,IP地址仅部分隐去后保留。</li>
+<li>因滥用而限制使用在线对战时,限制所需的玩家ID或IP地址(IPv6按网络前缀)在限制期间内保存(永久限制则保存至解除),之后删除。</li>
+<li>通过管理工具修改云端进度数据的记录(操作者、时间、玩家ID、修改的项目)保存1年,之后删除。</li>
 <li>使用统计和错误报告会根据Google的保存政策在一定期限后自动删除。</li>
 <li>相关法律法规要求保存的信息,在该期限内保存。</li>
 <li>删除的信息会以无法从服务器恢复的方式清除。</li>
@@ -391,8 +410,9 @@
 <h2>7. 个人信息的安全保护措施</h2>
 <ul>
 <li>传输加密:本游戏与Google、Unity服务以及在线对战中继服务器之间的通信均经过加密(HTTPS、TLS)。在同一Wi-Fi内进行的本地对战不加密。</li>
+<li>存储加密:保存在设备和云端的游戏进度数据均加密存储。</li>
 <li>密码保护:在线对战房间的密码仅以哈希值发送到服务器,不发送原文。</li>
-<li>访问控制:云端保存的数据只有通过该玩家的登录验证后才能读写。中继服务器的管理功能只能在服务器内部使用,服务器及各项服务的管理账户仅由开发者使用。</li>
+<li>访问控制:云端保存的数据须经该玩家的登录验证后读写。开发者仅为处理咨询和恢复,通过需要登录和权限的管理工具查看或修改,并记录每次修改。中继服务器的管理页面需要登录,且只能从开发者自己的地址打开,服务器及各项服务的管理账户仅由开发者使用。</li>
 <li>最少保存:中继服务器日志不保留玩家ID,IP地址仅部分隐去后保留,超过保存期限即删除。</li>
 </ul>
 <h2>8. 用户的权利</h2>
@@ -422,7 +442,7 @@
 </article>
 <article data-lang="es">
 <h1>Política de privacidad de StunStar</h1>
-<p class="muted">Fecha de entrada en vigor: 2026-10-31</p>
+<p class="muted">Fecha de entrada en vigor: 2026-11-01</p>
 <div class="card">
 <p>suseong kim (en adelante, &quot;el desarrollador&quot;) trata la información personal de los usuarios del juego para móviles &quot;StunStar&quot; (en adelante, &quot;el juego&quot;) de la siguiente manera.</p>
 <h2>1. Información que se recopila</h2>
@@ -433,12 +453,12 @@
 <li>Registros de juego: niveles, victorias y derrotas, compras de objetos y anuncios vistos, horas de uso</li>
 <li>Cuenta del juego: un ID de jugador anónimo y un nombre generado, creados automáticamente la primera vez que se abre el juego, y los registros de las clasificaciones semanales (aventura y duelo en línea) vinculados a ellos</li>
 <li>Registros de recompensas: la última recompensa de asistencia y de clasificación semanal recibidas, guardadas con el progreso del juego para que una recompensa no se entregue dos veces (en tu dispositivo; en la nube solo si vinculas una cuenta). La hora del juego se comprueba con la del servidor, sin guardar nada sobre ti.</li>
-<li>Si vinculas una cuenta (cuenta de Unity, iniciando sesión con Google, Apple o correo electrónico): el identificador de la cuenta y el progreso del juego guardado en la nube (nivel, monedas, objetos, etc.). Sin vincular, el progreso solo se guarda en el dispositivo. El juego no guarda el correo electrónico ni el nombre de la cuenta con la que inicias sesión.</li>
+<li>Si vinculas una cuenta (cuenta de Unity, iniciando sesión con Google, Apple o correo electrónico): el identificador de la cuenta y el progreso del juego guardado en la nube (nivel, monedas, objetos, etc.). Sin vincular, el progreso solo se guarda en el dispositivo. El juego no guarda el correo electrónico ni el nombre de la cuenta con la que inicias sesión. Con el progreso en la nube se guarda también un ID de instalación aleatorio, para distinguir tus dispositivos.</li>
 <li>Información de errores: el contenido del error, el estado del dispositivo (memoria, almacenamiento, orientación de la pantalla, etc.) y la hora, cuando el juego falla o se cierra de forma inesperada</li>
 <li>Duelos en vivo:
 <ul>
 <li>Duelo local (misma red Wi-Fi): la dirección del dispositivo y el nombre de la sala (que puede incluir el nombre del dispositivo) se dan a conocer en esa red.</li>
-<li>Duelo en línea: pasa por un servidor de retransmisión gestionado por el desarrollador. El servidor trata la dirección IP, el ID de jugador (para confirmar el inicio de sesión), los datos de la sala (número de sala, nombre generado, personaje del perfil y nivel, ajustes de la sala y un hash de su contraseña) y las horas de conexión, y transmite los datos de la partida entre los dos dispositivos.</li>
+<li>Duelo en línea: pasa por un servidor de retransmisión gestionado por el desarrollador. El servidor trata la dirección IP, el ID de jugador (para confirmar el inicio de sesión), los datos de la sala (número de sala, nombre generado, personaje del perfil y nivel, ajustes de la sala y un hash de su contraseña) y las horas de conexión, y transmite los datos de la partida entre los dos dispositivos. También se envía al servidor el nombre generado del jugador que se une. Para hacer frente al abuso, el servidor trata las direcciones IP y los ID de jugador de las conexiones activas solo en memoria (otra dirección que haya usado el mismo jugador, hasta 24 horas) y no los escribe en ningún archivo.</li>
 </ul></li>
 </ul>
 <p>El juego no recopila tu nombre real, número de teléfono, contactos, fotos ni ubicación precisa.</p>
@@ -447,10 +467,12 @@
 <ul>
 <li>Prestar el servicio del juego: identificar a los jugadores, calcular las clasificaciones semanales y entregar sus recompensas</li>
 <li>Duelos en línea: crear y unirse a salas, retransmitir las partidas, prevenir abusos (impedir conexiones simultáneas de una misma cuenta y unirse a la propia sala) y gestionar la carga del servidor</li>
+<li>Restricción del abuso: limitar las partidas en línea de un ID de jugador o una dirección IP (una dirección IPv6 por su prefijo de red) que incumpla los Términos de servicio</li>
 <li>Evitar que las recompensas se entreguen dos veces: guardar los registros de recompensas y comprobar la hora con el servidor</li>
 <li>Vinculación de cuentas: guardar el progreso de las cuentas vinculadas y permitir continuar en otro dispositivo</li>
 <li>Publicidad: mostrar anuncios con recompensa y entregar las recompensas, medir los resultados de los anuncios y prevenir el fraude</li>
 <li>Mejora del servicio: análisis de estadísticas de uso, ajuste de la dificultad y corrección de errores</li>
+<li>Atención y recuperación: comprobar y restaurar el progreso en la nube cuando lo pidas o cuando se haya perdido por un error del servidor</li>
 </ul>
 <h2>3. Información visible para otros usuarios</h2>
 <ul>
@@ -485,6 +507,8 @@
 <li>Los datos del juego guardados en el dispositivo se eliminan al desinstalar la aplicación.</li>
 <li>La cuenta y los registros guardados en los servidores (y, si vinculaste una cuenta, el progreso guardado en la nube) se conservan mientras se presta el servicio y se eliminan sin demora cuando se solicita o al eliminar la cuenta.</li>
 <li>El servidor de retransmisión no guarda los datos de las partidas. Para poder reanudar una partida interrumpida, solo conserva el último estado de la partida durante poco tiempo (unos 70 segundos). Sus registros de funcionamiento (número de conexión, número de sala y horas) se conservan un máximo de 30 días para el funcionamiento del servicio y la gestión de abusos, y después se eliminan. No contienen el ID de jugador y las direcciones IP solo aparecen en parte.</li>
+<li>Cuando se restringen las partidas en línea por abuso, el ID de jugador o la dirección IP (una dirección IPv6 por su prefijo de red) necesarios se conservan durante la restricción (si es permanente, hasta que se levante) y después se eliminan.</li>
+<li>Los registros de los cambios hechos en el progreso en la nube con la herramienta de administración (quién, cuándo, el ID de jugador y los datos cambiados) se conservan 1 año y después se eliminan.</li>
 <li>Las estadísticas de uso y los informes de errores se eliminan automáticamente pasado el plazo fijado por la política de conservación de Google.</li>
 <li>La información que la ley obliga a conservar se guarda durante ese plazo.</li>
 <li>La información eliminada se borra de los servidores de forma que no pueda recuperarse.</li>
@@ -492,8 +516,9 @@
 <h2>7. Medidas de seguridad</h2>
 <ul>
 <li>Cifrado en tránsito: las comunicaciones entre el juego y los servicios de Google y Unity y el servidor de retransmisión de los duelos en línea están cifradas (HTTPS, TLS). Los duelos locales en la misma red Wi-Fi no se cifran.</li>
+<li>Cifrado en almacenamiento: tu progreso en el juego se guarda cifrado, en el dispositivo y en la nube.</li>
 <li>Contraseñas: la contraseña de una sala de duelo en línea llega al servidor solo como hash, nunca tal como se escribió.</li>
-<li>Control de acceso: los datos guardados en la nube solo pueden leerse y escribirse tras verificar el inicio de sesión de ese jugador. La administración del servidor de retransmisión solo funciona desde el propio servidor, y las cuentas de administración del servidor y de cada servicio las usa únicamente el desarrollador.</li>
+<li>Control de acceso: los datos guardados en la nube se leen y escriben tras verificar el inicio de sesión de ese jugador. El desarrollador los consulta o modifica solo para atención y recuperación, mediante una herramienta de administración que requiere inicio de sesión y permiso, y cada cambio queda registrado. Las páginas de administración del servidor de retransmisión requieren inicio de sesión y solo se abren desde las direcciones del propio desarrollador, y las cuentas de administración del servidor y de cada servicio las usa solo el desarrollador.</li>
 <li>Conservación mínima: los registros del servidor de retransmisión no contienen el ID de jugador, las direcciones IP solo aparecen en parte, y se eliminan al terminar su plazo de conservación.</li>
 </ul>
 <h2>8. Derechos de los usuarios</h2>
@@ -523,7 +548,7 @@
 </article>
 <article data-lang="hi">
 <h1>StunStar गोपनीयता नीति</h1>
-<p class="muted">प्रभावी तिथि: 2026-10-31</p>
+<p class="muted">प्रभावी तिथि: 2026-11-01</p>
 <div class="card">
 <p>suseong kim (आगे &quot;डेवलपर&quot;) मोबाइल गेम &quot;StunStar&quot; (आगे &quot;गेम&quot;) के उपयोगकर्ताओं की व्यक्तिगत जानकारी को नीचे बताए अनुसार संभालता है।</p>
 <h2>1. एकत्र की जाने वाली जानकारी</h2>
@@ -534,12 +559,12 @@
 <li>गेम उपयोग रिकॉर्ड: लेवल, जीत-हार, आइटम खरीद और देखे गए विज्ञापनों का रिकॉर्ड, उपयोग का समय</li>
 <li>गेम खाता: गेम पहली बार खोलने पर अपने आप बनने वाली गुमनाम प्लेयर ID और अपने आप बना नाम, और उनसे जुड़े साप्ताहिक रैंकिंग रिकॉर्ड (रोमांच और ऑनलाइन मैच)</li>
 <li>इनाम रिकॉर्ड: आखिरी बार मिला उपस्थिति इनाम और साप्ताहिक रैंकिंग इनाम। कोई इनाम दो बार न मिले, इसलिए ये गेम की प्रगति के साथ आपके डिवाइस पर सहेजे जाते हैं, और खाता लिंक करने पर ही क्लाउड में भी। गेम का समय सर्वर के समय से जाँचा जाता है, जिसके लिए आपके बारे में कुछ भी सहेजा नहीं जाता।</li>
-<li>यदि आप खाता लिंक करते हैं (Unity खाता, Google, Apple या ईमेल से साइन इन): खाते का पहचानकर्ता, और क्लाउड में सहेजी गई गेम प्रगति (लेवल, मुद्रा, आइटम आदि)। लिंक न करने पर प्रगति केवल डिवाइस पर रहती है। गेम साइन इन में उपयोग किए गए खाते का ईमेल और नाम सहेजता नहीं है।</li>
+<li>यदि आप खाता लिंक करते हैं (Unity खाता, Google, Apple या ईमेल से साइन इन): खाते का पहचानकर्ता, और क्लाउड में सहेजी गई गेम प्रगति (लेवल, मुद्रा, आइटम आदि)। लिंक न करने पर प्रगति केवल डिवाइस पर रहती है। गेम साइन इन में उपयोग किए गए खाते का ईमेल और नाम सहेजता नहीं है। आपके डिवाइसों को अलग पहचानने के लिए क्लाउड प्रगति के साथ एक यादृच्छिक इंस्टॉलेशन ID भी सहेजी जाती है।</li>
 <li>त्रुटि की जानकारी: गेम में त्रुटि होने या अचानक बंद होने पर त्रुटि का विवरण, डिवाइस की स्थिति (मेमोरी, स्टोरेज, स्क्रीन की दिशा आदि) और समय</li>
 <li>लाइव मैच:
 <ul>
 <li>लोकल मैच (एक ही Wi-Fi): डिवाइस का पता और रूम का नाम (जिसमें डिवाइस का नाम हो सकता है) उसी नेटवर्क पर बताया जाता है।</li>
-<li>ऑनलाइन मैच: डेवलपर द्वारा चलाए जाने वाले रिले सर्वर से होकर जाता है। सर्वर IP पता, प्लेयर ID (साइन इन की पुष्टि के लिए), रूम की जानकारी (रूम नंबर, अपने आप बना नाम, प्रोफ़ाइल पात्र और लेवल, रूम सेटिंग और पासवर्ड का हैश) और कनेक्शन का समय संभालता है, और दोनों डिवाइस के बीच मैच का डेटा पहुँचाता है।</li>
+<li>ऑनलाइन मैच: डेवलपर द्वारा चलाए जाने वाले रिले सर्वर से होकर जाता है। सर्वर IP पता, प्लेयर ID (साइन इन की पुष्टि के लिए), रूम की जानकारी (रूम नंबर, अपने आप बना नाम, प्रोफ़ाइल पात्र और लेवल, रूम सेटिंग और पासवर्ड का हैश) और कनेक्शन का समय संभालता है, और दोनों डिवाइस के बीच मैच का डेटा पहुँचाता है। जुड़ने वाले खिलाड़ी का स्वचालित नाम भी सर्वर को भेजा जाता है। दुरुपयोग से निपटने के लिए सर्वर चालू कनेक्शनों के IP पते और प्लेयर ID केवल मेमोरी में रखता है (उसी खिलाड़ी का दूसरा पता अधिकतम 24 घंटे), और उन्हें किसी फ़ाइल में नहीं लिखता।</li>
 </ul></li>
 </ul>
 <p>गेम आपका असली नाम, फ़ोन नंबर, संपर्क, फ़ोटो या सटीक स्थान एकत्र नहीं करता।</p>
@@ -548,10 +573,12 @@
 <ul>
 <li>गेम सेवा देना: खिलाड़ियों की पहचान, साप्ताहिक रैंकिंग की गणना और पुरस्कार देना</li>
 <li>ऑनलाइन मैच: रूम बनाना और जुड़ना, मैच रिले करना, दुरुपयोग रोकना (एक ही खाते से एक साथ कनेक्शन और अपने ही रूम में जुड़ने से रोकना) और सर्वर का भार संभालना</li>
+<li>दुरुपयोग पर रोक: सेवा की शर्तें तोड़ने वाले प्लेयर ID या IP पते (IPv6 पता उसके नेटवर्क प्रीफ़िक्स से) के लिए ऑनलाइन मैच सीमित करना</li>
 <li>इनाम दो बार न मिले: इनाम रिकॉर्ड रखना और सर्वर के समय से जाँच करना</li>
 <li>खाता लिंक करना: लिंक किए गए खाते की प्रगति सहेजना और दूसरे डिवाइस पर जारी रखने देना</li>
 <li>विज्ञापन: इनाम वाले विज्ञापन दिखाना और इनाम देना, विज्ञापन के परिणाम मापना, धोखाधड़ी रोकना</li>
 <li>सेवा सुधार: उपयोग के आँकड़ों का विश्लेषण, कठिनाई समायोजन, त्रुटियाँ ठीक करना</li>
+<li>सहायता और पुनर्प्राप्ति: आपके कहने पर, या सर्वर त्रुटि से खो जाने पर, क्लाउड प्रगति की जाँच और उसे वापस लाना</li>
 </ul>
 <h2>3. अन्य उपयोगकर्ताओं को दिखने वाली जानकारी</h2>
 <ul>
@@ -586,6 +613,8 @@
 <li>डिवाइस पर सहेजा गया गेम डेटा ऐप हटाने पर साथ में हट जाता है।</li>
 <li>सर्वर पर सहेजे गए खाते और रिकॉर्ड (खाता लिंक होने पर क्लाउड में सहेजी गई प्रगति सहित) सेवा चलने तक रखे जाते हैं और अनुरोध करने या खाता हटाने पर बिना देरी हटा दिए जाते हैं।</li>
 <li>रिले सर्वर मैच का डेटा सहेजता नहीं है। टूटा हुआ मैच फिर से शुरू हो सके, इसलिए केवल आखिरी स्थिति थोड़े समय (लगभग 70 सेकंड) के लिए रखी जाती है। सर्वर के संचालन रिकॉर्ड (कनेक्शन नंबर, रूम नंबर और समय) सेवा चलाने और दुरुपयोग से निपटने के लिए अधिकतम 30 दिन रखे जाते हैं, फिर हटा दिए जाते हैं। इनमें प्लेयर ID नहीं होता और IP पता केवल आंशिक रूप से रहता है।</li>
+<li>दुरुपयोग के कारण ऑनलाइन मैच सीमित किए जाने पर, उसके लिए ज़रूरी प्लेयर ID या IP पता (IPv6 पता उसके नेटवर्क प्रीफ़िक्स से) प्रतिबंध की अवधि तक (स्थायी प्रतिबंध हटने तक) रखा जाता है, फिर हटा दिया जाता है।</li>
+<li>प्रशासन टूल से क्लाउड प्रगति में किए गए बदलावों के रिकॉर्ड (किसने, कब, प्लेयर ID और बदली गई प्रविष्टियाँ) 1 वर्ष तक रखे जाते हैं, फिर हटा दिए जाते हैं।</li>
 <li>उपयोग के आँकड़े और त्रुटि रिपोर्ट Google की नीति के अनुसार एक तय अवधि के बाद अपने आप हट जाते हैं।</li>
 <li>कानून द्वारा रखी जाने वाली जानकारी उस अवधि तक रखी जाती है।</li>
 <li>हटाई गई जानकारी सर्वर से इस तरह मिटाई जाती है कि उसे वापस न लाया जा सके।</li>
@@ -593,8 +622,9 @@
 <h2>7. जानकारी की सुरक्षा के उपाय</h2>
 <ul>
 <li>संचार का एन्क्रिप्शन: गेम और Google व Unity की सेवाओं तथा ऑनलाइन मैच के रिले सर्वर के बीच संचार एन्क्रिप्टेड (HTTPS, TLS) होता है। एक ही Wi-Fi पर लोकल मैच एन्क्रिप्टेड नहीं होता।</li>
+<li>संग्रहीत डेटा का एन्क्रिप्शन: आपकी गेम प्रगति डिवाइस पर और क्लाउड में एन्क्रिप्ट करके सहेजी जाती है।</li>
 <li>पासवर्ड: ऑनलाइन मैच रूम का पासवर्ड सर्वर तक केवल हैश के रूप में पहुँचता है, मूल रूप में नहीं।</li>
-<li>पहुँच नियंत्रण: क्लाउड में सहेजा गया डेटा उसी प्लेयर के साइन इन की पुष्टि के बाद ही पढ़ा और लिखा जा सकता है। रिले सर्वर का प्रबंधन केवल सर्वर के भीतर से होता है, और सर्वर व हर सेवा के प्रबंधन खाते केवल डेवलपर उपयोग करता है।</li>
+<li>पहुँच नियंत्रण: क्लाउड में सहेजा गया डेटा उस खिलाड़ी के साइन-इन की पुष्टि के बाद पढ़ा और लिखा जाता है। डेवलपर इसे केवल सहायता और पुनर्प्राप्ति के लिए, लॉगिन और अनुमति वाले प्रशासन टूल से देखता या बदलता है, और हर बदलाव दर्ज होता है। रिले सर्वर के प्रशासन पेज के लिए लॉगिन ज़रूरी है और वे केवल डेवलपर के अपने पतों से खुलते हैं, तथा सर्वर और हर सेवा के प्रशासक खाते केवल डेवलपर इस्तेमाल करता है।</li>
 <li>कम से कम संग्रह: रिले सर्वर के लॉग में प्लेयर ID नहीं होता, IP पता केवल आंशिक रूप से रहता है, और रखने की अवधि पूरी होने पर लॉग हटा दिए जाते हैं।</li>
 </ul>
 <h2>8. उपयोगकर्ता के अधिकार</h2>
@@ -624,7 +654,7 @@
 </article>
 <article data-lang="fr">
 <h1>Politique de confidentialité de StunStar</h1>
-<p class="muted">Date d'entrée en vigueur: 2026-10-31</p>
+<p class="muted">Date d'entrée en vigueur: 2026-11-01</p>
 <div class="card">
 <p>suseong kim (ci-après « le développeur ») traite les informations personnelles des utilisateurs du jeu mobile « StunStar » (ci-après « le jeu ») comme indiqué ci-dessous.</p>
 <h2>1. Informations collectées</h2>
@@ -635,12 +665,12 @@
 <li>Historique de jeu : niveaux, victoires et défaites, achats d'objets et publicités regardées, heures de connexion</li>
 <li>Compte de jeu : un identifiant de joueur anonyme et un nom généré, créés automatiquement au premier lancement, ainsi que les résultats des classements hebdomadaires (aventure et match en ligne) qui y sont liés</li>
 <li>Historique des récompenses : la dernière récompense d'assiduité et de classement hebdomadaire reçues, conservées avec la progression du jeu pour qu'une récompense ne soit pas versée deux fois (sur votre appareil ; dans le cloud seulement si vous associez un compte). L'heure du jeu est vérifiée auprès de celle du serveur, sans rien enregistrer vous concernant.</li>
-<li>Si vous associez un compte (compte Unity, connexion avec Google, Apple ou une adresse e-mail) : l'identifiant du compte et votre progression enregistrée dans le cloud (niveau, monnaies, objets, etc.). Sans association, la progression est conservée uniquement sur l'appareil. Le jeu n'enregistre ni l'adresse e-mail ni le nom du compte utilisé pour la connexion.</li>
+<li>Si vous associez un compte (compte Unity, connexion avec Google, Apple ou une adresse e-mail) : l'identifiant du compte et votre progression enregistrée dans le cloud (niveau, monnaies, objets, etc.). Sans association, la progression est conservée uniquement sur l'appareil. Le jeu n'enregistre ni l'adresse e-mail ni le nom du compte utilisé pour la connexion. Un identifiant d'installation aléatoire est enregistré avec la progression dans le cloud, pour distinguer vos appareils.</li>
 <li>Informations sur les erreurs : le contenu de l'erreur, l'état de l'appareil (mémoire, stockage, orientation de l'écran, etc.) et l'heure, lorsque le jeu rencontre une erreur ou se ferme anormalement</li>
 <li>Matchs en direct :
 <ul>
 <li>Match local (même Wi-Fi) : l'adresse de l'appareil et le nom du salon (qui peut contenir le nom de l'appareil) sont annoncés sur ce réseau.</li>
-<li>Match en ligne : il passe par un serveur relais exploité par le développeur. Le serveur traite l'adresse IP, l'identifiant de joueur (pour confirmer la connexion), les informations du salon (numéro, nom généré, personnage du profil et niveau, paramètres du salon et empreinte de son mot de passe) et les heures de connexion, et transmet les données du match entre les deux appareils.</li>
+<li>Match en ligne : il passe par un serveur relais exploité par le développeur. Le serveur traite l'adresse IP, l'identifiant de joueur (pour confirmer la connexion), les informations du salon (numéro, nom généré, personnage du profil et niveau, paramètres du salon et empreinte de son mot de passe) et les heures de connexion, et transmet les données du match entre les deux appareils. Le nom généré du joueur qui rejoint est aussi transmis au serveur. Pour lutter contre les abus, le serveur traite les adresses IP et identifiants de joueur des connexions en cours uniquement en mémoire (une autre adresse utilisée par le même joueur, 24 heures au plus) et ne les écrit dans aucun fichier.</li>
 </ul></li>
 </ul>
 <p>Le jeu ne collecte ni votre vrai nom, ni votre numéro de téléphone, ni vos contacts, ni vos photos, ni votre localisation précise.</p>
@@ -649,10 +679,12 @@
 <ul>
 <li>Fournir le jeu : identifier les joueurs, établir les classements hebdomadaires et verser leurs récompenses</li>
 <li>Matchs en ligne : créer et rejoindre des salons, relayer les matchs, prévenir les abus (empêcher les connexions simultanées d'un même compte et de rejoindre son propre salon) et gérer la charge du serveur</li>
+<li>Limitation des abus : restreindre les matchs en ligne d'un identifiant de joueur ou d'une adresse IP (une adresse IPv6 par son préfixe réseau) ayant enfreint les Conditions d'utilisation</li>
 <li>Éviter qu'une récompense soit versée deux fois : conserver l'historique des récompenses et vérifier l'heure auprès du serveur</li>
 <li>Association de compte : conserver la progression d'un compte associé et permettre de continuer sur un autre appareil</li>
 <li>Publicité : afficher des publicités avec récompense et verser les récompenses, mesurer leurs résultats et prévenir la fraude</li>
 <li>Amélioration du service : analyse des statistiques d'utilisation, réglage de la difficulté, correction des erreurs</li>
+<li>Assistance et récupération : vérifier et restaurer la progression dans le cloud à votre demande, ou lorsqu'elle a été perdue à cause d'une erreur du serveur</li>
 </ul>
 <h2>3. Informations visibles par les autres utilisateurs</h2>
 <ul>
@@ -687,6 +719,8 @@
 <li>Les données de jeu enregistrées sur l'appareil sont supprimées avec l'application.</li>
 <li>Le compte et les données enregistrés sur les serveurs (et, si vous avez associé un compte, la progression enregistrée dans le cloud) sont conservés tant que le service est fourni et supprimés sans délai sur demande ou à la suppression du compte.</li>
 <li>Le serveur relais n'enregistre pas les données des matchs. Pour permettre de reprendre un match interrompu, il ne garde que le dernier état du match pendant peu de temps (environ 70 secondes). Ses journaux d'exploitation (numéro de connexion, numéro de salon et heures) sont conservés au plus 30 jours pour l'exploitation du service et la lutte contre les abus, puis supprimés. Ils ne contiennent pas l'identifiant de joueur, et les adresses IP n'y figurent qu'en partie.</li>
+<li>Lorsque les matchs en ligne sont restreints pour abus, l'identifiant de joueur ou l'adresse IP (une adresse IPv6 par son préfixe réseau) nécessaire est conservé pendant la durée de la restriction (jusqu'à sa levée si elle est permanente), puis supprimé.</li>
+<li>Les traces des modifications apportées à la progression dans le cloud avec l'outil d'administration (auteur, date, identifiant de joueur et éléments modifiés) sont conservées 1 an, puis supprimées.</li>
 <li>Les statistiques d'utilisation et les rapports d'erreurs sont supprimés automatiquement après la durée fixée par la politique de conservation de Google.</li>
 <li>Les informations dont la loi exige la conservation sont gardées pendant la durée prévue.</li>
 <li>Les informations supprimées sont effacées des serveurs de manière irrécupérable.</li>
@@ -694,8 +728,9 @@
 <h2>7. Mesures de sécurité</h2>
 <ul>
 <li>Chiffrement des échanges : les communications entre le jeu et les services de Google et d'Unity ainsi que le serveur relais des matchs en ligne sont chiffrées (HTTPS, TLS). Les matchs locaux sur le même Wi-Fi ne sont pas chiffrés.</li>
+<li>Chiffrement au repos : votre progression est enregistrée chiffrée, sur l'appareil et dans le cloud.</li>
 <li>Mots de passe : le mot de passe d'un salon en ligne n'arrive au serveur que sous forme d'empreinte, jamais en clair.</li>
-<li>Contrôle d'accès : les données enregistrées dans le cloud ne peuvent être lues et écrites qu'après vérification de la connexion du joueur concerné. L'administration du serveur relais ne fonctionne que depuis le serveur lui-même, et les comptes d'administration du serveur et de chaque service ne sont utilisés que par le développeur.</li>
+<li>Contrôle d'accès : les données enregistrées dans le cloud sont lues et écrites après vérification de la connexion du joueur concerné. Le développeur ne les consulte ou ne les modifie que pour l'assistance et la récupération, au moyen d'un outil d'administration qui exige une connexion et une autorisation, et chaque modification est enregistrée. Les pages d'administration du serveur relais exigent une connexion et ne s'ouvrent que depuis les adresses du développeur, et les comptes d'administration du serveur et de chaque service ne sont utilisés que par le développeur.</li>
 <li>Conservation minimale : les journaux du serveur relais ne contiennent pas l'identifiant de joueur, les adresses IP n'y figurent qu'en partie, et ils sont supprimés à la fin de leur durée de conservation.</li>
 </ul>
 <h2>8. Droits des utilisateurs</h2>
@@ -725,7 +760,7 @@
 </article>
 <article data-lang="ru">
 <h1>Политика конфиденциальности StunStar</h1>
-<p class="muted">Дата вступления в силу: 2026-10-31</p>
+<p class="muted">Дата вступления в силу: 2026-11-01</p>
 <div class="card">
 <p>suseong kim (далее «разработчик») обрабатывает персональные данные пользователей мобильной игры «StunStar» (далее «игра») следующим образом.</p>
 <h2>1. Собираемые данные</h2>
@@ -736,12 +771,12 @@
 <li>Игровые записи: уровни, победы и поражения, покупки предметов и просмотры рекламы, время входа</li>
 <li>Игровой аккаунт: анонимный ID игрока и сгенерированное имя, которые создаются автоматически при первом запуске, а также связанные с ними результаты еженедельных рейтингов (приключение и онлайн-бой)</li>
 <li>Записи о наградах: последняя полученная награда за посещение и за еженедельный рейтинг. Чтобы награда не выдавалась дважды, они хранятся вместе с игровым прогрессом на устройстве, а в облаке — только если вы привязали аккаунт. Время в игре сверяется со временем сервера, при этом никаких данных о вас не сохраняется.</li>
-<li>Если вы привязали аккаунт (аккаунт Unity, вход через Google, Apple или электронную почту): идентификатор аккаунта и игровой прогресс, сохранённый в облаке (уровень, валюта, предметы и т. п.). Без привязки прогресс хранится только на устройстве. Игра не сохраняет адрес электронной почты и имя аккаунта, использованного для входа.</li>
+<li>Если вы привязали аккаунт (аккаунт Unity, вход через Google, Apple или электронную почту): идентификатор аккаунта и игровой прогресс, сохранённый в облаке (уровень, валюта, предметы и т. п.). Без привязки прогресс хранится только на устройстве. Игра не сохраняет адрес электронной почты и имя аккаунта, использованного для входа. Вместе с прогрессом в облаке сохраняется случайный идентификатор установки, чтобы различать ваши устройства.</li>
 <li>Данные об ошибках: содержание ошибки, состояние устройства (память, хранилище, ориентация экрана и т. п.) и время, когда в игре происходит ошибка или она неожиданно закрывается</li>
 <li>Бои в реальном времени:
 <ul>
 <li>Локальный бой (одна сеть Wi-Fi): адрес устройства и название комнаты (в нём может быть имя устройства) становятся известны в этой сети.</li>
-<li>Онлайн-бой: проходит через ретрансляционный сервер, который обслуживает разработчик. Сервер обрабатывает IP-адрес, ID игрока (для подтверждения входа), данные комнаты (номер комнаты, сгенерированное имя, персонаж профиля и уровень, настройки комнаты и хеш её пароля) и время подключения, а также передаёт данные боя между двумя устройствами.</li>
+<li>Онлайн-бой: проходит через ретрансляционный сервер, который обслуживает разработчик. Сервер обрабатывает IP-адрес, ID игрока (для подтверждения входа), данные комнаты (номер комнаты, сгенерированное имя, персонаж профиля и уровень, настройки комнаты и хеш её пароля) и время подключения, а также передаёт данные боя между двумя устройствами. Серверу также передаётся автоматически созданное имя присоединяющегося игрока. Для борьбы с нарушениями сервер обрабатывает IP-адреса и идентификаторы игроков текущих подключений только в памяти (другой адрес того же игрока — не более 24 часов) и не записывает их в файлы.</li>
 </ul></li>
 </ul>
 <p>Игра не собирает ваше настоящее имя, номер телефона, контакты, фотографии и точное местоположение.</p>
@@ -750,10 +785,12 @@
 <ul>
 <li>Предоставление игры: идентификация игроков, подсчёт еженедельных рейтингов и выдача наград</li>
 <li>Онлайн-бои: создание комнат и вход в них, ретрансляция боёв, предотвращение злоупотреблений (запрет одновременных подключений одного аккаунта и входа в собственную комнату) и управление нагрузкой на сервер</li>
+<li>Ограничение нарушений: ограничение онлайн-матчей для идентификатора игрока или IP-адреса (адреса IPv6 — по префиксу сети), нарушивших Условия использования</li>
 <li>Предотвращение повторной выдачи наград: хранение записей о наградах и сверка времени с сервером</li>
 <li>Привязка аккаунта: хранение прогресса привязанного аккаунта и возможность продолжить игру на другом устройстве</li>
 <li>Реклама: показ рекламы с вознаграждением и выдача наград, оценка эффективности рекламы, предотвращение мошенничества</li>
 <li>Улучшение сервиса: анализ статистики использования, настройка сложности, исправление ошибок</li>
+<li>Поддержка и восстановление: проверка и восстановление прогресса в облаке по вашему запросу или если он был утрачен из-за ошибки сервера</li>
 </ul>
 <h2>3. Данные, видимые другим пользователям</h2>
 <ul>
@@ -788,6 +825,8 @@
 <li>Игровые данные на устройстве удаляются вместе с приложением.</li>
 <li>Аккаунт и записи на серверах (а при привязанном аккаунте — и прогресс, сохранённый в облаке) хранятся, пока предоставляется сервис, и удаляются без промедления по запросу или при удалении аккаунта.</li>
 <li>Ретрансляционный сервер не сохраняет данные боёв. Чтобы прерванный бой можно было продолжить, он недолго (около 70 секунд) хранит только последнее состояние боя. Служебные журналы сервера (номер подключения, номер комнаты и время) хранятся не более 30 дней для работы сервиса и борьбы со злоупотреблениями, затем удаляются. ID игрока в них не записывается, а IP-адрес сохраняется лишь частично.</li>
+<li>Если онлайн-матчи ограничены за нарушения, необходимые для этого идентификатор игрока или IP-адрес (адрес IPv6 — по префиксу сети) хранятся в течение срока ограничения (бессрочного — до его снятия), а затем удаляются.</li>
+<li>Записи об изменениях прогресса в облаке, внесённых через инструмент администрирования (кто, когда, идентификатор игрока и изменённые данные), хранятся 1 год, а затем удаляются.</li>
 <li>Статистика использования и отчёты об ошибках удаляются автоматически по истечении срока, установленного политикой хранения Google.</li>
 <li>Данные, хранение которых требует закон, хранятся в течение установленного срока.</li>
 <li>Удаляемые данные стираются с серверов без возможности восстановления.</li>
@@ -795,8 +834,9 @@
 <h2>7. Меры по защите данных</h2>
 <ul>
 <li>Шифрование при передаче: связь между игрой, сервисами Google и Unity и ретрансляционным сервером онлайн-боя шифруется (HTTPS, TLS). Локальный бой в одной сети Wi-Fi не шифруется.</li>
+<li>Шифрование при хранении: ваш игровой прогресс хранится в зашифрованном виде на устройстве и в облаке.</li>
 <li>Пароли: пароль комнаты онлайн-боя попадает на сервер только в виде хеша, а не в исходном виде.</li>
-<li>Контроль доступа: данные в облаке можно читать и записывать только после проверки входа соответствующего игрока. Управление ретрансляционным сервером возможно только с самого сервера, а учётными записями администратора сервера и каждого сервиса пользуется только разработчик.</li>
+<li>Контроль доступа: данные в облаке читаются и записываются после проверки входа этого игрока. Разработчик просматривает или изменяет их только для поддержки и восстановления, через инструмент администрирования, требующий входа и прав доступа, и каждое изменение записывается. Страницы администрирования ретрансляционного сервера требуют входа и открываются только с адресов разработчика, а учётными записями администратора сервера и каждой службы пользуется только разработчик.</li>
 <li>Минимальное хранение: в журналах ретрансляционного сервера нет ID игрока, IP-адреса записываются лишь частично, и журналы удаляются по истечении срока хранения.</li>
 </ul>
 <h2>8. Права пользователей</h2>
@@ -826,7 +866,7 @@
 </article>
 <article data-lang="de">
 <h1>Datenschutzerklärung von StunStar</h1>
-<p class="muted">Gültig ab: 2026-10-31</p>
+<p class="muted">Gültig ab: 2026-11-01</p>
 <div class="card">
 <p>suseong kim (im Folgenden „der Entwickler“) verarbeitet die personenbezogenen Daten der Nutzer des Mobilspiels „StunStar“ (im Folgenden „das Spiel“) wie folgt.</p>
 <h2>1. Erhobene Daten</h2>
@@ -837,12 +877,12 @@
 <li>Spielverlauf: Level, Siege und Niederlagen, Käufe von Gegenständen und angesehene Werbung, Nutzungszeiten</li>
 <li>Spielkonto: eine anonyme Spieler-ID und ein generierter Name, die beim ersten Start automatisch erstellt werden, sowie die damit verbundenen Ergebnisse der Wochenranglisten (Abenteuer und Online-Duell)</li>
 <li>Belohnungsdaten: die zuletzt erhaltene Anwesenheits- und Wochenranglisten-Belohnung, mit dem Spielfortschritt gespeichert, damit eine Belohnung nicht doppelt vergeben wird (auf Ihrem Gerät; in der Cloud nur, wenn Sie ein Konto verknüpfen). Die Uhrzeit des Spiels wird mit der des Servers abgeglichen, ohne dabei etwas über Sie zu speichern.</li>
-<li>Wenn Sie ein Konto verknüpfen (Unity-Konto, Anmeldung mit Google, Apple oder E-Mail): die Kennung des Kontos und Ihr in der Cloud gespeicherter Spielfortschritt (Level, Währungen, Gegenstände usw.). Ohne Verknüpfung wird der Fortschritt nur auf dem Gerät gespeichert. Das Spiel speichert weder die E-Mail-Adresse noch den Namen des Kontos, mit dem Sie sich anmelden.</li>
+<li>Wenn Sie ein Konto verknüpfen (Unity-Konto, Anmeldung mit Google, Apple oder E-Mail): die Kennung des Kontos und Ihr in der Cloud gespeicherter Spielfortschritt (Level, Währungen, Gegenstände usw.). Ohne Verknüpfung wird der Fortschritt nur auf dem Gerät gespeichert. Das Spiel speichert weder die E-Mail-Adresse noch den Namen des Kontos, mit dem Sie sich anmelden. Mit dem Fortschritt in der Cloud wird eine zufällige Installations-ID gespeichert, um deine Geräte zu unterscheiden.</li>
 <li>Fehlerinformationen: der Fehler, der Zustand des Geräts (Arbeitsspeicher, Speicherplatz, Bildschirmausrichtung usw.) und die Uhrzeit, wenn im Spiel ein Fehler auftritt oder es unerwartet beendet wird</li>
 <li>Live-Duelle:
 <ul>
 <li>Lokales Duell (dasselbe WLAN): die Adresse des Geräts und der Raumname (der den Gerätenamen enthalten kann) werden in diesem Netzwerk bekannt gegeben.</li>
-<li>Online-Duell: läuft über einen vom Entwickler betriebenen Relay-Server. Der Server verarbeitet die IP-Adresse, die Spieler-ID (zur Bestätigung der Anmeldung), die Raumdaten (Raumnummer, generierter Name, Profilfigur und Level, Raumeinstellungen und ein Hash des Raumpassworts) und die Verbindungszeiten und leitet die Spieldaten zwischen den beiden Geräten weiter.</li>
+<li>Online-Duell: läuft über einen vom Entwickler betriebenen Relay-Server. Der Server verarbeitet die IP-Adresse, die Spieler-ID (zur Bestätigung der Anmeldung), die Raumdaten (Raumnummer, generierter Name, Profilfigur und Level, Raumeinstellungen und ein Hash des Raumpassworts) und die Verbindungszeiten und leitet die Spieldaten zwischen den beiden Geräten weiter. Auch der generierte Name des beitretenden Spielers wird an den Server übermittelt. Um Missbrauch zu begegnen, verarbeitet der Server die IP-Adressen und Spieler-IDs bestehender Verbindungen nur im Arbeitsspeicher (eine andere Adresse desselben Spielers höchstens 24 Stunden) und schreibt sie in keine Datei.</li>
 </ul></li>
 </ul>
 <p>Das Spiel erhebt weder Ihren echten Namen noch Ihre Telefonnummer, Kontakte, Fotos oder Ihren genauen Standort.</p>
@@ -851,10 +891,12 @@
 <ul>
 <li>Bereitstellung des Spiels: Erkennung der Spieler, Berechnung der Wochenranglisten und Vergabe ihrer Belohnungen</li>
 <li>Online-Duelle: Räume erstellen und betreten, Duelle weiterleiten, Missbrauch verhindern (gleichzeitige Verbindungen desselben Kontos und das Betreten des eigenen Raums unterbinden) und die Serverlast steuern</li>
+<li>Beschränkung von Missbrauch: Einschränkung von Online-Matches für eine Spieler-ID oder IP-Adresse (eine IPv6-Adresse nach ihrem Netzwerkpräfix), die gegen die Nutzungsbedingungen verstößt</li>
 <li>Doppelte Belohnungen verhindern: Belohnungsdaten speichern und die Zeit mit dem Server abgleichen</li>
 <li>Kontoverknüpfung: Speicherung des Fortschritts verknüpfter Konten und Fortsetzen auf einem anderen Gerät</li>
 <li>Werbung: Anzeige von Werbung mit Belohnung und Vergabe der Belohnungen, Messung des Werbeerfolgs, Verhinderung von Missbrauch</li>
 <li>Verbesserung des Dienstes: Auswertung von Nutzungsstatistiken, Anpassung des Schwierigkeitsgrads, Fehlerbehebung</li>
+<li>Support und Wiederherstellung: Prüfen und Wiederherstellen des Fortschritts in der Cloud auf deine Anfrage oder wenn er durch einen Serverfehler verloren ging</li>
 </ul>
 <h2>3. Für andere Nutzer sichtbare Daten</h2>
 <ul>
@@ -889,6 +931,8 @@
 <li>Auf dem Gerät gespeicherte Spieldaten werden mit der App gelöscht.</li>
 <li>Konto und Aufzeichnungen auf den Servern (und bei verknüpftem Konto der in der Cloud gespeicherte Fortschritt) werden gespeichert, solange der Dienst angeboten wird, und auf Anfrage oder bei Löschung des Kontos unverzüglich gelöscht.</li>
 <li>Der Relay-Server speichert keine Spieldaten. Damit ein abgebrochenes Duell fortgesetzt werden kann, behält er nur den letzten Spielstand für kurze Zeit (etwa 70 Sekunden). Seine Betriebsprotokolle (Verbindungsnummer, Raumnummer und Zeiten) werden für den Betrieb und die Bekämpfung von Missbrauch höchstens 30 Tage aufbewahrt und dann gelöscht. Sie enthalten keine Spieler-ID, und IP-Adressen nur gekürzt.</li>
+<li>Werden Online-Matches wegen Missbrauchs eingeschränkt, werden die dafür nötige Spieler-ID oder IP-Adresse (eine IPv6-Adresse nach ihrem Netzwerkpräfix) für die Dauer der Einschränkung (eine dauerhafte bis zu ihrer Aufhebung) gespeichert und danach gelöscht.</li>
+<li>Aufzeichnungen über Änderungen am Fortschritt in der Cloud mit dem Verwaltungswerkzeug (wer, wann, Spieler-ID und geänderte Einträge) werden 1 Jahr gespeichert und danach gelöscht.</li>
 <li>Nutzungsstatistiken und Fehlerberichte werden nach der in der Aufbewahrungsrichtlinie von Google festgelegten Frist automatisch gelöscht.</li>
 <li>Daten, deren Aufbewahrung gesetzlich vorgeschrieben ist, werden für diese Dauer aufbewahrt.</li>
 <li>Gelöschte Daten werden so von den Servern entfernt, dass sie nicht wiederhergestellt werden können.</li>
@@ -896,8 +940,9 @@
 <h2>7. Sicherheitsmaßnahmen</h2>
 <ul>
 <li>Verschlüsselte Übertragung: Die Verbindung zwischen dem Spiel und den Diensten von Google und Unity sowie dem Relay-Server der Online-Duelle ist verschlüsselt (HTTPS, TLS). Lokale Duelle im selben WLAN sind nicht verschlüsselt.</li>
+<li>Verschlüsselung bei der Speicherung: Dein Spielfortschritt wird auf dem Gerät und in der Cloud verschlüsselt gespeichert.</li>
 <li>Passwörter: Das Passwort eines Online-Raums erreicht den Server nur als Hash, nie im Klartext.</li>
-<li>Zugriffskontrolle: In der Cloud gespeicherte Daten können nur nach Prüfung der Anmeldung des jeweiligen Spielers gelesen und geschrieben werden. Die Verwaltung des Relay-Servers ist nur vom Server selbst aus möglich, und die Administratorkonten des Servers und der einzelnen Dienste nutzt allein der Entwickler.</li>
+<li>Zugriffskontrolle: In der Cloud gespeicherte Daten werden nach Prüfung der Anmeldung des jeweiligen Spielers gelesen und geschrieben. Der Entwickler sieht sie nur für Support und Wiederherstellung ein oder ändert sie, über ein Verwaltungswerkzeug, das Anmeldung und Berechtigung erfordert, und jede Änderung wird aufgezeichnet. Die Verwaltungsseiten des Relay-Servers erfordern eine Anmeldung und öffnen sich nur von den eigenen Adressen des Entwicklers, und die Administratorkonten des Servers und jedes Dienstes nutzt allein der Entwickler.</li>
 <li>Datensparsamkeit: Die Protokolle des Relay-Servers enthalten keine Spieler-ID und IP-Adressen nur gekürzt, und sie werden nach Ablauf der Aufbewahrungsfrist gelöscht.</li>
 </ul>
 <h2>8. Rechte der Nutzer</h2>
@@ -927,7 +972,7 @@
 </article>
 <article data-lang="pt">
 <h1>Política de Privacidade do StunStar</h1>
-<p class="muted">Data de vigência: 2026-10-31</p>
+<p class="muted">Data de vigência: 2026-11-01</p>
 <div class="card">
 <p>suseong kim (doravante &quot;o desenvolvedor&quot;) trata as informações pessoais dos usuários do jogo para celular &quot;StunStar&quot; (doravante &quot;o jogo&quot;) da forma descrita abaixo.</p>
 <h2>1. Informações coletadas</h2>
@@ -938,12 +983,12 @@
 <li>Registros de jogo: níveis, vitórias e derrotas, compras de itens e anúncios assistidos, horários de acesso</li>
 <li>Conta do jogo: um ID de jogador anônimo e um nome gerado, criados automaticamente na primeira vez que o jogo é aberto, e os registros dos rankings semanais (aventura e duelo online) ligados a eles</li>
 <li>Registros de recompensas: a última recompensa de presença e de ranking semanal recebidas, salvas com o progresso do jogo para que uma recompensa não seja entregue duas vezes (no seu dispositivo; na nuvem só se você vincular uma conta). O horário do jogo é verificado com o do servidor, sem salvar nada sobre você.</li>
-<li>Se você vincular uma conta (conta Unity, login com Google, Apple ou e-mail): o identificador da conta e o progresso do jogo salvo na nuvem (nível, moedas, itens etc.). Sem vincular, o progresso fica salvo apenas no dispositivo. O jogo não salva o e-mail nem o nome da conta usada no login.</li>
+<li>Se você vincular uma conta (conta Unity, login com Google, Apple ou e-mail): o identificador da conta e o progresso do jogo salvo na nuvem (nível, moedas, itens etc.). Sem vincular, o progresso fica salvo apenas no dispositivo. O jogo não salva o e-mail nem o nome da conta usada no login. Com o progresso na nuvem é guardado também um ID de instalação aleatório, para distinguir os seus dispositivos.</li>
 <li>Informações de erro: o conteúdo do erro, o estado do dispositivo (memória, armazenamento, orientação da tela etc.) e o horário, quando o jogo apresenta um erro ou fecha inesperadamente</li>
 <li>Duelos ao vivo:
 <ul>
 <li>Duelo local (mesma rede Wi-Fi): o endereço do dispositivo e o nome da sala (que pode incluir o nome do dispositivo) são divulgados nessa rede.</li>
-<li>Duelo online: passa por um servidor de retransmissão operado pelo desenvolvedor. O servidor trata o endereço IP, o ID de jogador (para confirmar o login), os dados da sala (número da sala, nome gerado, personagem do perfil e nível, configurações da sala e um hash da senha) e os horários de conexão, e repassa os dados da partida entre os dois dispositivos.</li>
+<li>Duelo online: passa por um servidor de retransmissão operado pelo desenvolvedor. O servidor trata o endereço IP, o ID de jogador (para confirmar o login), os dados da sala (número da sala, nome gerado, personagem do perfil e nível, configurações da sala e um hash da senha) e os horários de conexão, e repassa os dados da partida entre os dois dispositivos. O nome gerado do jogador que entra também é enviado ao servidor. Para combater abusos, o servidor trata os endereços IP e os IDs de jogador das conexões ativas apenas em memória (outro endereço usado pelo mesmo jogador, por até 24 horas) e não os grava em nenhum arquivo.</li>
 </ul></li>
 </ul>
 <p>O jogo não coleta seu nome real, número de telefone, contatos, fotos nem localização precisa.</p>
@@ -952,10 +997,12 @@
 <ul>
 <li>Fornecer o jogo: identificar os jogadores, calcular os rankings semanais e entregar suas recompensas</li>
 <li>Duelos online: criar e entrar em salas, retransmitir as partidas, evitar abusos (impedir conexões simultâneas da mesma conta e entrar na própria sala) e gerenciar a carga do servidor</li>
+<li>Restrição de abusos: limitar as partidas online de um ID de jogador ou endereço IP (um endereço IPv6 pelo seu prefixo de rede) que viole os Termos de Serviço</li>
 <li>Evitar recompensas em dobro: guardar os registros de recompensas e verificar o horário com o servidor</li>
 <li>Vinculação de conta: guardar o progresso de contas vinculadas e permitir continuar em outro dispositivo</li>
 <li>Publicidade: exibir anúncios premiados e entregar as recompensas, medir os resultados dos anúncios e evitar fraudes</li>
 <li>Melhoria do serviço: análise de estatísticas de uso, ajuste de dificuldade e correção de erros</li>
+<li>Suporte e recuperação: verificar e restaurar o progresso na nuvem quando você pedir ou quando ele se perder por um erro do servidor</li>
 </ul>
 <h2>3. Informações visíveis para outros usuários</h2>
 <ul>
@@ -990,6 +1037,8 @@
 <li>Os dados do jogo salvos no dispositivo são excluídos junto com o aplicativo.</li>
 <li>A conta e os registros salvos nos servidores (e, se você vinculou uma conta, o progresso salvo na nuvem) são mantidos enquanto o serviço for oferecido e excluídos sem demora quando solicitado ou ao excluir a conta.</li>
 <li>O servidor de retransmissão não salva os dados das partidas. Para permitir retomar uma partida interrompida, guarda apenas o último estado da partida por pouco tempo (cerca de 70 segundos). Seus registros de operação (número da conexão, número da sala e horários) são mantidos por até 30 dias para a operação do serviço e o combate a abusos, e depois excluídos. Eles não contêm o ID de jogador, e os endereços IP aparecem apenas em parte.</li>
+<li>Quando as partidas online são restringidas por abuso, o ID de jogador ou o endereço IP (um endereço IPv6 pelo seu prefixo de rede) necessário é guardado durante a restrição (se permanente, até ser retirada) e depois excluído.</li>
+<li>Os registros das alterações feitas no progresso na nuvem com a ferramenta de administração (quem, quando, o ID de jogador e os itens alterados) são guardados por 1 ano e depois excluídos.</li>
 <li>As estatísticas de uso e os relatórios de erro são excluídos automaticamente após o prazo definido pela política de retenção do Google.</li>
 <li>As informações que a lei exige guardar são mantidas por esse prazo.</li>
 <li>As informações excluídas são apagadas dos servidores de forma que não possam ser recuperadas.</li>
@@ -997,8 +1046,9 @@
 <h2>7. Medidas de segurança</h2>
 <ul>
 <li>Criptografia em trânsito: a comunicação entre o jogo e os serviços do Google e da Unity e o servidor de retransmissão dos duelos online é criptografada (HTTPS, TLS). Os duelos locais na mesma rede Wi-Fi não são criptografados.</li>
+<li>Criptografia no armazenamento: o seu progresso no jogo é guardado criptografado, no dispositivo e na nuvem.</li>
 <li>Senhas: a senha de uma sala de duelo online chega ao servidor apenas como hash, nunca como foi digitada.</li>
-<li>Controle de acesso: os dados salvos na nuvem só podem ser lidos e gravados após a verificação do login do jogador. A administração do servidor de retransmissão só funciona a partir do próprio servidor, e as contas de administração do servidor e de cada serviço são usadas apenas pelo desenvolvedor.</li>
+<li>Controle de acesso: os dados guardados na nuvem são lidos e gravados após a verificação do login desse jogador. O desenvolvedor só os consulta ou altera para suporte e recuperação, por uma ferramenta de administração que exige login e permissão, e cada alteração é registrada. As páginas de administração do servidor de retransmissão exigem login e só abrem a partir dos endereços do próprio desenvolvedor, e as contas de administrador do servidor e de cada serviço são usadas apenas pelo desenvolvedor.</li>
 <li>Retenção mínima: os registros do servidor de retransmissão não contêm o ID de jogador, os endereços IP aparecem apenas em parte, e eles são excluídos ao fim do prazo de retenção.</li>
 </ul>
 <h2>8. Direitos dos usuários</h2>

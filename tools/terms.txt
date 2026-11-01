@@ -1,6 +1,6 @@
 StunStar 이용약관
 
-시행일: 2026-10-29
+시행일: 2026-11-08
 
 제1조 (목적)
 이 약관은 suseong kim(이하 "개발자")이 제공하는 모바일 게임 "StunStar"(이하 "게임")의 이용 조건과 절차, 개발자와 이용자의 권리와 의무를 정합니다.
@@ -39,7 +39,7 @@ StunStar 이용약관
 6. 게임의 이미지, 음원 등 저작물을 허락 없이 복제·배포하는 행위
 
 제8조 (이용 제한)
-제7조를 어긴 이용자에게 개발자는 사안의 정도에 따라 랭킹 기록 삭제, 보상 회수, 온라인 대전 이용 제한, 계정 삭제를 할 수 있습니다. 이용자는 문의처로 이의를 제기할 수 있습니다.
+제7조를 어긴 이용자에게 개발자는 사안의 정도에 따라 랭킹 기록 삭제, 보상 회수, 온라인 대전 이용 제한, 계정 삭제를 할 수 있습니다. 온라인 대전 이용 제한은 기간(예: 1시간, 1일)을 정하거나 영구로 할 수 있으며, 플레이어 ID나 IP 주소(IPv6는 네트워크 대역) 단위로 적용합니다. IP 주소 단위의 제한은 같은 네트워크(공유기, 공용 Wi-Fi 등)를 쓰는 다른 이용자에게도 미칠 수 있습니다. 이용자는 문의처로 이의를 제기할 수 있습니다.
 
 제9조 (서비스의 변경, 점검, 중단)
 1. 개발자는 게임의 내용, 규칙, 밸런스를 바꿀 수 있습니다.
@@ -65,7 +65,7 @@ https://stunstar.sjm3labs.com/privacy-policy/
 
 StunStar Terms of Service
 
-Effective date: 2026-10-29
+Effective date: 2026-11-08
 
 1. Purpose
 These terms set out the conditions for using the mobile game "StunStar" ("the game") provided by suseong kim ("the developer"), and the rights and duties of the developer and of players.
@@ -104,7 +104,7 @@ You must not:
 (6) copy or distribute the game's images, music or other works without permission.
 
 8. Restrictions
-If you break section 7, the developer may, depending on its seriousness, remove your ranking records, take back rewards, restrict your online matches or delete your account. You may raise an objection at the contact below.
+If you break section 7, the developer may, depending on its seriousness, remove your ranking records, take back rewards, restrict your online matches or delete your account. A restriction of online matches may be for a set time (for example an hour or a day) or permanent, and is applied to a player ID or an IP address (an IPv6 address by its network prefix). A restriction by IP address may also reach other players on the same network (a shared router, public Wi-Fi and the like). You may raise an objection at the contact below.
 
 9. Changes, maintenance and ending of the service
 (1) The developer may change the game's content, rules and balance.
