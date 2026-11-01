@@ -4,14 +4,14 @@
 // privacy policy (/privacy-policy/) from the game's own Data/PrivacyPolicy.xml in all its languages, how to delete an
 // account (/delete-account/), the terms of service (/terms/, from tools/terms.txt), and app-ads.txt (with ads.txt beside it) for AdMob. Run again whenever the policy changes:
 //
-//   node tools/build-static.js [path to the Unity project]      (D:\Workspace\StunStar where none is given)
+//   node tools/build-static.js [path to the Unity project]      (D:\Workspace\StunStar\StunStar_Unity where none is given)
 //
 // The pictures in assets/ were made once from the game's Art (scaled down for the web) and are not touched.
 
 const fs = require('fs');
 const path = require('path');
 
-const unity = process.argv[2] || 'D:/Workspace/StunStar';
+const unity = process.argv[2] || 'D:/Workspace/StunStar/StunStar_Unity';
 const out = path.join(__dirname, '..');
 const policyXml = fs.readFileSync(path.join(unity, 'Assets/_Project/Data/PrivacyPolicy.xml'), 'utf8');
 
