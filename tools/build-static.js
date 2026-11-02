@@ -180,9 +180,16 @@ ${langScript(codes)}
 function home() {
   const characters = CHARACTERS.map(([key, ko, en]) => `<figure style="margin:0;text-align:center"><img src="assets/${key}.png" alt="${en}" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">${ko}</span><span data-lang="en">${en}</span></figcaption></figure>`).join('\n');
   const body = `<style>
-.hero{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
-.hero img.art{width:100%;max-width:360px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
-.hero .text{flex:1;min-width:260px}
+.hero{border-radius:22px;overflow:hidden;background:#0e1636;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.hero img.art{display:block;width:100%;height:auto;aspect-ratio:3/2;-webkit-mask-image:linear-gradient(#000 66%,transparent);mask-image:linear-gradient(#000 66%,transparent)}
+.hero .shade{position:relative;margin-top:-9%;padding:0 22px 26px;text-align:center;word-break:keep-all}
+.hero .text{max-width:600px;margin:0 auto}
+.hero h1{text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.hero p{text-shadow:0 1px 6px rgba(0,0,0,.7)}
+.hero .button{margin:4px 4px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.steps .card{padding:14px}
+.steps b{color:#ffd866}
 .chars{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
 .tile{display:flex;gap:12px;align-items:center;background:#18203a;border:1px solid #2a3760;border-radius:14px;padding:10px 12px}
@@ -190,25 +197,32 @@ function home() {
 .tile b{display:block;color:#ffd866;font-size:15px}
 .tile span.d{color:#c9d2ea;font-size:13px;line-height:1.45}
 .tile span.d.on{display:block}
-@media (max-width:560px){.chars{grid-template-columns:repeat(3,1fr)}.hero{justify-content:center}.tiles{grid-template-columns:1fr}}
+@media (max-width:560px){.chars{grid-template-columns:repeat(3,1fr)}.tiles,.steps{grid-template-columns:1fr}.hero .shade{margin-top:-10%;padding:0 16px 20px}.hero h1{font-size:24px}}
 </style>
 <section class="hero">
-<img class="art" src="assets/intro.jpg" alt="StunStar">
-<div class="text">
+<img class="art" src="assets/banner.jpg" alt="StunStar" width="1440" height="960">
+<div class="shade"><div class="text">
 <div data-lang="ko">
-<h1>던지고 기절시켜라!<br>1:1 대전</h1>
+<h1>던지고 기절시켜라! 1:1 대전</h1>
 <p>내 쪽의 무기를 모두 상대 진영으로 던져 넘기면 승리! 상대를 맞혀 기절시키고, 그 틈에 몰아 던지세요. 한 손으로도 즐길 수 있는 빠르고 짜릿한 던지기 대전입니다.</p>
 </div>
 <div data-lang="en">
-<h1>Throw, Stun &amp; Win!<br>1v1 battles</h1>
+<h1>Throw, Stun &amp; Win! 1v1 battles</h1>
 <p>Send every one of your tools over to the other side to win. Hit your rival to stun them, then throw everything while they are down. A fast, thrilling throwing battle you can play with one hand.</p>
 </div>
 <p>
 <a class="button" href="${PLAY}">Google Play</a>
 <a class="button pink" href="${APP_STORE}">App Store</a>
 </p>
-</div>
+</div></div>
 </section>
+
+<h2><span data-lang="ko">게임 방법</span><span data-lang="en">How to play</span></h2>
+<div class="steps">
+<div class="card"><b>1</b> <span data-lang="ko">내 쪽의 무기를 집어 상대 진영으로 던지세요.</span><span data-lang="en">Pick up a tool on your side and throw it over to the other side.</span></div>
+<div class="card"><b>2</b> <span data-lang="ko">상대를 맞히면 기절! 그 틈에 몰아서 던지세요.</span><span data-lang="en">Hit your rival to stun them, then throw while they are down.</span></div>
+<div class="card"><b>3</b> <span data-lang="ko">무기를 모두 넘기면 승리. 시간이 끝나면 더 많이 넘긴 쪽이 이깁니다.</span><span data-lang="en">Send every tool over to win. When time runs out, whoever sent more wins.</span></div>
+</div>
 
 <h2><span data-lang="ko">게임 특징</span><span data-lang="en">Features</span></h2>
 <div class="card">
@@ -234,7 +248,7 @@ ${characters}
 </div>
 
 <h2><span data-lang="ko">보스</span><span data-lang="en">Bosses</span></h2>
-<p class="muted"><span data-lang="ko">스테이지마다 마지막 판에 등장하고, 100레벨마다 크라켄이 기다립니다.</span><span data-lang="en">Each stage ends with a boss, and the Kraken waits at every hundredth level.</span></p>
+<p class="muted"><span data-lang="ko">스테이지마다 마지막 판에 등장하고, 100레벨마다 드래곤이 기다립니다.</span><span data-lang="en">Each stage ends with a boss, and the Dragon waits at every hundredth level.</span></p>
 <div class="chars">
 ${faces(BOSSES, 'bosses')}
 </div>
