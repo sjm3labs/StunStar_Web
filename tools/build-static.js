@@ -56,12 +56,12 @@ function heading(ko, en, count) {
 // So many hidden ones, as a question mark each: a card like a face, or a tile like a game's.
 function mysteryFaces(count) {
   return Array.from({ length: Math.max(0, count) }, () =>
-    '<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>').join('\n');
+    '<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div></figure>').join('\n');
 }
 
 function mysteryTiles(count) {
   return Array.from({ length: Math.max(0, count) }, () =>
-    '<div class="tile mystery-tile"><div class="mystery small" aria-hidden="true">?</div><div><b>???</b></div></div>').join('\n');
+    '<div class="tile mystery-tile"><div class="mystery small" aria-hidden="true">?</div></div>').join('\n');
 }
 const ITEMS = [
   ['grow', '확대', 'Grows', '날아가면서 커져서 옆으로 더 넓게 맞습니다.', 'Swells as it flies, so it hits from farther to the side.'],
