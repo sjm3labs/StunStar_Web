@@ -1,6 +1,6 @@
 StunStar 이용약관
 
-시행일: 2026-11-08
+시행일: 2026-11-09
 
 제1조 (목적)
 이 약관은 suseong kim(이하 "개발자")이 제공하는 모바일 게임 "StunStar"(이하 "게임")의 이용 조건과 절차, 개발자와 이용자의 권리와 의무를 정합니다.
@@ -20,7 +20,8 @@ StunStar 이용약관
 1. 별, 대전 티켓, 스탯 초기화 쿠폰, 스킬 아이템, 하트, 캐릭터(이하 "게임 재화 등")는 게임 플레이, 출석, 미션, 랭킹 보상, 보상형 광고 시청으로 얻으며, 현금으로 사거나 팔 수 없습니다.
 2. 게임 재화 등은 게임 안에서 쓰는 이용 권한일 뿐이며, 현금 가치가 없고 환불·환전·양도·판매할 수 없습니다.
 3. 게임 재화 등의 획득량, 가격, 효과, 보상 내용은 게임 운영과 밸런스를 위해 바뀔 수 있습니다.
-4. 이용자 기기의 오류, 앱 삭제, 계정 삭제, 연동하지 않은 계정의 분실로 잃은 게임 재화 등은 복구하지 않습니다. 다만 개발자의 서버 오류로 잃은 것은 확인되는 범위에서 복구합니다.
+4. 이용자 기기의 오류, 앱 삭제, 계정 삭제, 연동하지 않은 계정의 분실로 잃은 게임 재화 등은 복구하지 않습니다. 다만 개발자가 운영하는 서버의 장애로 잃은 것이 기록으로 확인되면 그 범위에서 복구합니다.
+5. 게임은 무료로 제공되므로, 게임의 버그·오류나 그 밖의 문제로 잃거나 잘못 바뀐 게임 재화 등은 복구되지 않을 수 있습니다. 버그·오류로 잘못 지급된 게임 재화 등은 회수할 수 있습니다.
 
 제5조 (광고)
 게임은 보상형 광고를 보여 주고, 끝까지 시청하면 정해진 보상을 지급합니다. 광고 내용은 광고 회사가 정하며, 광고가 준비되지 않으면 보상을 받을 수 없을 수 있습니다. 광고와 개인정보에 관한 내용은 개인정보처리방침에 따릅니다.
@@ -65,7 +66,7 @@ https://stunstar.sjm3labs.com/privacy-policy/
 
 StunStar Terms of Service
 
-Effective date: 2026-11-08
+Effective date: 2026-11-09
 
 1. Purpose
 These terms set out the conditions for using the mobile game "StunStar" ("the game") provided by suseong kim ("the developer"), and the rights and duties of the developer and of players.
@@ -85,7 +86,8 @@ These terms set out the conditions for using the mobile game "StunStar" ("the ga
 (1) Stars, match tickets, stat reset coupons, skill items, hearts and characters ("in-game items") are obtained by playing, attendance, missions, ranking rewards and watching rewarded adverts. They cannot be bought or sold for money.
 (2) In-game items are only a licence to use them within the game. They have no cash value and cannot be refunded, exchanged, transferred or sold.
 (3) How in-game items are obtained, their prices, effects and rewards may change for the running and balance of the game.
-(4) In-game items lost through a fault of your device, deleting the app, deleting your account or losing an unlinked account are not restored. Items lost through a fault of the developer's servers are restored as far as can be confirmed.
+(4) In-game items lost through a fault of your device, deleting the app, deleting your account or losing an unlinked account are not restored. Items lost through an outage of the servers the developer runs are restored as far as the records confirm.
+(5) As the game is free, in-game items lost or changed in error through bugs, faults or other issues may not be restored. In-game items given in error through a bug or fault may be taken back.
 
 5. Adverts
 The game shows rewarded adverts and pays the stated reward when one is watched to the end. Advert content is decided by the advertising companies, and a reward may not be available when no advert is ready. Adverts and personal information are covered by the privacy policy.
