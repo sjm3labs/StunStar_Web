@@ -44,6 +44,8 @@ const BOSSES = [
 ];
 // Only the two weakest bosses are shown (the first rungs of the game's boss ladder); the rest are left to be met.
 const SHOWN_BOSSES = ['clown', 'pirate'];
+// Likewise only three bonus games by name, the rest a question mark.
+const SHOWN_GAMES = ['bowling', 'archery', 'bricks'];
 const ITEMS = [
   ['grow', '확대', 'Grows', '날아가면서 커져서 옆으로 더 넓게 맞습니다.', 'Swells as it flies, so it hits from farther to the side.'],
   ['pierce', '관통', 'Pierce', '날아오는 무기와 부딪혀도 밀리지 않고 그대로 갑니다.', 'Keeps its course when it meets another tool in flight.'],
@@ -196,7 +198,7 @@ ${head || ''}
 ${body}
 <footer>
 <a href="${root}">Home</a><a href="${root}privacy-policy/"><span data-lang="ko">개인정보처리방침</span><span data-lang="en">Privacy Policy</span>${codes.length > 2 ? codes.filter((c) => c !== 'ko' && c !== 'en').map((c) => `<span data-lang="${c}">Privacy Policy</span>`).join('') : ''}</a><a href="${root}terms/"><span data-lang="ko">이용약관</span><span data-lang="en">Terms of Service</span>${codes.length > 2 ? codes.filter((c) => c !== 'ko' && c !== 'en').map((c) => `<span data-lang="${c}">Terms of Service</span>`).join('') : ''}</a><a href="${root}delete-account/"><span data-lang="ko">계정 삭제</span><span data-lang="en">Delete account</span>${codes.length > 2 ? codes.filter((c) => c !== 'ko' && c !== 'en').map((c) => `<span data-lang="${c}">Delete account</span>`).join('') : ''}</a><a href="mailto:${CONTACT}">${CONTACT}</a>
-<div style="margin-top:8px">© 2026 ${escape(DEVELOPER)} (sjm3labs)</div>
+<div style="margin-top:8px">© 2026 sjm3labs</div>
 </footer>
 </div>
 ${langScript(codes)}
@@ -230,6 +232,7 @@ function home() {
 .mystery{width:100%;max-width:120px;aspect-ratio:1;margin:0 auto;border-radius:16px;background:#18203a;border:1px dashed #3a4a7a;display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:800;color:#3a4a7a}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{background:#18203a;border:1px solid #2a3760;border-radius:999px;padding:6px 14px;color:#ffd866;font-weight:700;font-size:15px}
+.chip.mystery-chip{border-style:dashed;border-color:#3a4a7a;color:#5a6a9a;min-width:44px;text-align:center}
 @media (max-width:560px){.chars{grid-template-columns:repeat(3,1fr)}.tiles,.steps{grid-template-columns:1fr}.hero .shade{margin-top:-10%;padding:0 16px 20px}.hero h1{font-size:24px}}
 </style>
 <section class="hero">
@@ -280,6 +283,12 @@ function home() {
 ${characters}
 </div>
 
+<h2><span data-lang="ko">스킬 아이템</span><span data-lang="en">Skill items</span></h2>
+<p class="muted"><span data-lang="ko">경기 전에 골라 넣으면 내 무기 하나에 그 스킬이 붙습니다.</span><span data-lang="en">Pick them before a game and each puts its skill on one of your tools.</span></p>
+<div class="tiles">
+${tiles(ITEMS, 'items')}
+</div>
+
 <h2><span data-lang="ko">보스</span><span data-lang="en">Bosses</span></h2>
 <p class="muted"><span data-lang="ko">스테이지마다 마지막 판에 보스가 등장합니다. 나머지 보스는 모험에서 직접 만나 보세요!</span><span data-lang="en">Each stage ends with a boss. Meet the rest of them on your adventure!</span></p>
 <div class="chars">
@@ -287,11 +296,6 @@ ${faces(BOSSES.filter(([key]) => SHOWN_BOSSES.includes(key)), 'bosses')}
 <figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
 </div>
 
-<h2><span data-lang="ko">스킬 아이템</span><span data-lang="en">Skill items</span></h2>
-<p class="muted"><span data-lang="ko">경기 전에 골라 넣으면 내 무기 하나에 그 스킬이 붙습니다.</span><span data-lang="en">Pick them before a game and each puts its skill on one of your tools.</span></p>
-<div class="tiles">
-${tiles(ITEMS, 'items')}
-</div>
 
 <h2><span data-lang="ko">경기장</span><span data-lang="en">Courts</span></h2>
 <div class="tiles">
@@ -307,7 +311,8 @@ ${tiles(OBSTACLES, 'obstacles')}
 <h2><span data-lang="ko">보너스 게임</span><span data-lang="en">Bonus games</span></h2>
 <p class="muted"><span data-lang="ko">보스를 이긴 다음 레벨은 지지 않는 보너스 게임입니다. 점수만큼 별을 받습니다.</span><span data-lang="en">The level after each boss is a bonus game you cannot lose, paying stars for your score.</span></p>
 <div class="chips">
-${GAMES.map(([, ko, en]) => `<span class="chip"><span data-lang="ko">${ko}</span><span data-lang="en">${en}</span></span>`).join('\n')}
+${GAMES.filter(([key]) => SHOWN_GAMES.includes(key)).map(([, ko, en]) => `<span class="chip"><span data-lang="ko">${ko}</span><span data-lang="en">${en}</span></span>`).join('\n')}
+<span class="chip mystery-chip" aria-label="more">?</span>
 </div>
 
 <h2><span data-lang="ko">문의</span><span data-lang="en">Contact</span></h2>

@@ -54,6 +54,7 @@
 .mystery{width:100%;max-width:120px;aspect-ratio:1;margin:0 auto;border-radius:16px;background:#18203a;border:1px dashed #3a4a7a;display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:800;color:#3a4a7a}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{background:#18203a;border:1px solid #2a3760;border-radius:999px;padding:6px 14px;color:#ffd866;font-weight:700;font-size:15px}
+.chip.mystery-chip{border-style:dashed;border-color:#3a4a7a;color:#5a6a9a;min-width:44px;text-align:center}
 @media (max-width:560px){.chars{grid-template-columns:repeat(3,1fr)}.tiles,.steps{grid-template-columns:1fr}.hero .shade{margin-top:-10%;padding:0 16px 20px}.hero h1{font-size:24px}}
 </style>
 <section class="hero">
@@ -113,14 +114,6 @@
 <figure style="margin:0;text-align:center"><img src="assets/angel.png" alt="Angel" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">천사</span><span data-lang="en">Angel</span></figcaption></figure>
 </div>
 
-<h2><span data-lang="ko">보스</span><span data-lang="en">Bosses</span></h2>
-<p class="muted"><span data-lang="ko">스테이지마다 마지막 판에 보스가 등장합니다. 나머지 보스는 모험에서 직접 만나 보세요!</span><span data-lang="en">Each stage ends with a boss. Meet the rest of them on your adventure!</span></p>
-<div class="chars">
-<figure style="margin:0;text-align:center"><img src="assets/bosses/clown.png" alt="Mad Clown" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">미친광대</span><span data-lang="en">Mad Clown</span></figcaption></figure>
-<figure style="margin:0;text-align:center"><img src="assets/bosses/pirate.png" alt="Pirate" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">해적</span><span data-lang="en">Pirate</span></figcaption></figure>
-<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
-</div>
-
 <h2><span data-lang="ko">스킬 아이템</span><span data-lang="en">Skill items</span></h2>
 <p class="muted"><span data-lang="ko">경기 전에 골라 넣으면 내 무기 하나에 그 스킬이 붙습니다.</span><span data-lang="en">Pick them before a game and each puts its skill on one of your tools.</span></p>
 <div class="tiles">
@@ -135,6 +128,15 @@
 <div class="tile"><img src="assets/items/twinthrow.png" alt="Twin Throw" loading="lazy"><div><b><span data-lang="ko">쌍발</span><span data-lang="en">Twin Throw</span></b><span class="d" data-lang="ko">가까이 놓인 무기 하나를 함께 던집니다.</span><span class="d" data-lang="en">The tool lying nearest on your row is thrown along with it.</span></div></div>
 <div class="tile"><img src="assets/items/homing.png" alt="Homing" loading="lazy"><div><b><span data-lang="ko">유도</span><span data-lang="en">Homing</span></b><span class="d" data-lang="ko">날아가는 앞부분 동안 상대 쪽으로 방향을 틉니다.</span><span class="d" data-lang="en">Steers toward the opponent for the first part of its flight.</span></div></div>
 </div>
+
+<h2><span data-lang="ko">보스</span><span data-lang="en">Bosses</span></h2>
+<p class="muted"><span data-lang="ko">스테이지마다 마지막 판에 보스가 등장합니다. 나머지 보스는 모험에서 직접 만나 보세요!</span><span data-lang="en">Each stage ends with a boss. Meet the rest of them on your adventure!</span></p>
+<div class="chars">
+<figure style="margin:0;text-align:center"><img src="assets/bosses/clown.png" alt="Mad Clown" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">미친광대</span><span data-lang="en">Mad Clown</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/bosses/pirate.png" alt="Pirate" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">해적</span><span data-lang="en">Pirate</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
+</div>
+
 
 <h2><span data-lang="ko">경기장</span><span data-lang="en">Courts</span></h2>
 <div class="tiles">
@@ -158,23 +160,17 @@
 <h2><span data-lang="ko">보너스 게임</span><span data-lang="en">Bonus games</span></h2>
 <p class="muted"><span data-lang="ko">보스를 이긴 다음 레벨은 지지 않는 보너스 게임입니다. 점수만큼 별을 받습니다.</span><span data-lang="en">The level after each boss is a bonus game you cannot lose, paying stars for your score.</span></p>
 <div class="chips">
-<span class="chip"><span data-lang="ko">기절시키기</span><span data-lang="en">Stun Practice</span></span>
-<span class="chip"><span data-lang="ko">장애물 맞히기</span><span data-lang="en">Obstacle Shot</span></span>
-<span class="chip"><span data-lang="ko">움직이는 장애물</span><span data-lang="en">Moving Obstacles</span></span>
-<span class="chip"><span data-lang="ko">별 따기</span><span data-lang="en">Falling Stars</span></span>
-<span class="chip"><span data-lang="ko">무기 피하기</span><span data-lang="en">Dodge the Tools</span></span>
 <span class="chip"><span data-lang="ko">양궁</span><span data-lang="en">Archery</span></span>
 <span class="chip"><span data-lang="ko">벽돌 깨기</span><span data-lang="en">Brick Break</span></span>
-<span class="chip"><span data-lang="ko">보스 때리기</span><span data-lang="en">Boss Bash</span></span>
 <span class="chip"><span data-lang="ko">볼링</span><span data-lang="en">Bowling</span></span>
-<span class="chip"><span data-lang="ko">과일 짝 맞추기</span><span data-lang="en">Fruit Match</span></span>
+<span class="chip mystery-chip" aria-label="more">?</span>
 </div>
 
 <h2><span data-lang="ko">문의</span><span data-lang="en">Contact</span></h2>
 <p><a href="mailto:stunstar@sjm3labs.com">stunstar@sjm3labs.com</a></p>
 <footer>
 <a href="./">Home</a><a href="./privacy-policy/"><span data-lang="ko">개인정보처리방침</span><span data-lang="en">Privacy Policy</span></a><a href="./terms/"><span data-lang="ko">이용약관</span><span data-lang="en">Terms of Service</span></a><a href="./delete-account/"><span data-lang="ko">계정 삭제</span><span data-lang="en">Delete account</span></a><a href="mailto:stunstar@sjm3labs.com">stunstar@sjm3labs.com</a>
-<div style="margin-top:8px">© 2026 suseong kim (sjm3labs)</div>
+<div style="margin-top:8px">© 2026 sjm3labs</div>
 </footer>
 </div>
 <script>
