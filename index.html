@@ -52,9 +52,9 @@
 .tile span.d{color:#c9d2ea;font-size:13px;line-height:1.45}
 .tile span.d.on{display:block}
 .mystery{width:100%;max-width:120px;aspect-ratio:1;margin:0 auto;border-radius:16px;background:#18203a;border:1px dashed #3a4a7a;display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:800;color:#3a4a7a}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{background:#18203a;border:1px solid #2a3760;border-radius:999px;padding:6px 14px;color:#ffd866;font-weight:700;font-size:15px}
-.chip.mystery-chip{border-style:dashed;border-color:#3a4a7a;color:#5a6a9a;min-width:44px;text-align:center}
+.mystery.small{width:56px;height:56px;flex:none;border-radius:12px;font-size:26px;margin:0}
+.tile.mystery-tile{border-style:dashed;border-color:#3a4a7a}
+.tile.mystery-tile b{color:#5a6a9a}
 @media (max-width:560px){.chars{grid-template-columns:repeat(3,1fr)}.tiles,.steps{grid-template-columns:1fr}.hero .shade{margin-top:-10%;padding:0 16px 20px}.hero h1{font-size:24px}}
 </style>
 <section class="hero">
@@ -100,21 +100,22 @@
 </ul>
 </div>
 
-<h2><span data-lang="ko">캐릭터</span><span data-lang="en">Characters</span></h2>
+<h2><span data-lang="ko">캐릭터 (10)</span><span data-lang="en">Characters (10)</span></h2>
+<p class="muted"><span data-lang="ko">처음부터 3명과 함께하고, 레벨과 별로 나머지를 만나 보세요!</span><span data-lang="en">Start with three, and unlock the rest as you level up!</span></p>
 <div class="chars">
 <figure style="margin:0;text-align:center"><img src="assets/human.png" alt="Human" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">휴먼</span><span data-lang="en">Human</span></figcaption></figure>
 <figure style="margin:0;text-align:center"><img src="assets/robot.png" alt="Robot" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">로봇</span><span data-lang="en">Robot</span></figcaption></figure>
 <figure style="margin:0;text-align:center"><img src="assets/elf.png" alt="Elf" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">엘프</span><span data-lang="en">Elf</span></figcaption></figure>
-<figure style="margin:0;text-align:center"><img src="assets/monk.png" alt="Monk" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">수도승</span><span data-lang="en">Monk</span></figcaption></figure>
-<figure style="margin:0;text-align:center"><img src="assets/alien.png" alt="Alien" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">외계인</span><span data-lang="en">Alien</span></figcaption></figure>
-<figure style="margin:0;text-align:center"><img src="assets/mermaid.png" alt="Mermaid" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">인어공주</span><span data-lang="en">Mermaid</span></figcaption></figure>
-<figure style="margin:0;text-align:center"><img src="assets/gladiator.png" alt="Gladiator" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">검투사</span><span data-lang="en">Gladiator</span></figcaption></figure>
-<figure style="margin:0;text-align:center"><img src="assets/werewolf.png" alt="Werewolf" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">늑대인간</span><span data-lang="en">Werewolf</span></figcaption></figure>
-<figure style="margin:0;text-align:center"><img src="assets/chef.png" alt="Chef" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">요리사</span><span data-lang="en">Chef</span></figcaption></figure>
-<figure style="margin:0;text-align:center"><img src="assets/angel.png" alt="Angel" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">천사</span><span data-lang="en">Angel</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
+<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
+<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
+<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
+<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
+<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
+<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
 </div>
 
-<h2><span data-lang="ko">스킬 아이템</span><span data-lang="en">Skill items</span></h2>
+<h2><span data-lang="ko">스킬 아이템 (10)</span><span data-lang="en">Skill items (10)</span></h2>
 <p class="muted"><span data-lang="ko">경기 전에 골라 넣으면 내 무기 하나에 그 스킬이 붙습니다.</span><span data-lang="en">Pick them before a game and each puts its skill on one of your tools.</span></p>
 <div class="tiles">
 <div class="tile"><img src="assets/items/grow.png" alt="Grows" loading="lazy"><div><b><span data-lang="ko">확대</span><span data-lang="en">Grows</span></b><span class="d" data-lang="ko">날아가면서 커져서 옆으로 더 넓게 맞습니다.</span><span class="d" data-lang="en">Swells as it flies, so it hits from farther to the side.</span></div></div>
@@ -129,23 +130,29 @@
 <div class="tile"><img src="assets/items/homing.png" alt="Homing" loading="lazy"><div><b><span data-lang="ko">유도</span><span data-lang="en">Homing</span></b><span class="d" data-lang="ko">날아가는 앞부분 동안 상대 쪽으로 방향을 틉니다.</span><span class="d" data-lang="en">Steers toward the opponent for the first part of its flight.</span></div></div>
 </div>
 
-<h2><span data-lang="ko">보스</span><span data-lang="en">Bosses</span></h2>
+<h2><span data-lang="ko">보스 (10)</span><span data-lang="en">Bosses (10)</span></h2>
 <p class="muted"><span data-lang="ko">스테이지마다 마지막 판에 보스가 등장합니다. 나머지 보스는 모험에서 직접 만나 보세요!</span><span data-lang="en">Each stage ends with a boss. Meet the rest of them on your adventure!</span></p>
 <div class="chars">
 <figure style="margin:0;text-align:center"><img src="assets/bosses/clown.png" alt="Mad Clown" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">미친광대</span><span data-lang="en">Mad Clown</span></figcaption></figure>
 <figure style="margin:0;text-align:center"><img src="assets/bosses/pirate.png" alt="Pirate" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">해적</span><span data-lang="en">Pirate</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><img src="assets/bosses/cyclops.png" alt="Cyclops" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">사이클롭스</span><span data-lang="en">Cyclops</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
+<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
+<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
+<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
+<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
+<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
 <figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
 </div>
 
-
-<h2><span data-lang="ko">경기장</span><span data-lang="en">Courts</span></h2>
+<h2><span data-lang="ko">경기장 (3)</span><span data-lang="en">Courts (3)</span></h2>
 <div class="tiles">
 <div class="tile"><img src="assets/courts/rectangle.png" alt="Rectangle" loading="lazy"><div><b><span data-lang="ko">직사각형</span><span data-lang="en">Rectangle</span></b><span class="d" data-lang="ko">곧은 옆벽의 기본 경기장</span><span class="d" data-lang="en">The plain court with straight sides</span></div></div>
 <div class="tile"><img src="assets/courts/jar.png" alt="Jar" loading="lazy"><div><b><span data-lang="ko">항아리</span><span data-lang="en">Jar</span></b><span class="d" data-lang="ko">가운데가 넓게 부푼 경기장</span><span class="d" data-lang="en">Wide in the middle</span></div></div>
 <div class="tile"><img src="assets/courts/hourglass.png" alt="Hourglass" loading="lazy"><div><b><span data-lang="ko">모래시계</span><span data-lang="en">Hourglass</span></b><span class="d" data-lang="ko">가운데가 잘록한 경기장</span><span class="d" data-lang="en">Narrow in the middle</span></div></div>
 </div>
 
-<h2><span data-lang="ko">장애물</span><span data-lang="en">Obstacles</span></h2>
+<h2><span data-lang="ko">장애물 (7)</span><span data-lang="en">Obstacles (7)</span></h2>
 <p class="muted"><span data-lang="ko">레벨이 오를수록 경기장 가운데에 여러 장애물이 놓이고, 가만히 있거나 움직입니다.</span><span data-lang="en">As the levels go up, obstacles stand in the middle of the court, still or on the move.</span></p>
 <div class="tiles">
 <div class="tile"><img src="assets/obstacles/pin.png" alt="Stone" loading="lazy"><div><b><span data-lang="ko">돌멩이</span><span data-lang="en">Stone</span></b><span class="d" data-lang="ko">부딪힌 무기는 튕겨 나가고 스킬이 사라집니다.</span><span class="d" data-lang="en">A tool that hits it bounces off and loses its skill.</span></div></div>
@@ -157,13 +164,19 @@
 <div class="tile"><img src="assets/obstacles/ice.png" alt="Ice" loading="lazy"><div><b><span data-lang="ko">얼음</span><span data-lang="en">Ice</span></b><span class="d" data-lang="ko">무기를 2초 동안 멈춰 세웠다가 그대로 보냅니다.</span><span class="d" data-lang="en">Holds a tool still for 2 seconds, then lets it go on as it was.</span></div></div>
 </div>
 
-<h2><span data-lang="ko">보너스 게임</span><span data-lang="en">Bonus games</span></h2>
+<h2><span data-lang="ko">보너스 게임 (10)</span><span data-lang="en">Bonus games (10)</span></h2>
 <p class="muted"><span data-lang="ko">보스를 이긴 다음 레벨은 지지 않는 보너스 게임입니다. 점수만큼 별을 받습니다.</span><span data-lang="en">The level after each boss is a bonus game you cannot lose, paying stars for your score.</span></p>
-<div class="chips">
-<span class="chip"><span data-lang="ko">양궁</span><span data-lang="en">Archery</span></span>
-<span class="chip"><span data-lang="ko">벽돌 깨기</span><span data-lang="en">Brick Break</span></span>
-<span class="chip"><span data-lang="ko">볼링</span><span data-lang="en">Bowling</span></span>
-<span class="chip mystery-chip" aria-label="more">?</span>
+<div class="tiles">
+<div class="tile"><img src="assets/games/archery.png" alt="Archery" loading="lazy"><div><b><span data-lang="ko">양궁</span><span data-lang="en">Archery</span></b><span class="d" data-lang="ko">누르고 있다가 놓으면 던집니다. 과녁 가운데일수록 별이 많습니다.</span><span class="d" data-lang="en">Hold, then let go to throw. The nearer the middle, the more stars.</span></div></div>
+<div class="tile"><svg viewBox="0 0 56 56" aria-hidden="true"><g stroke="#16224a" stroke-width="2"><rect x="2" y="10" width="25" height="11" fill="#ff5a5a"/><rect x="29" y="10" width="25" height="11" fill="#ff5a5a"/><rect x="2" y="23" width="12" height="11" fill="#ff9f43"/><rect x="16" y="23" width="25" height="11" fill="#ff9f43"/><rect x="43" y="23" width="11" height="11" fill="#ff9f43"/><rect x="2" y="36" width="25" height="11" fill="#ffd866"/><rect x="29" y="36" width="25" height="11" fill="#ffd866"/></g></svg><div><b><span data-lang="ko">벽돌 깨기</span><span data-lang="en">Brick Break</span></b><span class="d" data-lang="ko">무기 하나로 벽돌을 깨세요. 무기는 튕겨 다니다 돌아옵니다.</span><span class="d" data-lang="en">Break the bricks with your one tool as it bounces about.</span></div></div>
+<div class="tile"><img src="assets/games/bowling.png" alt="Bowling" loading="lazy"><div><b><span data-lang="ko">볼링</span><span data-lang="en">Bowling</span></b><span class="d" data-lang="ko">누르고 있다가 놓으면 굴러갑니다. 쓰러진 핀만큼 점수!</span><span class="d" data-lang="en">Hold and let go to roll. Score by the pins you knock down.</span></div></div>
+<div class="tile mystery-tile"><div class="mystery small" aria-hidden="true">?</div><div><b>???</b></div></div>
+<div class="tile mystery-tile"><div class="mystery small" aria-hidden="true">?</div><div><b>???</b></div></div>
+<div class="tile mystery-tile"><div class="mystery small" aria-hidden="true">?</div><div><b>???</b></div></div>
+<div class="tile mystery-tile"><div class="mystery small" aria-hidden="true">?</div><div><b>???</b></div></div>
+<div class="tile mystery-tile"><div class="mystery small" aria-hidden="true">?</div><div><b>???</b></div></div>
+<div class="tile mystery-tile"><div class="mystery small" aria-hidden="true">?</div><div><b>???</b></div></div>
+<div class="tile mystery-tile"><div class="mystery small" aria-hidden="true">?</div><div><b>???</b></div></div>
 </div>
 
 <h2><span data-lang="ko">문의</span><span data-lang="en">Contact</span></h2>

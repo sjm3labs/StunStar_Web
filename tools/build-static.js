@@ -42,10 +42,27 @@ const BOSSES = [
   ['dragon', '드래곤', 'Dragon'], ['mummy', '미라', 'Mummy'], ['darkmage', '흑마법사', 'Dark Mage'], ['hydra', '히드라', 'Hydra'],
   ['cyclops', '사이클롭스', 'Cyclops'], ['kraken', '크라켄', 'Kraken'],
 ];
-// Only the two weakest bosses are shown (the first rungs of the game's boss ladder); the rest are left to be met.
-const SHOWN_BOSSES = ['clown', 'pirate'];
-// Likewise only three bonus games by name, the rest a question mark.
-const SHOWN_GAMES = ['bowling', 'archery', 'bricks'];
+// Only three of each are shown, the rest as question marks (since 2026-11-02, at the user's word): the characters open
+// from the start, the three weakest bosses (the first rungs of the game's boss ladder) and three bonus games.
+const SHOWN_CHARACTERS = ['human', 'robot', 'elf'];
+const SHOWN_BOSSES = ['clown', 'pirate', 'cyclops'];
+const SHOWN_GAMES = ['archery', 'bricks', 'bowling'];
+
+// A section heading with how many there are, "Characters (10)".
+function heading(ko, en, count) {
+  return `<h2><span data-lang="ko">${ko} (${count})</span><span data-lang="en">${en} (${count})</span></h2>`;
+}
+
+// So many hidden ones, as a question mark each: a card like a face, or a tile like a game's.
+function mysteryFaces(count) {
+  return Array.from({ length: Math.max(0, count) }, () =>
+    '<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>').join('\n');
+}
+
+function mysteryTiles(count) {
+  return Array.from({ length: Math.max(0, count) }, () =>
+    '<div class="tile mystery-tile"><div class="mystery small" aria-hidden="true">?</div><div><b>???</b></div></div>').join('\n');
+}
 const ITEMS = [
   ['grow', '확대', 'Grows', '날아가면서 커져서 옆으로 더 넓게 맞습니다.', 'Swells as it flies, so it hits from farther to the side.'],
   ['pierce', '관통', 'Pierce', '날아오는 무기와 부딪혀도 밀리지 않고 그대로 갑니다.', 'Keeps its course when it meets another tool in flight.'],
@@ -210,7 +227,7 @@ ${langScript(codes)}
 // ---- Home ------------------------------------------------------------------------------------------------
 
 function home() {
-  const characters = CHARACTERS.map(([key, ko, en]) => `<figure style="margin:0;text-align:center"><img src="assets/${key}.png" alt="${en}" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">${ko}</span><span data-lang="en">${en}</span></figcaption></figure>`).join('\n');
+  const characters = CHARACTERS.filter(([key]) => SHOWN_CHARACTERS.includes(key)).map(([key, ko, en]) => `<figure style="margin:0;text-align:center"><img src="assets/${key}.png" alt="${en}" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">${ko}</span><span data-lang="en">${en}</span></figcaption></figure>`).join('\n');
   const body = `<style>
 .hero{border-radius:22px;overflow:hidden;background:#0e1636;box-shadow:0 10px 30px rgba(0,0,0,.45)}
 .hero img.art{display:block;width:100%;height:auto;aspect-ratio:3/2;-webkit-mask-image:linear-gradient(#000 66%,transparent);mask-image:linear-gradient(#000 66%,transparent)}
@@ -230,9 +247,9 @@ function home() {
 .tile span.d{color:#c9d2ea;font-size:13px;line-height:1.45}
 .tile span.d.on{display:block}
 .mystery{width:100%;max-width:120px;aspect-ratio:1;margin:0 auto;border-radius:16px;background:#18203a;border:1px dashed #3a4a7a;display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:800;color:#3a4a7a}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{background:#18203a;border:1px solid #2a3760;border-radius:999px;padding:6px 14px;color:#ffd866;font-weight:700;font-size:15px}
-.chip.mystery-chip{border-style:dashed;border-color:#3a4a7a;color:#5a6a9a;min-width:44px;text-align:center}
+.mystery.small{width:56px;height:56px;flex:none;border-radius:12px;font-size:26px;margin:0}
+.tile.mystery-tile{border-style:dashed;border-color:#3a4a7a}
+.tile.mystery-tile b{color:#5a6a9a}
 @media (max-width:560px){.chars{grid-template-columns:repeat(3,1fr)}.tiles,.steps{grid-template-columns:1fr}.hero .shade{margin-top:-10%;padding:0 16px 20px}.hero h1{font-size:24px}}
 </style>
 <section class="hero">
@@ -278,41 +295,42 @@ function home() {
 </ul>
 </div>
 
-<h2><span data-lang="ko">캐릭터</span><span data-lang="en">Characters</span></h2>
+${heading('캐릭터', 'Characters', CHARACTERS.length)}
+<p class="muted"><span data-lang="ko">처음부터 3명과 함께하고, 레벨과 별로 나머지를 만나 보세요!</span><span data-lang="en">Start with three, and unlock the rest as you level up!</span></p>
 <div class="chars">
 ${characters}
+${mysteryFaces(CHARACTERS.length - SHOWN_CHARACTERS.length)}
 </div>
 
-<h2><span data-lang="ko">스킬 아이템</span><span data-lang="en">Skill items</span></h2>
+${heading('스킬 아이템', 'Skill items', ITEMS.length)}
 <p class="muted"><span data-lang="ko">경기 전에 골라 넣으면 내 무기 하나에 그 스킬이 붙습니다.</span><span data-lang="en">Pick them before a game and each puts its skill on one of your tools.</span></p>
 <div class="tiles">
 ${tiles(ITEMS, 'items')}
 </div>
 
-<h2><span data-lang="ko">보스</span><span data-lang="en">Bosses</span></h2>
+${heading('보스', 'Bosses', BOSSES.length)}
 <p class="muted"><span data-lang="ko">스테이지마다 마지막 판에 보스가 등장합니다. 나머지 보스는 모험에서 직접 만나 보세요!</span><span data-lang="en">Each stage ends with a boss. Meet the rest of them on your adventure!</span></p>
 <div class="chars">
-${faces(BOSSES.filter(([key]) => SHOWN_BOSSES.includes(key)), 'bosses')}
-<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
+${faces(SHOWN_BOSSES.map((key) => BOSSES.find(([k]) => k === key)), 'bosses')}
+${mysteryFaces(BOSSES.length - SHOWN_BOSSES.length)}
 </div>
 
-
-<h2><span data-lang="ko">경기장</span><span data-lang="en">Courts</span></h2>
+${heading('경기장', 'Courts', COURTS.length)}
 <div class="tiles">
 ${tiles(COURTS, 'courts')}
 </div>
 
-<h2><span data-lang="ko">장애물</span><span data-lang="en">Obstacles</span></h2>
+${heading('장애물', 'Obstacles', OBSTACLES.length)}
 <p class="muted"><span data-lang="ko">레벨이 오를수록 경기장 가운데에 여러 장애물이 놓이고, 가만히 있거나 움직입니다.</span><span data-lang="en">As the levels go up, obstacles stand in the middle of the court, still or on the move.</span></p>
 <div class="tiles">
 ${tiles(OBSTACLES, 'obstacles')}
 </div>
 
-<h2><span data-lang="ko">보너스 게임</span><span data-lang="en">Bonus games</span></h2>
+${heading('보너스 게임', 'Bonus games', GAMES.length)}
 <p class="muted"><span data-lang="ko">보스를 이긴 다음 레벨은 지지 않는 보너스 게임입니다. 점수만큼 별을 받습니다.</span><span data-lang="en">The level after each boss is a bonus game you cannot lose, paying stars for your score.</span></p>
-<div class="chips">
-${GAMES.filter(([key]) => SHOWN_GAMES.includes(key)).map(([, ko, en]) => `<span class="chip"><span data-lang="ko">${ko}</span><span data-lang="en">${en}</span></span>`).join('\n')}
-<span class="chip mystery-chip" aria-label="more">?</span>
+<div class="tiles">
+${tiles(SHOWN_GAMES.map((key) => GAMES.find(([k]) => k === key)), 'games')}
+${mysteryTiles(GAMES.length - SHOWN_GAMES.length)}
 </div>
 
 <h2><span data-lang="ko">문의</span><span data-lang="en">Contact</span></h2>
