@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stunstar.sjm3labs.com/sitemap.xml

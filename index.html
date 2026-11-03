@@ -3,12 +3,31 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>StunStar</title>
-<meta name="description" content="Throw, stun and win! A 1v1 throwing battle game. 던지고 기절시켜라! 1:1 대전 게임">
-<meta property="og:title" content="StunStar">
-<meta property="og:description" content="Throw, stun and win! A 1v1 throwing battle game. 던지고 기절시켜라! 1:1 대전 게임">
-<meta property="og:image" content="./assets/icon.png">
+<title>StunStar - 1:1 던지기 대전 게임 | Throw &amp; Stun 1v1 Battle</title>
+<meta name="description" content="던지고 기절시켜라! 무기를 상대 진영으로 던져 넘기는 1:1 대전 게임 StunStar. 10명의 캐릭터와 스킬, 보스 모험, 온라인 대전. Throw, stun and win in StunStar, a free 1v1 throwing battle game with 10 characters, boss adventures and online matches.">
+<meta name="keywords" content="StunStar, 스턴스타, 1:1 대전 게임, 던지기 게임, 기절, 캐주얼 대전, 온라인 대전, 모바일 게임, 무료 게임, 한 손 게임, 1v1 battle game, throwing game, stun, casual PvP, online match, mobile game, free game, one-handed game">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#16224a">
+<link rel="canonical" href="https://stunstar.sjm3labs.com/">
+<meta name="apple-itunes-app" content="app-id=6826731312">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="StunStar">
+<meta property="og:url" content="https://stunstar.sjm3labs.com/">
+<meta property="og:title" content="StunStar - 1:1 던지기 대전 게임 | Throw &amp; Stun 1v1 Battle">
+<meta property="og:description" content="던지고 기절시켜라! 무기를 상대 진영으로 던져 넘기는 1:1 대전 게임 StunStar. 10명의 캐릭터와 스킬, 보스 모험, 온라인 대전. Throw, stun and win in StunStar, a free 1v1 throwing battle game with 10 characters, boss adventures and online matches.">
+<meta property="og:image" content="https://stunstar.sjm3labs.com/assets/banner.jpg">
+<meta property="og:image:width" content="1440">
+<meta property="og:image:height" content="960">
+<meta property="og:image:alt" content="StunStar">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="StunStar - 1:1 던지기 대전 게임 | Throw &amp; Stun 1v1 Battle">
+<meta name="twitter:description" content="던지고 기절시켜라! 무기를 상대 진영으로 던져 넘기는 1:1 대전 게임 StunStar. 10명의 캐릭터와 스킬, 보스 모험, 온라인 대전. Throw, stun and win in StunStar, a free 1v1 throwing battle game with 10 characters, boss adventures and online matches.">
+<meta name="twitter:image" content="https://stunstar.sjm3labs.com/assets/banner.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["VideoGame","MobileApplication"],"name":"StunStar","alternateName":"스턴스타","description":"던지고 기절시켜라! 무기를 상대 진영으로 던져 넘기는 1:1 대전 게임 StunStar. 10명의 캐릭터와 스킬, 보스 모험, 온라인 대전. Throw, stun and win in StunStar, a free 1v1 throwing battle game with 10 characters, boss adventures and online matches.","url":"https://stunstar.sjm3labs.com/","image":"https://stunstar.sjm3labs.com/assets/banner.jpg","applicationCategory":"GameApplication","genre":["Casual","Action","PvP"],"gamePlatform":["Android","iOS"],"operatingSystem":"Android, iOS","playMode":["SinglePlayer","MultiPlayer"],"inLanguage":["ko","en","ja","zh","es","hi","fr","ru","de","pt"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"sjm3labs","url":"https://sjm3labs.com/","email":"stunstar@sjm3labs.com"},"installUrl":"https://play.google.com/store/apps/details?id=com.sjm3labs.stunstar","sameAs":["https://play.google.com/store/apps/details?id=com.sjm3labs.stunstar","https://apps.apple.com/app/id6826731312"]}</script>
 <link rel="icon" href="./assets/favicon.png">
+<link rel="apple-touch-icon" href="./assets/icon.png">
 <link rel="stylesheet" href="./assets/site.css">
 </head>
 <body>
@@ -32,6 +51,9 @@
 .tile b{display:block;color:#ffd866;font-size:15px}
 .tile span.d{color:#c9d2ea;font-size:13px;line-height:1.45}
 .tile span.d.on{display:block}
+.mystery{width:100%;max-width:120px;aspect-ratio:1;margin:0 auto;border-radius:16px;background:#18203a;border:1px dashed #3a4a7a;display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:800;color:#3a4a7a}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#18203a;border:1px solid #2a3760;border-radius:999px;padding:6px 14px;color:#ffd866;font-weight:700;font-size:15px}
 @media (max-width:560px){.chars{grid-template-columns:repeat(3,1fr)}.tiles,.steps{grid-template-columns:1fr}.hero .shade{margin-top:-10%;padding:0 16px 20px}.hero h1{font-size:24px}}
 </style>
 <section class="hero">
@@ -63,14 +85,14 @@
 <div class="card">
 <ul data-lang="ko">
 <li>각자 다른 무기와 스킬을 가진 캐릭터 10명</li>
-<li>설인, 골렘, 드래곤, 크라켄 등 보스와 다양한 장애물이 기다리는 모험 모드</li>
+<li>개성 강한 보스들과 다양한 장애물이 기다리는 모험 모드</li>
 <li>볼링, 양궁, 벽돌 깨기 등 보너스 게임</li>
 <li>같은 와이파이에서 즐기는 로컬 대전과 전 세계 플레이어와 겨루는 온라인 대전</li>
 <li>모험·온라인 대전 주간 랭킹과 보상, 일일 미션과 출석 보상</li>
 </ul>
 <ul data-lang="en">
 <li>10 characters, each with its own tool and skill</li>
-<li>An adventure of bosses such as the Yeti, the Golem, the Dragon and the Kraken, with obstacles on the court</li>
+<li>An adventure of fearsome bosses, with obstacles on the court</li>
 <li>Bonus games: bowling, archery, bricks and more</li>
 <li>Local matches on the same Wi-Fi, and online matches with players around the world</li>
 <li>Weekly rankings for adventure and online matches with rewards, daily missions and attendance rewards</li>
@@ -92,18 +114,11 @@
 </div>
 
 <h2><span data-lang="ko">보스</span><span data-lang="en">Bosses</span></h2>
-<p class="muted"><span data-lang="ko">스테이지마다 마지막 판에 등장하고, 100레벨마다 드래곤이 기다립니다.</span><span data-lang="en">Each stage ends with a boss, and the Dragon waits at every hundredth level.</span></p>
+<p class="muted"><span data-lang="ko">스테이지마다 마지막 판에 보스가 등장합니다. 나머지 보스는 모험에서 직접 만나 보세요!</span><span data-lang="en">Each stage ends with a boss. Meet the rest of them on your adventure!</span></p>
 <div class="chars">
-<figure style="margin:0;text-align:center"><img src="assets/bosses/yeti.png" alt="Yeti" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">설인</span><span data-lang="en">Yeti</span></figcaption></figure>
-<figure style="margin:0;text-align:center"><img src="assets/bosses/golem.png" alt="Golem" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">골렘</span><span data-lang="en">Golem</span></figcaption></figure>
 <figure style="margin:0;text-align:center"><img src="assets/bosses/clown.png" alt="Mad Clown" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">미친광대</span><span data-lang="en">Mad Clown</span></figcaption></figure>
 <figure style="margin:0;text-align:center"><img src="assets/bosses/pirate.png" alt="Pirate" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">해적</span><span data-lang="en">Pirate</span></figcaption></figure>
-<figure style="margin:0;text-align:center"><img src="assets/bosses/dragon.png" alt="Dragon" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">드래곤</span><span data-lang="en">Dragon</span></figcaption></figure>
-<figure style="margin:0;text-align:center"><img src="assets/bosses/mummy.png" alt="Mummy" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">미라</span><span data-lang="en">Mummy</span></figcaption></figure>
-<figure style="margin:0;text-align:center"><img src="assets/bosses/darkmage.png" alt="Dark Mage" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">흑마법사</span><span data-lang="en">Dark Mage</span></figcaption></figure>
-<figure style="margin:0;text-align:center"><img src="assets/bosses/hydra.png" alt="Hydra" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">히드라</span><span data-lang="en">Hydra</span></figcaption></figure>
-<figure style="margin:0;text-align:center"><img src="assets/bosses/cyclops.png" alt="Cyclops" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">사이클롭스</span><span data-lang="en">Cyclops</span></figcaption></figure>
-<figure style="margin:0;text-align:center"><img src="assets/bosses/kraken.png" alt="Kraken" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">크라켄</span><span data-lang="en">Kraken</span></figcaption></figure>
+<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
 </div>
 
 <h2><span data-lang="ko">스킬 아이템</span><span data-lang="en">Skill items</span></h2>
@@ -142,17 +157,17 @@
 
 <h2><span data-lang="ko">보너스 게임</span><span data-lang="en">Bonus games</span></h2>
 <p class="muted"><span data-lang="ko">보스를 이긴 다음 레벨은 지지 않는 보너스 게임입니다. 점수만큼 별을 받습니다.</span><span data-lang="en">The level after each boss is a bonus game you cannot lose, paying stars for your score.</span></p>
-<div class="tiles">
-<div class="tile"><img src="assets/games/stun.png" alt="Stun Practice" loading="lazy"><div><b><span data-lang="ko">기절시키기</span><span data-lang="en">Stun Practice</span></b><span class="d" data-lang="ko">상대를 맞혀 기절시키세요. 맞힐 때마다 별을 얻습니다.</span><span class="d" data-lang="en">Hit the opponent to stun it. Every hit earns stars.</span></div></div>
-<div class="tile"><img src="assets/games/pins.png" alt="Obstacle Shot" loading="lazy"><div><b><span data-lang="ko">장애물 맞히기</span><span data-lang="en">Obstacle Shot</span></b><span class="d" data-lang="ko">장애물을 맞힐 때마다 별을 얻습니다.</span><span class="d" data-lang="en">Every obstacle you hit earns stars.</span></div></div>
-<div class="tile"><img src="assets/games/moving.png" alt="Moving Obstacles" loading="lazy"><div><b><span data-lang="ko">움직이는 장애물</span><span data-lang="en">Moving Obstacles</span></b><span class="d" data-lang="ko">돌아다니는 장애물을 맞히세요.</span><span class="d" data-lang="en">Hit the obstacles as they drift about.</span></div></div>
-<div class="tile"><img src="assets/games/stars.png" alt="Falling Stars" loading="lazy"><div><b><span data-lang="ko">별 따기</span><span data-lang="en">Falling Stars</span></b><span class="d" data-lang="ko">별이 내 쪽에 닿기 전에 맞히세요.</span><span class="d" data-lang="en">Hit the stars before they reach your side.</span></div></div>
-<div class="tile"><img src="assets/games/dodge.png" alt="Dodge the Tools" loading="lazy"><div><b><span data-lang="ko">무기 피하기</span><span data-lang="en">Dodge the Tools</span></b><span class="d" data-lang="ko">떨어지는 무기를 피하세요. 지나간 무기만큼 별을 얻습니다.</span><span class="d" data-lang="en">Keep clear of what comes down. Every tool that gets past earns stars.</span></div></div>
-<div class="tile"><img src="assets/games/archery.png" alt="Archery" loading="lazy"><div><b><span data-lang="ko">양궁</span><span data-lang="en">Archery</span></b><span class="d" data-lang="ko">누르고 있다가 놓으면 던집니다. 과녁 가운데일수록 별이 많습니다.</span><span class="d" data-lang="en">Hold, then let go to throw. The nearer the middle, the more stars.</span></div></div>
-<div class="tile"><svg viewBox="0 0 56 56" aria-hidden="true"><g stroke="#16224a" stroke-width="2"><rect x="2" y="10" width="25" height="11" fill="#ff5a5a"/><rect x="29" y="10" width="25" height="11" fill="#ff5a5a"/><rect x="2" y="23" width="12" height="11" fill="#ff9f43"/><rect x="16" y="23" width="25" height="11" fill="#ff9f43"/><rect x="43" y="23" width="11" height="11" fill="#ff9f43"/><rect x="2" y="36" width="25" height="11" fill="#ffd866"/><rect x="29" y="36" width="25" height="11" fill="#ffd866"/></g></svg><div><b><span data-lang="ko">벽돌 깨기</span><span data-lang="en">Brick Break</span></b><span class="d" data-lang="ko">무기 하나로 벽돌을 깨세요. 무기는 튕겨 다니다 돌아옵니다.</span><span class="d" data-lang="en">Break the bricks with your one tool as it bounces about.</span></div></div>
-<div class="tile"><img src="assets/games/boss.png" alt="Boss Bash" loading="lazy"><div><b><span data-lang="ko">보스 때리기</span><span data-lang="en">Boss Bash</span></b><span class="d" data-lang="ko">보스를 때리세요. 체력을 깎은 만큼 별을 얻습니다.</span><span class="d" data-lang="en">Hit the boss. The more of its health you take, the more stars.</span></div></div>
-<div class="tile"><img src="assets/games/bowling.png" alt="Bowling" loading="lazy"><div><b><span data-lang="ko">볼링</span><span data-lang="en">Bowling</span></b><span class="d" data-lang="ko">누르고 있다가 놓으면 굴러갑니다. 쓰러진 핀만큼 점수!</span><span class="d" data-lang="en">Hold and let go to roll. Score by the pins you knock down.</span></div></div>
-<div class="tile"><img src="assets/games/fruit.png" alt="Fruit Match" loading="lazy"><div><b><span data-lang="ko">과일 짝 맞추기</span><span data-lang="en">Fruit Match</span></b><span class="d" data-lang="ko">같은 과일을 연달아 맞혀 짝을 지우세요.</span><span class="d" data-lang="en">Hit the same fruit twice in a row to clear the pair.</span></div></div>
+<div class="chips">
+<span class="chip"><span data-lang="ko">기절시키기</span><span data-lang="en">Stun Practice</span></span>
+<span class="chip"><span data-lang="ko">장애물 맞히기</span><span data-lang="en">Obstacle Shot</span></span>
+<span class="chip"><span data-lang="ko">움직이는 장애물</span><span data-lang="en">Moving Obstacles</span></span>
+<span class="chip"><span data-lang="ko">별 따기</span><span data-lang="en">Falling Stars</span></span>
+<span class="chip"><span data-lang="ko">무기 피하기</span><span data-lang="en">Dodge the Tools</span></span>
+<span class="chip"><span data-lang="ko">양궁</span><span data-lang="en">Archery</span></span>
+<span class="chip"><span data-lang="ko">벽돌 깨기</span><span data-lang="en">Brick Break</span></span>
+<span class="chip"><span data-lang="ko">보스 때리기</span><span data-lang="en">Boss Bash</span></span>
+<span class="chip"><span data-lang="ko">볼링</span><span data-lang="en">Bowling</span></span>
+<span class="chip"><span data-lang="ko">과일 짝 맞추기</span><span data-lang="en">Fruit Match</span></span>
 </div>
 
 <h2><span data-lang="ko">문의</span><span data-lang="en">Contact</span></h2>

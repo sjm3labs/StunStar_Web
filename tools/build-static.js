@@ -19,7 +19,12 @@ const DEVELOPER = 'suseong kim';
 const CONTACT = 'stunstar@sjm3labs.com';
 const PUBLISHER = 'pub-2075600345013086';
 const PLAY = 'https://play.google.com/store/apps/details?id=com.sjm3labs.stunstar';
-const APP_STORE = 'https://apps.apple.com/app/id6826731312';
+const APP_STORE_ID = '6826731312';
+const APP_STORE = 'https://apps.apple.com/app/id' + APP_STORE_ID;
+// The site's own address, for canonical links, sharing previews, the sitemap and structured data.
+const SITE = 'https://stunstar.sjm3labs.com/';
+const KEYWORDS = 'StunStar, 스턴스타, 1:1 대전 게임, 던지기 게임, 기절, 캐주얼 대전, 온라인 대전, 모바일 게임, 무료 게임, 한 손 게임, '
+  + '1v1 battle game, throwing game, stun, casual PvP, online match, mobile game, free game, one-handed game';
 
 const LANGS = [
   ['ko', '한국어'], ['en', 'English'], ['ja', '日本語'], ['zh', '中文'], ['es', 'Español'],
@@ -37,6 +42,8 @@ const BOSSES = [
   ['dragon', '드래곤', 'Dragon'], ['mummy', '미라', 'Mummy'], ['darkmage', '흑마법사', 'Dark Mage'], ['hydra', '히드라', 'Hydra'],
   ['cyclops', '사이클롭스', 'Cyclops'], ['kraken', '크라켄', 'Kraken'],
 ];
+// Only the two weakest bosses are shown (the first rungs of the game's boss ladder); the rest are left to be met.
+const SHOWN_BOSSES = ['clown', 'pirate'];
 const ITEMS = [
   ['grow', '확대', 'Grows', '날아가면서 커져서 옆으로 더 넓게 맞습니다.', 'Swells as it flies, so it hits from farther to the side.'],
   ['pierce', '관통', 'Pierce', '날아오는 무기와 부딪혀도 밀리지 않고 그대로 갑니다.', 'Keeps its course when it meets another tool in flight.'],
@@ -146,7 +153,11 @@ function langSelect(codes) {
     .map(([c, name]) => `<option value="${c}">${name}</option>`).join('')}</select></div>`;
 }
 
-function page(title, description, codes, body, root) {
+// A page. pathName is its address under the site ("" for the home page, "terms/" ...), for its canonical link and
+// sharing preview; head is anything more for its <head> (the home page's structured data).
+function page(title, description, codes, body, root, pathName, head) {
+  const url = SITE + (pathName || '');
+  const image = SITE + 'assets/banner.jpg';
   return `<!doctype html>
 <html lang="ko">
 <head>
@@ -154,10 +165,29 @@ function page(title, description, codes, body, root) {
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${escape(title)}</title>
 <meta name="description" content="${escape(description)}">
+<meta name="keywords" content="${escape(KEYWORDS)}">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#16224a">
+<link rel="canonical" href="${url}">
+<meta name="apple-itunes-app" content="app-id=${APP_STORE_ID}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="StunStar">
+<meta property="og:url" content="${url}">
 <meta property="og:title" content="${escape(title)}">
 <meta property="og:description" content="${escape(description)}">
-<meta property="og:image" content="${root}assets/icon.png">
+<meta property="og:image" content="${image}">
+<meta property="og:image:width" content="1440">
+<meta property="og:image:height" content="960">
+<meta property="og:image:alt" content="StunStar">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${escape(title)}">
+<meta name="twitter:description" content="${escape(description)}">
+<meta name="twitter:image" content="${image}">
+${head || ''}
 <link rel="icon" href="${root}assets/favicon.png">
+<link rel="apple-touch-icon" href="${root}assets/icon.png">
 <link rel="stylesheet" href="${root}assets/site.css">
 </head>
 <body>
@@ -197,6 +227,9 @@ function home() {
 .tile b{display:block;color:#ffd866;font-size:15px}
 .tile span.d{color:#c9d2ea;font-size:13px;line-height:1.45}
 .tile span.d.on{display:block}
+.mystery{width:100%;max-width:120px;aspect-ratio:1;margin:0 auto;border-radius:16px;background:#18203a;border:1px dashed #3a4a7a;display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:800;color:#3a4a7a}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#18203a;border:1px solid #2a3760;border-radius:999px;padding:6px 14px;color:#ffd866;font-weight:700;font-size:15px}
 @media (max-width:560px){.chars{grid-template-columns:repeat(3,1fr)}.tiles,.steps{grid-template-columns:1fr}.hero .shade{margin-top:-10%;padding:0 16px 20px}.hero h1{font-size:24px}}
 </style>
 <section class="hero">
@@ -228,14 +261,14 @@ function home() {
 <div class="card">
 <ul data-lang="ko">
 <li>각자 다른 무기와 스킬을 가진 캐릭터 10명</li>
-<li>설인, 골렘, 드래곤, 크라켄 등 보스와 다양한 장애물이 기다리는 모험 모드</li>
+<li>개성 강한 보스들과 다양한 장애물이 기다리는 모험 모드</li>
 <li>볼링, 양궁, 벽돌 깨기 등 보너스 게임</li>
 <li>같은 와이파이에서 즐기는 로컬 대전과 전 세계 플레이어와 겨루는 온라인 대전</li>
 <li>모험·온라인 대전 주간 랭킹과 보상, 일일 미션과 출석 보상</li>
 </ul>
 <ul data-lang="en">
 <li>10 characters, each with its own tool and skill</li>
-<li>An adventure of bosses such as the Yeti, the Golem, the Dragon and the Kraken, with obstacles on the court</li>
+<li>An adventure of fearsome bosses, with obstacles on the court</li>
 <li>Bonus games: bowling, archery, bricks and more</li>
 <li>Local matches on the same Wi-Fi, and online matches with players around the world</li>
 <li>Weekly rankings for adventure and online matches with rewards, daily missions and attendance rewards</li>
@@ -248,9 +281,10 @@ ${characters}
 </div>
 
 <h2><span data-lang="ko">보스</span><span data-lang="en">Bosses</span></h2>
-<p class="muted"><span data-lang="ko">스테이지마다 마지막 판에 등장하고, 100레벨마다 드래곤이 기다립니다.</span><span data-lang="en">Each stage ends with a boss, and the Dragon waits at every hundredth level.</span></p>
+<p class="muted"><span data-lang="ko">스테이지마다 마지막 판에 보스가 등장합니다. 나머지 보스는 모험에서 직접 만나 보세요!</span><span data-lang="en">Each stage ends with a boss. Meet the rest of them on your adventure!</span></p>
 <div class="chars">
-${faces(BOSSES, 'bosses')}
+${faces(BOSSES.filter(([key]) => SHOWN_BOSSES.includes(key)), 'bosses')}
+<figure style="margin:0;text-align:center"><div class="mystery" aria-hidden="true">?</div><figcaption class="muted">???</figcaption></figure>
 </div>
 
 <h2><span data-lang="ko">스킬 아이템</span><span data-lang="en">Skill items</span></h2>
@@ -272,13 +306,36 @@ ${tiles(OBSTACLES, 'obstacles')}
 
 <h2><span data-lang="ko">보너스 게임</span><span data-lang="en">Bonus games</span></h2>
 <p class="muted"><span data-lang="ko">보스를 이긴 다음 레벨은 지지 않는 보너스 게임입니다. 점수만큼 별을 받습니다.</span><span data-lang="en">The level after each boss is a bonus game you cannot lose, paying stars for your score.</span></p>
-<div class="tiles">
-${tiles(GAMES, 'games')}
+<div class="chips">
+${GAMES.map(([, ko, en]) => `<span class="chip"><span data-lang="ko">${ko}</span><span data-lang="en">${en}</span></span>`).join('\n')}
 </div>
 
 <h2><span data-lang="ko">문의</span><span data-lang="en">Contact</span></h2>
 <p><a href="mailto:${CONTACT}">${CONTACT}</a></p>`;
-  return page('StunStar', 'Throw, stun and win! A 1v1 throwing battle game. 던지고 기절시켜라! 1:1 대전 게임', ['ko', 'en'], body, './');
+  const description = '던지고 기절시켜라! 무기를 상대 진영으로 던져 넘기는 1:1 대전 게임 StunStar. 10명의 캐릭터와 스킬, 보스 모험, 온라인 대전. '
+    + 'Throw, stun and win in StunStar, a free 1v1 throwing battle game with 10 characters, boss adventures and online matches.';
+  // What search engines read of the game (schema.org): a free mobile game on both stores.
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': ['VideoGame', 'MobileApplication'],
+    name: 'StunStar',
+    alternateName: '스턴스타',
+    description,
+    url: SITE,
+    image: SITE + 'assets/banner.jpg',
+    applicationCategory: 'GameApplication',
+    genre: ['Casual', 'Action', 'PvP'],
+    gamePlatform: ['Android', 'iOS'],
+    operatingSystem: 'Android, iOS',
+    playMode: ['SinglePlayer', 'MultiPlayer'],
+    inLanguage: ['ko', 'en', 'ja', 'zh', 'es', 'hi', 'fr', 'ru', 'de', 'pt'],
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    publisher: { '@type': 'Organization', name: 'sjm3labs', url: 'https://sjm3labs.com/', email: CONTACT },
+    installUrl: PLAY,
+    sameAs: [PLAY, APP_STORE],
+  };
+  const head = `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`;
+  return page('StunStar - 1:1 던지기 대전 게임 | Throw & Stun 1v1 Battle', description, ['ko', 'en'], body, './', '', head);
 }
 
 // ---- Privacy policy ------------------------------------------------------------------------------------
@@ -338,7 +395,7 @@ ${policyHtml(unescapeXml(m[1]).replace(/^\n+|\s+$/g, ''))}
 </div>
 </article>`);
   }
-  return page('StunStar Privacy Policy', 'StunStar privacy policy / 개인정보처리방침', codes, sections.join('\n'), '../');
+  return page('StunStar Privacy Policy', 'StunStar privacy policy / 개인정보처리방침', codes, sections.join('\n'), '../', 'privacy-policy/');
 }
 
 // ---- Terms of service -----------------------------------------------------------------------------------
@@ -360,7 +417,7 @@ function termsPart(text, code) {
 function terms() {
   const text = fs.readFileSync(path.join(__dirname, 'terms.txt'), 'utf8').replace(/\r\n/g, '\n');
   const [ko, en] = text.split(/\n-{10,}\n/);
-  return page('StunStar Terms of Service', 'StunStar terms of service / 이용약관', ['ko', 'en'], termsPart(ko, 'ko') + '\n' + termsPart(en, 'en'), '../');
+  return page('StunStar Terms of Service', 'StunStar terms of service / 이용약관', ['ko', 'en'], termsPart(ko, 'ko') + '\n' + termsPart(en, 'en'), '../', 'terms/');
 }
 
 // ---- Account deletion ----------------------------------------------------------------------------------
@@ -408,7 +465,7 @@ function deleteAccount() {
 <h2>If you cannot open the game</h2>
 <div class="card"><p>If you have removed the app or cannot open it, email <a href="mailto:${CONTACT}?subject=StunStar%20account%20deletion">${CONTACT}</a> to ask for deletion. Including your <b>player ID</b>, shown in the game under <b>Menu → Terms</b>, helps us find your account. Requests are handled within 30 days.</p></div>
 </article>`;
-  return page('Delete your StunStar account', 'How to delete a StunStar account and its data / StunStar 계정 삭제 방법', ['ko', 'en'], body, '../');
+  return page('Delete your StunStar account', 'How to delete a StunStar account and its data / StunStar 계정 삭제 방법', ['ko', 'en'], body, '../', 'delete-account/');
 }
 
 // ---- Write ---------------------------------------------------------------------------------------------
@@ -426,4 +483,11 @@ fs.writeFileSync(path.join(out, 'terms', 'index.html'), terms());
 const adsLine = `google.com, ${PUBLISHER}, DIRECT, f08c47fec0942fa0\n`;
 fs.writeFileSync(path.join(out, 'app-ads.txt'), adsLine);
 fs.writeFileSync(path.join(out, 'ads.txt'), adsLine);
+// For search engines (since 2026-11-02): everything may be read, and the pages are listed, the home page first.
+const today = new Date().toISOString().slice(0, 10);
+const pages = [['', '1.0'], ['privacy-policy/', '0.3'], ['terms/', '0.3'], ['delete-account/', '0.3']];
+fs.writeFileSync(path.join(out, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+  + pages.map(([p, priority]) => `<url><loc>${SITE}${p}</loc><lastmod>${today}</lastmod><priority>${priority}</priority></url>`).join('\n')
+  + '\n</urlset>\n');
+fs.writeFileSync(path.join(out, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}sitemap.xml\n`);
 console.log('made ' + out + ' (privacy policy dated ' + ((/<date>([^<]*)<\/date>/.exec(policyXml) || [])[1]) + ')');
