@@ -236,6 +236,7 @@ function home() {
 .hero h1{text-shadow:0 2px 8px rgba(0,0,0,.6)}
 .hero p{text-shadow:0 1px 6px rgba(0,0,0,.7)}
 .hero .button{margin:4px 4px}
+.hero .soon{display:inline-block;vertical-align:middle;margin:-4px 0 -2px 6px;padding:3px 9px;border-radius:999px;background:#ffd866;color:#1a1f33;font-size:13px;font-weight:700;text-shadow:none}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .steps .card{padding:14px}
 .steps b{color:#ffd866}
@@ -265,7 +266,7 @@ function home() {
 </div>
 <p>
 <a class="button" href="${PLAY}">Google Play</a>
-<a class="button pink" href="${APP_STORE}">App Store</a>
+<span class="button pink">App Store <span class="soon">Coming Soon</span></span>
 </p>
 </div></div>
 </section>
