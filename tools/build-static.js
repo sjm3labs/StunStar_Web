@@ -37,10 +37,11 @@ const CHARACTERS = [
 ];
 
 // What the home page lists, with the game's own names (Texts.cs) and words; the pictures in assets/<folder>/<key>.png.
+// In the order of the balance file's boss lines (Config.csv), which is the order they come in a round.
 const BOSSES = [
-  ['yeti', '설인', 'Yeti'], ['golem', '골렘', 'Golem'], ['clown', '미친광대', 'Mad Clown'], ['pirate', '해적', 'Pirate'],
-  ['dragon', '드래곤', 'Dragon'], ['mummy', '미라', 'Mummy'], ['darkmage', '흑마법사', 'Dark Mage'], ['hydra', '히드라', 'Hydra'],
-  ['cyclops', '사이클롭스', 'Cyclops'], ['kraken', '크라켄', 'Kraken'],
+  ['clown', '미친광대', 'Mad Clown'], ['pirate', '해적', 'Pirate'], ['cyclops', '사이클롭스', 'Cyclops'], ['mummy', '미라', 'Mummy'],
+  ['yeti', '설인', 'Yeti'], ['kraken', '크라켄', 'Kraken'], ['golem', '골렘', 'Golem'], ['darkmage', '흑마법사', 'Dark Mage'],
+  ['hydra', '히드라', 'Hydra'], ['dragon', '드래곤', 'Dragon'],
 ];
 
 // A section heading with how many there are, "Characters (10)".
@@ -101,6 +102,35 @@ const BRICKS_SVG = '<svg viewBox="0 0 56 56" aria-hidden="true"><g stroke="#1622
   + '<rect x="2" y="10" width="25" height="11" fill="#ff5a5a"/><rect x="29" y="10" width="25" height="11" fill="#ff5a5a"/>'
   + '<rect x="2" y="23" width="12" height="11" fill="#ff9f43"/><rect x="16" y="23" width="25" height="11" fill="#ff9f43"/><rect x="43" y="23" width="11" height="11" fill="#ff9f43"/>'
   + '<rect x="2" y="36" width="25" height="11" fill="#ffd866"/><rect x="29" y="36" width="25" height="11" fill="#ffd866"/></g></svg>';
+
+// Each boss's double throw in percent, read from the balance file's boss lines (Config.csv) when the pages are made.
+function bossDoubleThrows() {
+  const shares = {};
+  let inBoss = false, columns = null;
+  const text = fs.readFileSync(path.join(unity, 'Assets/_Project/Data/Config.csv'), 'utf8').replace(/^\uFEFF/, '');
+  for (const line of text.split(/\r?\n/)) {
+    const cells = line.split(',');
+    if (cells[0] === 'category') { inBoss = cells[1] === 'boss'; columns = null; continue; }
+    if (!inBoss) continue;
+    if (cells[0] === 'key') columns = cells;
+    else if (cells[0] === 'val' && columns) {
+      const name = cells[columns.indexOf('boss')].replace('_', '');
+      const share = Number(cells[columns.indexOf('double_throw')]);
+      if (share > 0) shares[name] = share;
+    }
+  }
+  return shares;
+}
+
+// The bosses' faces, each with its double throw on a see-through black label over the picture's foot, as the game's cards have it.
+function bossFaces(list) {
+  const shares = bossDoubleThrows();
+  return list.map(([key, ko, en]) => {
+    const share = shares[key];
+    const label = share ? `<span class="dt"><span data-lang="ko">2연발 ${share}%</span><span data-lang="en">Double ${share}%</span></span>` : '';
+    return `<figure style="margin:0;text-align:center"><div class="face"><img src="assets/bosses/${key}.png" alt="${en}" loading="lazy" style="width:100%;aspect-ratio:1;object-fit:contain;display:block">${label}</div><figcaption class="muted"><span data-lang="ko">${ko}</span><span data-lang="en">${en}</span></figcaption></figure>`;
+  }).join('\n');
+}
 
 function faces(list, folder) {
   return list.map(([key, ko, en]) => `<figure style="margin:0;text-align:center"><img src="assets/${folder}/${key}.png" alt="${en}" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">${ko}</span><span data-lang="en">${en}</span></figcaption></figure>`).join('\n');
@@ -236,6 +266,8 @@ function home() {
 .steps .card{padding:14px}
 .steps b{color:#ffd866}
 .chars{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.face{position:relative;max-width:120px;margin:0 auto}
+.face .dt{position:absolute;left:4px;bottom:4px;padding:1px 7px;border-radius:7px;background:rgba(0,0,0,.6);color:#ffd866;font-size:12px;font-weight:700;line-height:1.5;white-space:nowrap}
 .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
 .tile{display:flex;gap:12px;align-items:center;background:#18203a;border:1px solid #2a3760;border-radius:14px;padding:10px 12px}
 .tile img,.tile svg{width:56px;height:56px;object-fit:contain;flex:none}
@@ -306,7 +338,7 @@ ${tiles(ITEMS, 'items')}
 ${heading('보스', 'Bosses', BOSSES.length)}
 <p class="muted"><span data-lang="ko">스테이지마다 마지막 판에 등장하고, 100레벨마다 드래곤이 기다립니다.</span><span data-lang="en">Each stage ends with a boss, and the Dragon waits at every hundredth level.</span></p>
 <div class="chars">
-${faces(BOSSES, 'bosses')}
+${bossFaces(BOSSES)}
 </div>
 
 ${heading('경기장', 'Courts', COURTS.length)}
