@@ -42,11 +42,6 @@ const BOSSES = [
   ['dragon', '드래곤', 'Dragon'], ['mummy', '미라', 'Mummy'], ['darkmage', '흑마법사', 'Dark Mage'], ['hydra', '히드라', 'Hydra'],
   ['cyclops', '사이클롭스', 'Cyclops'], ['kraken', '크라켄', 'Kraken'],
 ];
-// Only three of each are shown, the rest as question marks (since 2026-11-02, at the user's word): the characters open
-// from the start, the three weakest bosses (the first rungs of the game's boss ladder) and three bonus games.
-const SHOWN_CHARACTERS = ['human', 'robot', 'elf'];
-const SHOWN_BOSSES = ['clown', 'pirate', 'cyclops'];
-const SHOWN_GAMES = ['archery', 'bricks', 'bowling'];
 
 // A section heading with how many there are, "Characters (10)".
 function heading(ko, en, count) {
@@ -227,7 +222,7 @@ ${langScript(codes)}
 // ---- Home ------------------------------------------------------------------------------------------------
 
 function home() {
-  const characters = CHARACTERS.filter(([key]) => SHOWN_CHARACTERS.includes(key)).map(([key, ko, en]) => `<figure style="margin:0;text-align:center"><img src="assets/${key}.png" alt="${en}" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">${ko}</span><span data-lang="en">${en}</span></figcaption></figure>`).join('\n');
+  const characters = CHARACTERS.map(([key, ko, en]) => `<figure style="margin:0;text-align:center"><img src="assets/${key}.png" alt="${en}" loading="lazy" style="width:100%;max-width:120px;aspect-ratio:1;object-fit:contain"><figcaption class="muted"><span data-lang="ko">${ko}</span><span data-lang="en">${en}</span></figcaption></figure>`).join('\n');
   const body = `<style>
 .hero{border-radius:22px;overflow:hidden;background:#0e1636;box-shadow:0 10px 30px rgba(0,0,0,.45)}
 .hero img.art{display:block;width:100%;height:auto;aspect-ratio:3/2;-webkit-mask-image:linear-gradient(#000 66%,transparent);mask-image:linear-gradient(#000 66%,transparent)}
@@ -300,7 +295,6 @@ ${heading('캐릭터', 'Characters', CHARACTERS.length)}
 <p class="muted"><span data-lang="ko">처음부터 3명과 함께하고, 레벨과 별로 나머지를 만나 보세요!</span><span data-lang="en">Start with three, and unlock the rest as you level up!</span></p>
 <div class="chars">
 ${characters}
-${mysteryFaces(CHARACTERS.length - SHOWN_CHARACTERS.length)}
 </div>
 
 ${heading('스킬 아이템', 'Skill items', ITEMS.length)}
@@ -310,10 +304,9 @@ ${tiles(ITEMS, 'items')}
 </div>
 
 ${heading('보스', 'Bosses', BOSSES.length)}
-<p class="muted"><span data-lang="ko">스테이지마다 마지막 판에 보스가 등장합니다. 나머지 보스는 모험에서 직접 만나 보세요!</span><span data-lang="en">Each stage ends with a boss. Meet the rest of them on your adventure!</span></p>
+<p class="muted"><span data-lang="ko">스테이지마다 마지막 판에 등장하고, 100레벨마다 드래곤이 기다립니다.</span><span data-lang="en">Each stage ends with a boss, and the Dragon waits at every hundredth level.</span></p>
 <div class="chars">
-${faces(SHOWN_BOSSES.map((key) => BOSSES.find(([k]) => k === key)), 'bosses')}
-${mysteryFaces(BOSSES.length - SHOWN_BOSSES.length)}
+${faces(BOSSES, 'bosses')}
 </div>
 
 ${heading('경기장', 'Courts', COURTS.length)}
@@ -330,8 +323,7 @@ ${tiles(OBSTACLES, 'obstacles')}
 ${heading('보너스 게임', 'Bonus games', GAMES.length)}
 <p class="muted"><span data-lang="ko">보스를 이긴 다음 레벨은 지지 않는 보너스 게임입니다. 점수만큼 별을 받습니다.</span><span data-lang="en">The level after each boss is a bonus game you cannot lose, paying stars for your score.</span></p>
 <div class="tiles">
-${tiles(SHOWN_GAMES.map((key) => GAMES.find(([k]) => k === key)), 'games')}
-${mysteryTiles(GAMES.length - SHOWN_GAMES.length)}
+${tiles(GAMES, 'games')}
 </div>
 
 <h2><span data-lang="ko">문의</span><span data-lang="en">Contact</span></h2>
